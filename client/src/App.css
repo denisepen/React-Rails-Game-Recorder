@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+.navBar {
+ background-color: orangered;
+}
+
+.sideBar {
+  background-color: yellow;
+  font-size: 10px;
+  float: left;
+  width: 45vw;
+  height: 90vh;
+}
+
+.main-content {
+background-color: skyblue;
+float: right;
+width: 53vw;
+height: 90vh;
+}
+
+.input {
+  background-color: mediumpurple;
+}
+
+.radio {
+  display: inline;
+}
