@@ -1,4 +1,10 @@
 # README
+# start with rake start.
+
+# react app boots up on 3000
+# api boots up on 3001
+
+# used gem foreman
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
