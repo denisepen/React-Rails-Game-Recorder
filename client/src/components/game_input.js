@@ -19,13 +19,13 @@ export default class GameInput extends Component {
   event.preventDefault();
   const game = this.state
   this.props.addGame(game)
-  this.setState={
+  this.setState({
     date: '',
     mode: '',
     max_kills: '',
     final_place: '',
     comments: ''
-  }
+  })
 
   // below was created before ading api
   // this.props.addGame(this.state)
