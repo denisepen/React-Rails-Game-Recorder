@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 import Chart from '../components/chart'
 
 class GameStats extends Component {
-//   constructor (props) {
-//     super(props)
-//     debugger
-// }
 
 componentDidMount () {
   this.renderCharts()
@@ -20,6 +16,34 @@ componentDidMount () {
    } else {
      console.log("This.props:", this.props.games);
 
+     // const solo = []
+    const soloGames = this.props.games.filter(game =>
+      {
+      return (game.mode === 'Solo')
+    })
+
+    const squadGames = this.props.games.filter(game =>
+      {
+      return (game.mode === 'Squads')
+    })
+
+    const fiftyvGames = this.props.games.filter(game =>
+      {
+      return (game.mode === '50v50')
+    })
+
+    const duosGames = this.props.games.filter(game =>
+      {
+      return (game.mode === 'Duos')
+    })
+
+    const playgroundGames = this.props.games.filter(game =>
+      {
+      return (game.mode === 'Playground')
+    })
+
+
+    debugger;
   const overallKills = [];
    const OverallKills = this.props.games.map(game => {
      return overallKills.push(game.max_kills)
@@ -41,8 +65,7 @@ componentDidMount () {
            <td>
              <Chart  data={overallKills} color="green" svgWidth={25} svgHeight={20} />
            </td>
-         </tr>
-         <tr>
+
            <td>
              <Chart  data={overallFinalPlace} color="blue" svgWidth={25} svgHeight={20} />
            </td>
@@ -52,37 +75,14 @@ componentDidMount () {
  }
 }
 
-
-
-   //   <div> Overall charts
-   //   <p>Overall Kills </p>
-   //   <div>
-   //    <Chart  data={overallKills} color="green" svgWidth={25} svgHeight={20} />
-   //    </div>
-   //
-   //    <p> Final Position </p>
-   //    <div>
-   //    <Chart  data={overallKills} color="green" svgWidth={25} svgHeight={20} />
-   //    </div>
-   //   </div>
-   // )
-   // }
   render () {
-    // debugger;
     return (
-      // <div>
-      //   {this.renderCharts(this.props)}
-      // </div>
       <table>
         <thead>
-          <th> Total Kills</th>
-          <th> Final Place </th>
+          <th> Total Kills Overall</th>
+          <th> Final Place Over Time </th>
         </thead>
-
-
-        {this.renderCharts()}
-
-
+          {this.renderCharts()}
       </table>
       // <table className="table table-hover">
       //   <thead>
