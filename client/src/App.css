@@ -21,6 +21,10 @@ width: 50vw;
 height: 90vh;
 }
 
+.about{
+  background-color: slategrey;
+}
+
 .input {
   background-color: mediumpurple;
 }

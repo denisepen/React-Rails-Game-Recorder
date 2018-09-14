@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GameContainer from './containers/game_container'
  import GameService from './actions/actions_games';
 import Games from './components/games'
+import About from './components/about'
 // import GameInput from './components/game_input'
 
 import './App.css';
@@ -35,18 +36,20 @@ class App extends Component {
       <div className="App">
         <div className="navBar"><p>NavBar</p></div>
         Game Recorder
-        <div className="container">
-          {/*<GameContainer />*/}
+        <div className="main-content">
+        <p> This receives the data from the API</p>
+          <GameContainer />
         </div>
 
 
         <div className="sideBar" >
           {/*<Games games={this.state.games} />*/}
+          <About />
         </div>
-        <div className="main-content"> Main Content
+      {/*  <div className="main-content"> Main Content
         <p> This receives the data from the API</p>
           <GameContainer  />
-        </div>
+        </div>*/}
       </div>
     );
   }
