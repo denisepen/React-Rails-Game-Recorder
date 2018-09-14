@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import GameContainer from './containers/game_container'
  import GameService from './actions/actions_games';
 import Games from './components/games'
-import GameInput from './components/game_input'
+// import GameInput from './components/game_input'
 
 import './App.css';
 
@@ -41,7 +41,7 @@ class App extends Component {
 
 
         <div className="sideBar" >
-          <Games games={this.state.games} />
+          {/*<Games games={this.state.games} />*/}
         </div>
         <div className="main-content"> Main Content
         <p> This receives the data from the API</p>

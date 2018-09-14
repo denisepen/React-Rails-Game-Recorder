@@ -1,11 +1,14 @@
 import React from 'react';
 import Game from './game'
 
+let games;
 const Games = props => {
+  if (!props.games){
+    return  games = (<p>Please Add a game</p>)
+  } else {
   // debugger;
-  const games = props.games.map((game, index) => {
+   games = props.games.map((game, index) => {
     return (<Game  key={index} date={game.date} mode={game.mode} max_kills={game.max_kills} final_place={game.final_place}  comments={game.comments} />)
-
   }
 
 
@@ -19,6 +22,7 @@ const Games = props => {
       //   <td> {game.comments}</td>
       // </tr>
   );
+}
 
   return (
     <div>
@@ -27,7 +31,7 @@ const Games = props => {
           <tr>
             <th>Date</th>
             <th>Game Mode</th>
-            <th>Max Kills</th>
+            <th>Total Kills</th>
             <th>Place</th>
             <th>Comments</th>
           </tr>

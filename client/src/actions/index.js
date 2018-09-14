@@ -1,13 +1,30 @@
-
+// import thunk from 'redux-thunk';
 
 export function fetchGames() {
-  return fetch('/games')
+  return function (dispatch){
+    // debugger;
+     return fetch('/games')
            .then(response => response.json())
+            .then(games => {
+              dispatch({ type: 'FETCH_GAMES', games})
+            })
+
+              // dispatch(receiveGames(json))
+           // dispatch({ type: 'FETCH_GAME', game})
     }
+  }
+
+
+  export function receiveGames(games) {
+    return{
+      type: 'RECEIVE_GAMES',
+      games: games
+    }
+  }
 
 
 export function addGame(game) {
-    debugger;
+     // debugger;
       const request = {
         method: 'POST',
         body: JSON.stringify(game),
@@ -19,11 +36,16 @@ export function addGame(game) {
       // return fetch(`/games`, request )
       // .then(response => response.json())
 
-      return{
-        type: 'ADD_GAME',
-        payload: fetch(`/games`, request )
-                  .then(response => response.json())
+      return (dispatch) => {
+
+        return fetch('/games', request )
+                .then(response => response.json())
+                 .then(game => console.log("Game:", game))
+                 .then(newGame => dispatch({ type: 'ADD_GAME', game})
+               )
       }
+
+    // return  ({ type: 'ADD_GAME', game})
     }
 
 export function  updatedGames () {
