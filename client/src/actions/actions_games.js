@@ -13,7 +13,6 @@ const GameService = {
         type: 'GET_GAME',
         payload: request
       }
-
                     },
   fetchGames: () => {
     // debugger;
@@ -36,11 +35,12 @@ const GameService = {
         'Content-Type': 'application/json'
       }
     };
-    // debugger;
+     // debugger;
     // return fetch(`/games`, request )
     // .then(response => response.json())
 
     return{
+
       type: 'ADD_GAME',
       payload: fetch(`/games`, request )
                 .then(response => response.json())

@@ -10,14 +10,14 @@
   background-color: yellow;
   font-size: 10px;
   float: left;
-  width: 45vw;
+  width: 40vw;
   height: 90vh;
 }
 
 .main-content {
 background-color: skyblue;
 float: right;
-width: 53vw;
+width: 50vw;
 height: 90vh;
 }
 
