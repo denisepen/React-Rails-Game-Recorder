@@ -4,7 +4,13 @@ import GameInput from '../components/game_input'
 import Games from '../components/games'
 import { updatedGames, addGame, fetchGames} from '../actions/index'
 
+
 class GameContainer extends Component {
+
+  componentDidMount () {
+    // GameService.fetchGames().then(games => this.setState({ games }) )
+    this.props.fetchGames();
+  }
 
   render (){
      console.log("Game",this.props)
@@ -35,7 +41,7 @@ const mapDispatchToProps = dispatch => {
     addGame: (game) => {
       dispatch(addGame(game))
     },
-    fetchGames: (game) => {
+    fetchGames: () => {
       dispatch(fetchGames())
     }
   }
