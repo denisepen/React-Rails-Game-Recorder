@@ -45,7 +45,7 @@ class App extends Component {
         </div>
         <div className="main-content"> Main Content
         <p> This receives the data from the API</p>
-          <GameInput addGame={this.addGame} />
+          <GameContainer  />
         </div>
       </div>
     );

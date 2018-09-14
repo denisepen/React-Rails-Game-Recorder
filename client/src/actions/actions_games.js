@@ -1,6 +1,6 @@
 // const API_URL = process.env.REACT_APP_API_URL;
 // console.log(API_URL);
-const API_URL = '/api/games'
+// const API_URL = '/games'
 
 
 const GameService = {
@@ -21,7 +21,7 @@ const GameService = {
       }
 
     };
-
+    // debugger;
     return fetch(`/games`, request )
     .then(response => response.json())
 

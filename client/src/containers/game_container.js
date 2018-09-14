@@ -6,6 +6,7 @@ import Games from '../components/games'
 class GameContainer extends Component {
 
   render (){
+    console.log("Game",this.props.addGame)
     return(
       <div>
 
@@ -21,7 +22,13 @@ class GameContainer extends Component {
 
 const mapStateToProps = ({ games }) => ({ games })
 
-const mapDispatchToProps = dispatch => ({ addGame: game => dispatch({ type: "ADD_GAME", game }) })
+const mapDispatchToProps = dispatch =>
+({
+  addGame: game => {
+    // debugger;
+  dispatch({ type: "ADD_GAME", game })
+}
+ })
 
 export default connect (mapStateToProps, mapDispatchToProps)(GameContainer)
 
