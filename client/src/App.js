@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount () {
-    GameService.fetchGames().then(games => this.setState({ games }) )
+    // GameService.fetchGames().then(games => this.setState({ games }) )
   }
 
   addGame= (game) => {

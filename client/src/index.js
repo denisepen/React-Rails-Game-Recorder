@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 import manageGame from './reducers/manage_game'
 import thunk from 'redux-thunk';
 
-const store = createStore(manageGame, applyMiddleware(thunk))
+const store = createStore(manageGame, applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <Provider store={store}>
