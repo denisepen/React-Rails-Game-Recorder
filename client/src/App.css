@@ -2,9 +2,23 @@
   text-align: center;
 }
 
+table {
+  margin-left:auto; margin-right:auto;
+}
+
 td, th {
   vertical-align: middle;
   text-align: center;
+}
+
+td {
+  margin-right: 20px;
+  padding-right: 20px;
+}
+
+tr {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 svg {

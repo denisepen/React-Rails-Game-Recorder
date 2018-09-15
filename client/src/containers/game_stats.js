@@ -174,6 +174,7 @@ createModeCharts () {
               {this.renderCharts()}
             </table>
           </div>
+          <br/>
 
        <table className="table table-hover">
          <thead>
