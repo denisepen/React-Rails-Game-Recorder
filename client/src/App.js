@@ -19,7 +19,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount () {
+  componentWillMount () {
     GameService.fetchGames().then(games => this.setState({ games }) )
   }
 

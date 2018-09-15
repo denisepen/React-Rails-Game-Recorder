@@ -5,27 +5,25 @@ import { NavLink } from 'react-router-dom';
   <div>
     <NavLink
       to="/"
-
-
       /* add prop for activeStyle */
       activeStyle={{
-        background: 'darkblue'
+        background: 'yellow'
       }}
     >Home</NavLink>
+
     <NavLink
       to="/new"
       exact
-
       activeStyle={{
-        background: 'darkblue'
+        background: 'yellow'
       }}
     >New</NavLink>
+
     <NavLink
       to="/stats"
       exact
-
       activeStyle={{
-        background: 'darkblue'
+        background: 'yellow'
       }}
       >Stats</NavLink>
   </div>;
