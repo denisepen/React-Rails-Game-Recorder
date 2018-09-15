@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class GameInput extends Component {
+export default class GameInput extends React.Component {
   constructor(props){
     super(props);
 

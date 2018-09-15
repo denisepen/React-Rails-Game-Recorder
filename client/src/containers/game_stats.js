@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Chart from '../components/chart'
 
-class GameStats extends Component {
+class GameStats extends React.Component {
 
 componentDidMount () {
   this.renderCharts()

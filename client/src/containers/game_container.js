@@ -5,7 +5,7 @@ import Games from '../components/games'
 import { updatedGames, addGame, fetchGames} from '../actions/index'
 
 
-class GameContainer extends Component {
+class GameContainer extends React.Component {
 
   componentDidMount () {
     // GameService.fetchGames().then(games => this.setState({ games }) )

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import GameContainer from './containers/game_container'
- import GameService from './actions/actions_games';
+import GameService from './actions/actions_games';
 import Games from './components/games'
 import About from './components/about'
 import GameStats from './containers/game_stats'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import Navbar from './components/navbar'
 // import GameInput from './components/game_input'
 
 import './App.css';
@@ -34,28 +36,15 @@ class App extends Component {
   render() {
     // console.log("Games:", this.state.games);
     return (
-      <div className="App">
-        <div className="navBar"><p>NavBar</p></div>
-        Game Recorder
-        <div className="main-content">
-        <p> This receives the data from the API</p>
-          <GameContainer />
-        </div>
 
-        <div className="charts">
-          <GameStats />
-        </div>
-
-
-        <div className="sideBar" >
-          {/*<Games games={this.state.games} />*/}
-          <About />
-        </div>
-      {/*  <div className="main-content"> Main Content
-        <p> This receives the data from the API</p>
-          <GameContainer  />
-        </div>*/}
-      </div>
+      <Router>
+        <React.Fragment>
+            <Navbar />
+            <Route exact path="/" render={About} />
+            <Route exact path="/new" component={GameContainer} />
+            <Route exact path="/stats" component={GameStats} />
+        </React.Fragment>
+      </Router>
     );
   }
 }
