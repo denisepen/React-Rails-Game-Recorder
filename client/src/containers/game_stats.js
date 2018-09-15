@@ -165,13 +165,15 @@ createModeCharts () {
   render () {
     return (
       <div>
+        <div>
           <table>
             <thead>
               <th> Game Kills Over Time</th>
               <th> Final Place Over Time </th>
             </thead>
               {this.renderCharts()}
-          </table>
+            </table>
+          </div>
 
        <table className="table table-hover">
          <thead>
