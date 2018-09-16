@@ -1,6 +1,6 @@
 import React from 'react'
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
-import {Bar, Line, Pie} from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 
 export default (props) => {

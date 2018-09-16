@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import GameInput from '../components/game_input'
 import Games from '../components/games'
-import { updatedGames, addGame, fetchGames} from '../actions/index'
+import {  addGame, fetchGames, deleteGame} from '../actions/index'
 
 
 class GameContainer extends React.Component {
@@ -12,13 +12,15 @@ class GameContainer extends React.Component {
     this.props.fetchGames();
   }
 
-  render (){ 
-     console.log("Game",this.props)
+  render (){
+     console.log("GameProps",this.props)
     return(
       <div>
 
       <div className="input">
-        <GameInput addGame={this.props.addGame}/>
+        <GameInput
+          addGame={this.props.addGame}
+          deleteGame={this.props.deleteGame}/>
       </div>
       <div className="sideBar">
         <Games games={this.props.games}/>
@@ -43,7 +45,9 @@ const mapDispatchToProps = dispatch => {
     },
     fetchGames: () => {
       dispatch(fetchGames())
-    }
+    },
+    // delete: (game) => dispatch({type: 'DELETE_GAME', payload: game })
+      deleteGame: (game) => dispatch(deleteGame())
   }
 }
 // ({
