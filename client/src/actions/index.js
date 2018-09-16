@@ -38,7 +38,7 @@ export function addGame(game) {
 
         return fetch('/games', request )
                 .then(response => response.json())
-                 // .then(game => console.log("Game just fetched:", game))
+                 .then(game => console.log("Game just added to db:", game))
                  .then(newGame => dispatch({ type: 'ADD_GAME', game})
                )
       }
@@ -46,19 +46,21 @@ export function addGame(game) {
 
     export function deleteGame(game) {
          // debugger;
-          // const request = {
-          //   method: 'DELETE',
-          //   body: JSON.stringify(game),
-          //   headers: {
-          //     'Content-Type': 'application/json'
-          //   }
-          // };
-
+          const request = {
+            method: 'DELETE',
+            // mode: 'no-cors',
+            body: JSON.stringify(game),
+            credentials: "same-origin",
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          };
+          console.log(request);
           return (dispatch) => {
-            console.log("inside actions", game);
-            return fetch(`/games/${game.id}`, {method: 'DELETE'} )
-                    .then(response => response.json())
-                     .then(game => console.log("Inside Actions:", game))
+            console.log("inside delete actions", game);
+             fetch(`/games/${game.id}`, {method: 'DELETE'} )
+                    // .then(response => response.json())
+                     // .then(game => console.log("Inside Actions:", game))
                      .then(game => dispatch({ type: 'DELETE_GAME', game})
                    )
           }

@@ -7,7 +7,7 @@ export default class GameInput extends React.Component {
 
 
     this.state={
-      id: '',
+
       date: '',
       mode: '',
       max_kills: '',
@@ -20,7 +20,10 @@ export default class GameInput extends React.Component {
   event.preventDefault();
   const game = this.state
   this.props.addGame(game)
+  console.log("onsubmit state:", this.state);
+  
   this.setState({
+    gameId: '',
     date: '',
     mode: '',
     max_kills: '',

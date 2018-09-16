@@ -7,9 +7,13 @@ import {  addGame, fetchGames, deleteGame} from '../actions/index'
 
 class GameContainer extends React.Component {
 
-  componentDidMount () {
+  componentWillMount () {
     // GameService.fetchGames().then(games => this.setState({ games }) )
     this.props.fetchGames();
+  }
+
+  componentDidUpdate(){
+    // this.props.fetchGames();
   }
 
   render (){

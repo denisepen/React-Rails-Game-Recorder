@@ -6,14 +6,11 @@ export default function manageGame(state = initState, action) {
   switch (action.type) {
 
     case 'ADD_GAME':
-     // debugger;
-     // const game = {
-     //    id: Math.random()*10000000000000000,
-     //    // game: action.payload
-     //  }
 
-      console.log("newState:", state);
-      // return {...state, games: state.games.concat(action.game) };
+     action.game.gameId = Math.random()*10000000000000000
+
+      console.log("Add Action:", action);
+    
       return { ...state, games: state.games.concat(action.game)};
 
       case 'DELETE_GAME':
