@@ -45,7 +45,7 @@ export default (props) => {
           scales: {
             xAxes: [{
               scaleLabel: {
-                display: true,
+                display: false,
                 labelString: 'Date',
                 fontSize: 10
               },
@@ -58,7 +58,7 @@ export default (props) => {
             yAxes: [{
               scaleLabel: {
                 display: true,
-                labelString: 'Total',
+                labelString: props.y,
                 fontSize: 10
               }
             }]

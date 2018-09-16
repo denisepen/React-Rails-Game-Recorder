@@ -23,6 +23,10 @@ class App extends Component {
     GameService.fetchGames().then(games => this.setState({ games }) )
   }
 
+  componentWillUnmount () {
+    this.state = {games: []}
+  }
+
   addGame= (game) => {
      // debugger;
     GameService.addGame(game).then(game =>

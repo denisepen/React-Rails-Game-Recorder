@@ -8,10 +8,14 @@ export default (props) => {
     const chartData = {
       labels:  ['Solo', 'Squad', '50v50', 'Duo', 'Playground'],
       datasets: [{
-        label: 'Percentage of Game Play',
+        // label: 'Game Play',
         data: props.data,
-        backgroundColor: ['red', 'green', 'blue', 'orange', 'purple']
-      }]
+        backgroundColor: ['red', 'orange', 'green', 'purple', 'blue']
+      }],
+      borderWidth: 1,
+      borderColor: 'gray',
+      hoverBorderWidth: 3,
+      hoverBorderColor: 'black'
     }
 
 
@@ -21,6 +25,15 @@ export default (props) => {
         data={chartData}
 
         options={{
+          layout:{
+            padding:{
+              left: 50,
+
+            }
+          },
+          toolTips:{
+            enabled: true
+          },
 
           maintainAspectRatio: false,
             title: {
@@ -31,7 +44,10 @@ export default (props) => {
             legend: {
               display: true,
               position: 'right',
-              text: 'Percentage of Game Play'
+              // text: 'Percentage of Game Play'
+              labels:{
+                fontColor: 'black'
+              }
               }
         }}
       />

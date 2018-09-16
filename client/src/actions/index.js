@@ -32,9 +32,6 @@ export function addGame(game) {
           'Content-Type': 'application/json'
         }
       };
-       // / debugger;
-      // return fetch(`/games`, request )
-      // .then(response => response.json())
 
       return (dispatch) => {
 

@@ -12,7 +12,7 @@ class GameContainer extends React.Component {
     this.props.fetchGames();
   }
 
-  render (){
+  render (){ 
      console.log("Game",this.props)
     return(
       <div>

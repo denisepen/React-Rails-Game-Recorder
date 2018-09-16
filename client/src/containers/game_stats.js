@@ -5,10 +5,20 @@ import { fetchGames } from '../actions/index'
 import PieChart from '../components/pie_chart'
 
 class GameStats extends React.Component {
+  constructor (props) {
+    super(props)
 
-componentWillMount () {
-  this.props.fetchGames();
-  this.renderCharts()
+    // this.state = props
+    this.props.fetchGames();
+  }
+
+// componentWillMount() {
+//   // this.props.fetchGames();
+//   this.renderCharts()
+// }
+
+componentWillUnmount () {
+  this.props = {games: []}
 }
 
 createPieChart () {
@@ -89,12 +99,17 @@ createModeCharts () {
   const playgroundGames = this.props.games.filter(game =>
     { return (game.mode === 'Playground') })
 
-  const playgroundKills = [];
-  const PlaygroundKills = playgroundGames.map(game => {
-    return playgroundKills.push(game.max_kills)
-   }
- );
+ //  const playgroundKills = [];
+ //  const PlaygroundKills = playgroundGames.map(game => {
+ //    return playgroundKills.push(game.max_kills)
+ //   }
+ // );
 
+  const playgroundKills = playgroundGames.map(game => game.max_kills)
+
+
+console.log("PG Games", playgroundGames);
+console.log("PG Kills", playgroundKills);
 //  to calc data for final position playing playground mode
  const pgFinalPlace = [];
    const PgFinalPlace = playgroundGames.map(game => {
@@ -110,37 +125,37 @@ createModeCharts () {
            <tr>
            <td> Total Kills </td>
              <td>
-               <Chart  data={soloKills} color="red" mode={'Solo'} />
+               <Chart  data={soloKills} color="red" mode={'Solo'} y={'Total Kills'}/>
              </td>
              <td>
-               <Chart  data={duoKills} color="purple" mode={'Duos'} />
+               <Chart  data={duoKills} color="purple" mode={'Duos'} y={'Total Kills'} />
              </td>
              <td>
-               <Chart  data={squadKills} color="orange"  mode={'Squads'}/>
+               <Chart  data={squadKills} color="orange"  mode={'Squads'} y={'Total Kills'}/>
              </td>
              <td>
-               <Chart  data={fiftyvKills} color="green"  mode={'50v50'}/>
+               <Chart  data={fiftyvKills} color="green"  mode={'50v50'} y={'Total Kills'}/>
              </td>
              <td>
-               <Chart  data={playgroundKills} color="blue" mode={'Playground'} />
+               <Chart  data={playgroundKills} color="blue" mode={'Playground'}  y={'Total Kills'}/>
              </td>
            </tr>
            <tr>
            <td> Final Position </td>
              <td>
-               <Chart  data={soloFinalPlace} color="red" mode={'Solo'} />
+               <Chart  data={soloFinalPlace} color="red" mode={'Solo'} y={'Final Position'}/>
              </td>
              <td>
-               <Chart  data={duoFinalPlace} color="purple" mode={'Duos'} />
+               <Chart  data={duoFinalPlace} color="purple" mode={'Duos'} y={'Final Position'}/>
              </td>
              <td>
-               <Chart  data={squadFinalPlace} color="orange" mode={'Squads'} />
+               <Chart  data={squadFinalPlace} color="orange" mode={'Squads'} y={'Final Position'}/>
              </td>
              <td>
-               <Chart  data={fiftyvFinalPlace} color="green" mode={'50v50'} />
+               <Chart  data={fiftyvFinalPlace} color="green" mode={'50v50'} y={'Final Position'}/>
              </td>
              <td>
-               <Chart  data={pgFinalPlace} color="blue" mode={'Playground'} />
+               <Chart  data={pgFinalPlace} color="blue" mode={'Playground'} y={'Final Position'}/>
              </td>
            </tr>
         </tbody>

@@ -69,68 +69,76 @@ handleCommentsChange = (e) => {
   render(){
     // console.log(this.state);
     return(
-      <div>
-        <h2> Please add your game </h2>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
-        Date: <input type="date" onChange={(e) => this.handleDateChange(e)}/>{this.state.date}<br/>
+      <div >
 
-          <h3>Game Mode</h3>
-          <div >
-            <label>
-            Solo
-              <input type="radio"
-              onChange={(e) => this.handleModeChange(e)}
-              value="Solo"
-              checked={this.state.mode === "Solo"}
-              className="radio"
-              /> <br/>
-            </label>
+        <form onSubmit={(event) => this.handleSubmit(event)} className="input">
+          <h2> Please add your game </h2>
+          Date: <input type="date" onChange={(e) => this.handleDateChange(e)}/>{this.state.date}<br/>
 
-            <label>
-            Duo
-              <input type="radio"
-              onChange={(e) => this.handleModeChange(e)}
-              value="Duos"
-              checked={this.state.mode === "Duos"}
-              className="radio"
-              /> <br/>
-            </label>
 
-            <label>
-            Squads
-              <input type="radio"
-              onChange={(e) => this.handleModeChange(e)}
-              value="Squads"
-              checked={this.state.mode === "Squads"}
-              /> <br/>
-            </label>
-
-            <label>
-            50v50
-              <input type="radio"
-              onChange={(e) => this.handleModeChange(e)}
-              value="50v50"
-              checked={this.state.mode === "50v50"}
-              /> <br/>
-            </label>
-
-            <label>
-            Playground Mode
-              <input type="radio"
-              onChange={(e) => this.handleModeChange(e)}
-              value="Playground"
-              checked={this.state.mode === "Playground"}
-              /> <br/>
-            </label>
-          </div>
-
+          <div>
+            <p className="gameMode">Game Mode</p>
+              <ul className="form">
+                <li>
+                  <label>
+                  Solo
+                    <input type="radio"
+                    onChange={(e) => this.handleModeChange(e)}
+                    value="Solo"
+                    checked={this.state.mode === "Solo"}
+                    className="radio"
+                    /> <br/>
+                  </label>
+                  </li>
+                  <li>
+                    <label>
+                     Duo
+                      <input type="radio"
+                      onChange={(e) => this.handleModeChange(e)}
+                      value="Duos"
+                      checked={this.state.mode === "Duos"}
+                      className="radio"
+                      /> <br/>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Squads
+                        <input type="radio"
+                        onChange={(e) => this.handleModeChange(e)}
+                        value="Squads"
+                        checked={this.state.mode === "Squads"}
+                        /> <br/>
+                      </label>
+                  </li>
+                  <li>
+                    <label>
+                    50v50
+                      <input type="radio"
+                      onChange={(e) => this.handleModeChange(e)}
+                      value="50v50"
+                      checked={this.state.mode === "50v50"}
+                      /> <br/>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                    Playground Mode
+                      <input type="radio"
+                      onChange={(e) => this.handleModeChange(e)}
+                      value="Playground"
+                      checked={this.state.mode === "Playground"}
+                      /> <br/>
+                    </label>
+                  </li>
+                </ul>
 
           Max Kills: <input type="number" value={this.state.max_kills} onChange={(e) => this.handleKillsChange(e)}/>{this.state.max_kills}<br/>
 
           Final Place:<input value={this.state.final_place} type="number" onChange={(e) => this.handlePlaceChange(e)}/>{this.state.final_place}<br/>
 
           Comments: <input value={this.state.comments} type="text" onChange={(e) => this.handleCommentsChange(e)}/>{this.state.comments}<br/>
-
+          </div>
 
           <input type="submit" value="Add Game" />
         </form><br/>
