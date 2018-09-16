@@ -41,9 +41,27 @@ export function addGame(game) {
                  .then(newGame => dispatch({ type: 'ADD_GAME', game})
                )
       }
-
-    // return  ({ type: 'ADD_GAME', game})
     }
+
+    export function deleteGame(game) {
+         // debugger;
+          const request = {
+            method: 'DELETE',
+            body: JSON.stringify(game),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          };
+
+          return (dispatch) => {
+
+            return fetch('/games', request )
+                    .then(response => response.json())
+                     .then(game => console.log("Game:", game))
+                     .then(newGame => dispatch({ type: 'DELETE_GAME', game})
+                   )
+          }
+        }
 
 export function  updatedGames () {
       const request = fetch('/games')

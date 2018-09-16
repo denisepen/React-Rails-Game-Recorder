@@ -12,6 +12,12 @@ export default function manageGame(state = initState, action) {
       // return {...state, games: state.games.concat(action.game) };
       return { ...state, games: state.games.concat(action.game)};
 
+      case 'DELETE_GAME':
+       // debugger;
+        console.log("DeletedGames:", state);
+        // return {...state, games: state.games.concat(action.game) };
+        return { ...state, games: state.games.concat(action.game)};
+
       case 'FETCH_GAMES':
        // debugger;
 
