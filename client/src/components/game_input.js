@@ -7,6 +7,7 @@ export default class GameInput extends React.Component {
 
 
     this.state={
+      id: '',
       date: '',
       mode: '',
       max_kills: '',

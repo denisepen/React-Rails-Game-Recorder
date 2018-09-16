@@ -7,6 +7,10 @@ export default function manageGame(state = initState, action) {
 
     case 'ADD_GAME':
      // debugger;
+     // const game = {
+     //    id: Math.random()*10000000000000000,
+     //    // game: action.payload
+     //  }
 
       console.log("newState:", state);
       // return {...state, games: state.games.concat(action.game) };
@@ -14,9 +18,9 @@ export default function manageGame(state = initState, action) {
 
       case 'DELETE_GAME':
        // debugger;
-        console.log("DeletedGames:", state);
+        console.log("DeletedGames:", action);
         // return {...state, games: state.games.concat(action.game) };
-        return { ...state, games: state.games.concat(action.game)};
+        return {games: state.games.filter(game => game.id !== action.game)}
 
       case 'FETCH_GAMES':
        // debugger;

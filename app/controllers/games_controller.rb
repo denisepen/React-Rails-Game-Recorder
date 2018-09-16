@@ -14,6 +14,14 @@ class GamesController < ApplicationController
     end
   end
 
+  def show
+    @game = Game.find_by(id: params[:id])
+    # respond_to do |format|
+    #   format.html { render :show }
+      render json: @game
+    # end
+  end
+
   def destroy
     @game = Game.find(params[:id])
 

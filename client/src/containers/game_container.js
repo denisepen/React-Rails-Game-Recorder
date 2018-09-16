@@ -20,10 +20,12 @@ class GameContainer extends React.Component {
       <div className="input">
         <GameInput
           addGame={this.props.addGame}
-          deleteGame={this.props.deleteGame}/>
+          />
       </div>
       <div className="sideBar">
-        <Games games={this.props.games}/>
+        <Games games={this.props.games}
+        deleteGame={this.props.deleteGame}
+        />
       </div>
 
       </div>
@@ -47,7 +49,9 @@ const mapDispatchToProps = dispatch => {
       dispatch(fetchGames())
     },
     // delete: (game) => dispatch({type: 'DELETE_GAME', payload: game })
-      deleteGame: (game) => dispatch(deleteGame())
+      deleteGame: (game) => {
+        dispatch(deleteGame(game))
+      }
   }
 }
 // ({

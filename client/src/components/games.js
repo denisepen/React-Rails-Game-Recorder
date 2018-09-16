@@ -3,15 +3,20 @@ import Game from './game'
 
 let games;
 const Games = props => {
+
+
+
   if (!props.games){
     return  games = (<p>Please Add a game</p>)
   } else {
   // debugger;
+  const onHandleDelete = (game) => props.deleteGame(game)
    games = props.games.map((game, index) => {
-    return (<Game  key={index} date={game.date} mode={game.mode} max_kills={game.max_kills} final_place={game.final_place}  comments={game.comments} />)
+     console.log("inside games - propobj", props);
+    return (<Game  id={game.id} key={index} date={game.date} mode={game.mode} max_kills={game.max_kills} final_place={game.final_place}  comments={game.comments} game={game} deleteGame={props.deleteGame}/>)
   }
 
-
+//
   // console.log(game);
       // <tr key={index}>
       //   <td> {game.date} </td>
@@ -34,6 +39,7 @@ const Games = props => {
             <th>Total Kills</th>
             <th>Place</th>
             <th>Comments</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
