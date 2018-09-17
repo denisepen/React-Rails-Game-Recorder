@@ -9,7 +9,7 @@ class GameStats extends Component {
     super(props)
 
     // this.state = props
-    this.props.fetchGames();
+    // this.props.fetchGames();
   }
 
 // componentWillMount() {
@@ -125,37 +125,37 @@ console.log("PG Kills", playgroundKills);
            <tr>
            <td> Total Kills </td>
              <td>
-               <Chart  data={soloKills} color="red" mode={'Solo'} y={'Total Kills'}/>
+               <Chart  data={soloKills} color="red" mode={'Solo'} y={'Total Kills'} label={'Total Kills'}/>
              </td>
              <td>
-               <Chart  data={duoKills} color="purple" mode={'Duos'} y={'Total Kills'} />
+               <Chart  data={duoKills} color="purple" mode={'Duos'} y={'Total Kills'} label={'Total Kills'}/>
              </td>
              <td>
-               <Chart  data={squadKills} color="orange"  mode={'Squads'} y={'Total Kills'}/>
+               <Chart  data={squadKills} color="orange"  mode={'Squads'} y={'Total Kills'} label={'Total Kills'}/>
              </td>
              <td>
-               <Chart  data={fiftyvKills} color="green"  mode={'50v50'} y={'Total Kills'}/>
+               <Chart  data={fiftyvKills} color="green"  mode={'50v50'} y={'Total Kills'} label={'Total Kills'}/>
              </td>
              <td>
-               <Chart  data={playgroundKills} color="blue" mode={'Playground'}  y={'Total Kills'}/>
+               <Chart  data={playgroundKills} color="blue" mode={'Playground'}  y={'Total Kills'} label={'Total Kills'}/>
              </td>
            </tr>
            <tr>
            <td> Final Position </td>
              <td>
-               <Chart  data={soloFinalPlace} color="red" mode={'Solo'} y={'Final Position'}/>
+               <Chart  data={soloFinalPlace} color="red" mode={'Solo'} y={'Final Position'} label={'Final Position'}/>
              </td>
              <td>
-               <Chart  data={duoFinalPlace} color="purple" mode={'Duos'} y={'Final Position'}/>
+               <Chart  data={duoFinalPlace} color="purple" mode={'Duos'} y={'Final Position'} label={'Final Position'}/>
              </td>
              <td>
-               <Chart  data={squadFinalPlace} color="orange" mode={'Squads'} y={'Final Position'}/>
+               <Chart  data={squadFinalPlace} color="orange" mode={'Squads'} y={'Final Position'} label={'Final Position'}/>
              </td>
              <td>
-               <Chart  data={fiftyvFinalPlace} color="green" mode={'50v50'} y={'Final Position'}/>
+               <Chart  data={fiftyvFinalPlace} color="green" mode={'50v50'} y={'Final Position'} label={'Final Position'}/>
              </td>
              <td>
-               <Chart  data={pgFinalPlace} color="blue" mode={'Playground'} y={'Final Position'}/>
+               <Chart  data={pgFinalPlace} color="blue" mode={'Playground'} y={'Final Position'} label={'Final Position'}/>
              </td>
            </tr>
         </tbody>
@@ -205,9 +205,9 @@ console.log("PG Kills", playgroundKills);
   render () {
     return (
       <div>
-        <div>
+
           {this.createPieChart()}
-        </div>
+      
           <br/>
 
        <table className="table table-hover">

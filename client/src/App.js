@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import GameContainer from './containers/game_container'
 import GameService from './actions/actions_games';
-import Games from './components/games'
+// import Games from './components/games'
 import About from './components/about'
 import GameStats from './containers/game_stats'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Navbar from './components/navbar'
+import { connect } from 'react-redux';
+import {  fetchGames } from './actions/index'
 // import GameInput from './components/game_input'
 
 import './App.css';
@@ -23,19 +25,19 @@ class App extends Component {
     GameService.fetchGames().then(games => this.setState({ games }) )
   }
 
-  componentWillUnmount () {
-    this.state = {games: []}
+  componentWillMount () {
+    this.props.fetchGames();
   }
 
-  addGame= (game) => {
-     // debugger;
-    GameService.addGame(game).then(game =>
-       // console.log("Created Game: ", game)
-       this.setState({
-       games: this.state.games.concat(game)})
-      // [...this.state.games, game]
-    )
-  }
+  // addGame= (game) => {
+  //    // debugger;
+  //   GameService.addGame(game).then(game =>
+  //      // console.log("Created Game: ", game)
+  //      this.setState({
+  //      games: this.state.games.concat(game)})
+  //     // [...this.state.games, game]
+  //   )
+  // }
 
   render() {
     // console.log("Games:", this.state.games);
@@ -53,4 +55,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchGames: () => {
+      dispatch(fetchGames())
+    },
+  }
+}
+
+export default connect (null, mapDispatchToProps)(App);

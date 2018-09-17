@@ -1,19 +1,19 @@
 import React from 'react'
-import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
+// import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
 import { Line } from 'react-chartjs-2';
 
 
-export default (props) => {
+const Chart = (props) => {
 
     const chartData = {
       // labels:  [],
       datasets: [{
-        label: 'Total Kills per Game',
+        label: props.label,
         data: props.data,
         backgroundColor: props.color
       }]
     }
-
+    // debugger;
 
   return(
     // <div>
@@ -40,7 +40,8 @@ export default (props) => {
               },
             legend: {
               display: false,
-              position: 'bottom'
+              position: 'bottom',
+              // labelString: 'Final Position'
               },
           scales: {
             xAxes: [{
@@ -69,3 +70,5 @@ export default (props) => {
     </div>
   )
 }
+
+  export default Chart;

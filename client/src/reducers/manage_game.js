@@ -17,7 +17,7 @@ export default function manageGame(state = initState, action) {
        // debugger;
         console.log("DeletedGames:", action);
         // return {...state, games: state.games.concat(action.game) };
-        return {games: state.games.filter(game => game.id !== action.game.id)}
+        return {games: (state.games.filter(game => game.id !== action.game.id)) || (state.games.slice(-1)[0])}
 
       case 'FETCH_GAMES':
        // debugger;
