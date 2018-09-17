@@ -43,7 +43,7 @@ export default (props) => {
               },
             legend: {
               display: true,
-              position: 'right',
+              position: 'bottom',
               // text: 'Percentage of Game Play'
               labels:{
                 fontColor: 'black'

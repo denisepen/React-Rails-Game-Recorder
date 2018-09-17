@@ -119,13 +119,15 @@ console.log("PG Kills", playgroundKills);
     // const  pieData = [soloGames.length, squadGames.length, fiftyvGames.length, duoGames.length, playgroundGames.length]
 
  return (
-   <div>
+    <div>
 
        <tbody>
            <tr>
            <td> Total Kills </td>
              <td>
+
                <Chart  data={soloKills} color="red" mode={'Solo'} y={'Total Kills'} label={'Total Kills'}/>
+
              </td>
              <td>
                <Chart  data={duoKills} color="purple" mode={'Duos'} y={'Total Kills'} label={'Total Kills'}/>
@@ -202,12 +204,21 @@ console.log("PG Kills", playgroundKills);
  }
 }
 
+// render () {
+//   return (
+//     <div>
+//       {this.createModeCharts()}
+//     </div>
+//   )
+//
+// }
+
   render () {
     return (
       <div>
 
           {this.createPieChart()}
-      
+
           <br/>
 
        <table className="table table-hover">
