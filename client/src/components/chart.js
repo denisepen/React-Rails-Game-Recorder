@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
 import { Line } from 'react-chartjs-2';
 
 
@@ -30,18 +29,7 @@ const Chart = (props) => {
       }
     ]
   }
-    // debugger;
-
   return(
-    // <div>
-      // <Sparklines height={120} width={180}
-      //   data={props.data}>
-      //   <SparklinesLine  color={props.color} />
-      //   {/*<SparklinesReferenceLine type="avg" />*/}
-      //
-      // </Sparklines>
-
-    // </div>
 
     <div className="chart">
       <Line
