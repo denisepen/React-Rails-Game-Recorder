@@ -21,7 +21,7 @@ export default class GameInput extends React.Component {
   const game = this.state
   this.props.addGame(game)
   console.log("onsubmit state:", this.state);
-  
+
   this.setState({
     gameId: '',
     date: '',
@@ -39,7 +39,7 @@ export default class GameInput extends React.Component {
 
 handleDateChange = (e) => {
   this.setState({
-    date: e.target.value
+    date: e.target.value.toLocaleString('en-US')
   })
 }
 

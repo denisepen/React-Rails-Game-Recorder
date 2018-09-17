@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import GameContainer from './containers/game_container'
-import GameService from './actions/actions_games';
+// import GameService from './actions/actions_games';
 // import Games from './components/games'
 import About from './components/about'
 import GameStats from './containers/game_stats'
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Navbar from './components/navbar'
 import { connect } from 'react-redux';
 import {  fetchGames } from './actions/index'
@@ -21,9 +21,9 @@ class App extends Component {
     }
   }
 
-  componentWillMount () {
-    GameService.fetchGames().then(games => this.setState({ games }) )
-  }
+  // componentWillMount () {
+  //   GameService.fetchGames().then(games => this.setState({ games }) )
+  // }
 
   componentWillMount () {
      this.props.fetchGames();

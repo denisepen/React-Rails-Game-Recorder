@@ -5,12 +5,12 @@ import { fetchGames } from '../actions/index'
 import PieChart from '../components/pie_chart'
 
 class GameStats extends Component {
-  constructor (props) {
-    super(props)
-
-    // this.state = props
-    // this.props.fetchGames();
-  }
+  // constructor (props) {
+  //   super(props)
+  //
+  //   // this.state = props
+  //   // this.props.fetchGames();
+  // }
 
 // componentWillMount() {
 //   // this.props.fetchGames();
@@ -22,6 +22,7 @@ componentWillUnmount () {
 }
 
 createPieChart () {
+  const total = this.props.games.length
   const soloGames =this.props.games.filter(game => (game.mode === 'Solo'))
   const squadGames = this.props.games.filter(game => (game.mode === 'Squads'))
   const fiftyvGames = this.props.games.filter(game => (game.mode === '50v50'))
@@ -31,7 +32,7 @@ createPieChart () {
   const pieData = [soloGames.length, squadGames.length, fiftyvGames.length, duoGames.length, playgroundGames.length]
 
   return (
-    <PieChart data={pieData} total={this.props.games.length}/>
+    <PieChart  data={pieData} total={total}/>
   )
 
 
@@ -216,9 +217,9 @@ console.log("PG Kills", playgroundKills);
   render () {
     return (
       <div>
-
+        <div>
           {this.createPieChart()}
-
+        </div>
           <br/>
 
        <table className="table table-hover">

@@ -1,12 +1,12 @@
 import React from 'react';
 
 const  Game = (props) => {
-  console.log('inside game', props);
+  // console.log('inside game', props);
   // const deleteGame = props.deleteGame;
 
   const onClickHandler = (e) => {
     e.preventDefault();
-    console.log(this);
+    // console.log(this);
      props.deleteGame(props.game)
   }
   return (<tr >

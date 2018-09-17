@@ -49,7 +49,7 @@ const Chart = (props) => {
         data={chartData}
 
         options={{
-
+          responsive: true,
           maintainAspectRatio: false,
             title: {
               display: true,
@@ -67,16 +67,24 @@ const Chart = (props) => {
                 display: false,
                 labelString: 'Date',
                 fontSize: 10
-              },
+                },
             // type: 'linear',
-            position: 'bottom',
-            gridLines: {
+              position: 'bottom',
+              gridLines: {
                 display: false
                 }
               }],
             yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                // max: 100
+              },
               scaleLabel: {
                 display: true,
+                ticks: {
+                  beginAtZero: true,
+                  max: 100
+                },
                 labelString: props.y,
                 fontSize: 10
               }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
+// import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
 import {Pie} from 'react-chartjs-2';
 
 
@@ -23,7 +23,7 @@ export default (props) => {
     <div className="chart">
       <Pie
         data={chartData}
-
+        width={450}  height={350}
         options={{
           layout:{
             padding:{
@@ -38,8 +38,8 @@ export default (props) => {
           maintainAspectRatio: false,
             title: {
               display: true,
-              text: 'Games By Mode',
-              fontSize: 15
+              text: 'Total Games Played by Game Mode',
+              fontSize: 20
               },
             legend: {
               display: true,

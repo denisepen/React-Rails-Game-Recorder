@@ -8,20 +8,9 @@ export function fetchGames() {
            // .then(res => console.log("Game just fetched:", res))
             .then(games => {
               dispatch({ type: 'FETCH_GAMES', games})
-            })
-
-              // dispatch(receiveGames(json))
-           // dispatch({ type: 'FETCH_GAME', game})
+          })
     }
   }
-
-
-  // export function receiveGames(games) {
-  //   return{
-  //     type: 'RECEIVE_GAMES',
-  //     games: games
-  //   }
-  // }
 
 
 export function addGame(game) {
@@ -38,9 +27,11 @@ export function addGame(game) {
 
         return fetch('/games', request )
                 .then(response => response.json())
-                 .then(game => console.log("Game just added to db:", game))
-                 .then(newGame => dispatch({ type: 'ADD_GAME', game})
-               )
+                // .then(response => console.log("api response",response))
+                 // .then(game => console.log("Game just added to db:", game))
+                 .then(newGame => dispatch({ type: 'ADD_GAME', newGame}))
+
+
       }
     }
 
@@ -65,12 +56,3 @@ export function addGame(game) {
                    )
           }
         }
-
-// export function  updatedGames () {
-//       const request = fetch('/games')
-//                         .then(response => response.json())
-//         return {
-//           type: 'GET_GAMES',
-//           payload: request
-//         }
-//       }
