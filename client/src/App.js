@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   componentWillMount () {
-    this.props.fetchGames();
+     this.props.fetchGames();
   }
 
   // addGame= (game) => {
