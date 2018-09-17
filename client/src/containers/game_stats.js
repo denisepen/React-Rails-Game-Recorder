@@ -32,7 +32,7 @@ createPieChart () {
   const pieData = [soloGames.length, squadGames.length, fiftyvGames.length, duoGames.length, playgroundGames.length]
 
   return (
-    <PieChart  data={pieData} total={total}/>
+    <PieChart  data={pieData} total={this.props.games.length}/>
   )
 
 
@@ -43,58 +43,50 @@ createModeCharts () {
   const soloGames = this.props.games.filter(game =>
     { return (game.mode === 'Solo') })
 
-    const soloKills = [];
-     const SoloKills = soloGames.map(game => {
-       return soloKills.push(game.max_kills)
+    const soloKills = soloGames.map(game => {
+       return (game.max_kills)
       }
     );
 
-    const soloFinalPlace = [];
-      const SoloFinalPlace = soloGames.map(game => {
-        return soloFinalPlace.push(game.final_place)
+    const soloFinalPlace = soloGames.map(game => {
+        return (game.final_place)
         });
 
   const squadGames = this.props.games.filter(game =>
     { return (game.mode === 'Squads') })
 
-    const squadKills = [];
-    const SquadKills = squadGames.map(game => {
-      return squadKills.push(game.max_kills)
+    const squadKills = squadGames.map(game => {
+      return (game.max_kills)
      }
    );
 
-   const squadFinalPlace = [];
-     const SquadFinalPlace = squadGames.map(game => {
-       return squadFinalPlace.push(game.final_place)
+   const squadFinalPlace = squadGames.map(game => {
+       return (game.final_place)
        });
 
   const fiftyvGames = this.props.games.filter(game =>
     { return (game.mode === '50v50') })
 
-  const fiftyvKills = [];
-  const FiftyvKills = fiftyvGames.map(game => {
-    return fiftyvKills.push(game.max_kills)
+  const fiftyvKills = fiftyvGames.map(game => {
+    return (game.max_kills)
    }
  );
 
- const fiftyvFinalPlace = [];
-   const FiftyvFinalPlace = fiftyvGames.map(game => {
-     return fiftyvFinalPlace.push(game.final_place)
+ const fiftyvFinalPlace = fiftyvGames.map(game => {
+     return (game.final_place)
      });
 
   const duoGames = this.props.games.filter(game =>
     { return (game.mode === 'Duos') })
 
-    const duoKills = [];
-    const DuoKills = duoGames.map(game => {
-      return duoKills.push(game.max_kills)
+    const duoKills = duoGames.map(game => {
+      return (game.max_kills)
      }
    );
 
 // calc final place over time while playing duos
-   const duoFinalPlace = [];
-     const DuoFinalPlace = duoGames.map(game => {
-       return duoFinalPlace.push(game.final_place)
+   const duoFinalPlace = duoGames.map(game => {
+       return (game.final_place)
        });
 
   const playgroundGames = this.props.games.filter(game =>
@@ -112,9 +104,8 @@ createModeCharts () {
 console.log("PG Games", playgroundGames);
 console.log("PG Kills", playgroundKills);
 //  to calc data for final position playing playground mode
- const pgFinalPlace = [];
-   const PgFinalPlace = playgroundGames.map(game => {
-     return pgFinalPlace.push(game.final_place)
+ const pgFinalPlace = playgroundGames.map(game => {
+     return (game.final_place)
      });
 
     // const  pieData = [soloGames.length, squadGames.length, fiftyvGames.length, duoGames.length, playgroundGames.length]

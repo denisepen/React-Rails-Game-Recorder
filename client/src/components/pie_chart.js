@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
 import {Pie} from 'react-chartjs-2';
 
 
