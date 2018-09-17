@@ -4,7 +4,7 @@ import Chart from '../components/chart'
 import { fetchGames } from '../actions/index'
 import PieChart from '../components/pie_chart'
 
-class GameStats extends React.Component {
+class GameStats extends Component {
   constructor (props) {
     super(props)
 

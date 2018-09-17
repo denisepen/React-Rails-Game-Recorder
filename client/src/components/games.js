@@ -4,7 +4,12 @@ import Game from './game'
 let games;
 const Games = props => {
 
-
+  // const shouldComponentUpdate = (props) => {
+  //   return (props.games.filter(game => {
+  //     return game.id === (undefined || null)
+  //   })
+  //   )
+  // }
 
   if (!props.games){
     return  games = (<p>Please Add a game</p>)

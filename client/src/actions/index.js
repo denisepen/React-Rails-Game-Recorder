@@ -45,7 +45,7 @@ export function addGame(game) {
     }
 
     export function deleteGame(game) {
-         // debugger;
+          // debugger;
           const request = {
             method: 'DELETE',
             // mode: 'no-cors',
@@ -57,11 +57,11 @@ export function addGame(game) {
           };
           console.log(request);
           return (dispatch) => {
-            console.log("inside delete actions", game);
-             fetch(`/games/${game.id}`, {method: 'DELETE'} )
-                    // .then(response => response.json())
-                     // .then(game => console.log("Inside Actions:", game))
-                     .then(game => dispatch({ type: 'DELETE_GAME', game})
+            // console.log("inside delete actions", game);
+            return  fetch(`games/${game.id}`, {method: 'DELETE'} )
+                    // .then(response => console.log(response.json()))
+                     // .then(data => console.log("Inside Actions:", data))
+                     .then(newGame => dispatch({ type: 'DELETE_GAME', game})
                    )
           }
         }

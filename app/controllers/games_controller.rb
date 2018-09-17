@@ -23,21 +23,15 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    @game = Game.find(params[:id])
+    Game.find(params[:id]).destroy
+  end  
 
-    # if !is_admin? && current_user == @review.user
-    if @game
-        @game.destroy
-        redirect_to games_path
-      else
-          flash[:alert] = "This game can't be found"
-        end
-  #   else
-  #     redirect_to reviews_path
-  #     flash[:alert] = "You can't delete this review!"
+    # @game = Game.find(params[:id])
+    # # if !is_admin? && current_user == @review.user
+    # # if @game
+    #     @game.destroy
+      # end
   # end
-
-  end
 
   private
 

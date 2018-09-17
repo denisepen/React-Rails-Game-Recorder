@@ -10,14 +10,14 @@ export default function manageGame(state = initState, action) {
      action.game.gameId = Math.random()*10000000000000000
 
       console.log("Add Action:", action);
-    
+
       return { ...state, games: state.games.concat(action.game)};
 
       case 'DELETE_GAME':
        // debugger;
         console.log("DeletedGames:", action);
         // return {...state, games: state.games.concat(action.game) };
-        return {games: state.games.filter(game => game.id !== action.game)}
+        return {games: state.games.filter(game => game.id !== action.game.id)}
 
       case 'FETCH_GAMES':
        // debugger;
