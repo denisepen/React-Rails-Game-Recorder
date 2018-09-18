@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import {  addUser } from '../actions/actions_users'
 
 class NewUser extends React.Component {
-  constructor () {
-    super ()
+  constructor (props) {
+    super (props)
 
     this.state={
       name: '',

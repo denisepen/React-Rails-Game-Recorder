@@ -1,8 +1,10 @@
 
-const initState = {games: []};
+// const initState = {games: []};
+
+const initState = {games: [], users:[]};
 export default function manageGame(state = initState, action) {
-  console.log("Action:", action)
-  // console.log("Games:", state)
+  console.log("Games Action:", action)
+  console.log("Games State:", state)
   switch (action.type) {
 
     case 'ADD_GAME':
@@ -11,6 +13,8 @@ export default function manageGame(state = initState, action) {
 
       return { ...state, games: state.games.concat(action.newGame)};
 
+
+
     case 'DELETE_GAME':
        // debugger;
         console.log("DeletedGames:", action);
@@ -18,9 +22,23 @@ export default function manageGame(state = initState, action) {
         return {games: state.games.filter(game => game.id !== action.game.id) }
 
     case 'FETCH_GAMES':
-        console.log("Fetch State:", state);
+        console.log("Fetch Action:", action);
         // return {...state, games: state.games.concat(action.game) };
         return { ...state, games: state.games.concat(action.games)};
+        // return [...state, action.newGame]
+
+        case 'ADD_USER':
+          console.log("User state:", state)
+          console.log("Add User Action:", action);
+
+          return { ...state, users: state.users.concat(action.newUser)};
+
+          case 'FETCH_USERS':
+              console.log("Fetch User State:", state);
+              // return {...state, games: state.games.concat(action.game) };
+              return { ...state, users: state.users.concat(action.users)};
+  
+
 
     default:
       return state;

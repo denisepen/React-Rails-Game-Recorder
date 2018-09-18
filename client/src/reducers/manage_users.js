@@ -1,4 +1,6 @@
-const initState = {users: []};
+// const initState = {users: []};
+
+const initState = [];
 
 export default function manageUsers(state = initState, action) {
    console.log("User Action:", action)
@@ -11,5 +13,14 @@ export default function manageUsers(state = initState, action) {
 
       return { ...state, users: state.users.concat(action.newUser)};
 
+      case 'FETCH_USERS':
+          console.log("Fetch User State:", state);
+          // return {...state, games: state.games.concat(action.game) };
+          return { ...state, users: state.users.concat(action.users)};
+
+      default:
+        return state;
+
   }
+
 }
