@@ -71,7 +71,7 @@ class NewUser extends React.Component {
 
       Email:<input value={this.state.email} type="text" onChange={(e) => this.handleEmailChange(e)}/>{this.state.email}<br/>
 
-      Password: <input value={this.state.password} type="text" onChange={(e) => this.handlePasswordChange(e)}/>{this.state.password}<br/>
+      Password: <input value={this.state.password} type="password" onChange={(e) => this.handlePasswordChange(e)}/>{this.state.password}<br/>
 
 
       <input type="submit" value="Create Account" />
@@ -90,4 +90,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default NewUser;
+export default connect(null, mapDispatchToProps)(NewUser);
