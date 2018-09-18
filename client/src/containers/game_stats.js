@@ -21,8 +21,11 @@ componentWillUnmount () {
   this.props = {games: []}
 }
 
+// const total = this.props.games.length
+// console.log(this.props.games.length);
+
 createPieChart () {
-  const total = this.props.games.length
+  const total = this.props.games.length;
   const soloGames =this.props.games.filter(game => (game.mode === 'Solo'))
   const squadGames = this.props.games.filter(game => (game.mode === 'Squads'))
   const fiftyvGames = this.props.games.filter(game => (game.mode === '50v50'))
@@ -32,7 +35,7 @@ createPieChart () {
   const pieData = [soloGames.length, squadGames.length, fiftyvGames.length, duoGames.length, playgroundGames.length]
 
   return (
-    <PieChart  data={pieData} total={this.props.games.length}/>
+    <PieChart  data={pieData} total={total}/>
   )
 
 
@@ -92,12 +95,6 @@ createModeCharts () {
   const playgroundGames = this.props.games.filter(game =>
     { return (game.mode === 'Playground') })
 
- //  const playgroundKills = [];
- //  const PlaygroundKills = playgroundGames.map(game => {
- //    return playgroundKills.push(game.max_kills)
- //   }
- // );
-
   const playgroundKills = playgroundGames.map(game => game.max_kills)
 
 
@@ -112,6 +109,7 @@ console.log("PG Kills", playgroundKills);
 
  return (
     <div>
+
 
        <tbody>
            <tr>

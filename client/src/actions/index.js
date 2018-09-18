@@ -14,7 +14,7 @@ export function fetchGames() {
 
 
 export function addGame(game) {
-     // debugger;
+
       const request = {
         method: 'POST',
         body: JSON.stringify(game),
@@ -30,8 +30,6 @@ export function addGame(game) {
                 // .then(response => console.log("api response",response))
                  // .then(game => console.log("Game just added to db:", game))
                  .then(newGame => dispatch({ type: 'ADD_GAME', newGame}))
-
-
       }
     }
 
