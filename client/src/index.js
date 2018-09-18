@@ -7,6 +7,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import manageGame from './reducers/manage_game'
 import thunk from 'redux-thunk';
+import combineReducers from './reducers/combine_reducers'
 
 const store = createStore(manageGame, undefined, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
 
