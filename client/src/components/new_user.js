@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {  addUser } from '../actions/actions_users'
 
 class NewUser extends React.Component {
   constructor () {
@@ -12,11 +14,13 @@ class NewUser extends React.Component {
     }
   }
 
+
+
   handleUserSubmit = event => {
   event.preventDefault();
-  const game = this.state
-  this.props.addGame(game)
-  console.log("onsubmit state:", this.state);
+  const user = this.state
+  this.props.addUser(user)
+  console.log("onsubmit user state:", this.state);
 
   this.setState({
     name: '',
@@ -26,7 +30,7 @@ class NewUser extends React.Component {
   })
 
 
-  console.log("state:", this.state)
+  // console.log("state:", this.state)
 
 }
 
@@ -78,5 +82,12 @@ class NewUser extends React.Component {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    addUser: (user) => {
+      dispatch(addUser(user))
+    }
+  }
+}
 
 export default NewUser;

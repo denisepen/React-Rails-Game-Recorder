@@ -16,6 +16,6 @@ export function addUser(user) {
                  .then(response => response.json())
                  // .then(response => console.log("api response",response))
                  //  .then(res => console.log("Game just added to db:", res))
-                 .then(newUser => dispatch({ type: 'ADD_GAME', newUser}))
+                 .then(newUser => dispatch({ type: 'ADD_USER', newUser}))
       }
     }
