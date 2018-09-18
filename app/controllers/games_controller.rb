@@ -24,7 +24,7 @@ class GamesController < ApplicationController
 
   def destroy
     Game.find(params[:id]).destroy
-  end  
+  end
 
     # @game = Game.find(params[:id])
     # # if !is_admin? && current_user == @review.user
@@ -36,7 +36,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date)
+      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date).merge(user_id:1)
    end
 
 end
