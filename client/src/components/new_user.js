@@ -9,9 +9,26 @@ class NewUser extends React.Component {
       gamer_tag: '',
       email: '',
       password: '',
-
     }
   }
+
+  handleUserSubmit = event => {
+  event.preventDefault();
+  const game = this.state
+  this.props.addGame(game)
+  console.log("onsubmit state:", this.state);
+
+  this.setState({
+    name: '',
+    gamer_tag: '',
+    email: '',
+    password: '',
+  })
+
+
+  console.log("state:", this.state)
+
+}
 
   handleNameChange = (e) => {
     this.setState({
@@ -41,7 +58,7 @@ class NewUser extends React.Component {
     return (
       <div>
 
-    <form onSubmit={(event) => this.handleSubmit(event)} className="input">
+    <form onSubmit={(event) => this.handleUserSubmit(event)} className="input">
       <h2> Please Sign Up </h2>
       Name: <input type="text" value={this.state.name} onChange={(e) => this.handleNameChange(e)}/>{this.state.name}<br/>
 
