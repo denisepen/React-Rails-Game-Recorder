@@ -24,11 +24,11 @@ export function addGame(game) {
       };
 
       return (dispatch) => {
-
+        console.log("Dispatched game", game);
         return fetch('/games', request )
-                .then(response => response.json())
-                // .then(response => console.log("api response",response))
-                 // .then(game => console.log("Game just added to db:", game))
+                 .then(response => response.json())
+                 // .then(response => console.log("api response",response))
+                 //  .then(res => console.log("Game just added to db:", res))
                  .then(newGame => dispatch({ type: 'ADD_GAME', newGame}))
       }
     }

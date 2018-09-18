@@ -6,6 +6,7 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.integer :final_place
       t.datetime :date
       t.text :comments
+      t.integer :user_id
 
       t.timestamps
     end
