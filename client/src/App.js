@@ -7,8 +7,9 @@ import GameStats from './containers/game_stats'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Navbar from './components/navbar'
 import { connect } from 'react-redux';
-import {  fetchGames } from './actions/index'
-import NewUser from './components/new_user'
+import {  fetchGames } from './actions/index';
+import NewUser from './components/new_user';
+import Auth from './modules/Auth';
 // import GameInput from './components/game_input'
 
 import './App.css';
@@ -18,7 +19,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      games: []
+      games: [],
+      auth: Auth.isUserAuthenticated(),
     }
   }
 

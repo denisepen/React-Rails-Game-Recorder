@@ -8,10 +8,13 @@ class Auth {
   }
 
   static deauthenticateUser() {
-    sessionDtorage.removeItem('token');
+    sessionStorage.removeItem('token');
   }
 
   static getToken() {
     return sessionStorage.getItem('token')
   }
 }
+
+
+export default Auth
