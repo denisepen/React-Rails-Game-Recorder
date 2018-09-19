@@ -26,7 +26,7 @@ export function addUser(user) {
                  .then(response => response.json())
                  // .then(response => console.log("api response",response.json()))
                  //  .then(res => console.log("User just added to db:", res))
-                  // .catch(error => console.error('Error:', error))
-                 .then(newUser => dispatch({ type: 'ADD_USER', newUser}))
+                  .catch(error => console.error('Error:', error))
+                 // .then(newUser => dispatch({ type: 'ADD_USER', newUser}))
       }
     }

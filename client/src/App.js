@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Navbar from './components/navbar'
 import { connect } from 'react-redux';
 import {  fetchGames } from './actions/index'
+import NewUser from './components/new_user'
 // import GameInput from './components/game_input'
 
 import './App.css';
@@ -49,6 +50,7 @@ class App extends Component {
             <Route exact path="/" render={About} />
             <Route exact path="/new" component={GameContainer} />
             <Route exact path="/stats" component={GameStats} />
+            <Route exact path="/login" component={NewUser} />
         </React.Fragment>
       </Router>
     );
