@@ -1,7 +1,7 @@
 
 // const initState = {games: []};
 
-const initState = {games: [], users:[]};
+const initState = {games: [], users:[], user: {}};
 export default function manageGame(state = initState, action) {
   console.log("Games Action:", action)
   console.log("Games State:", state)
@@ -37,7 +37,13 @@ export default function manageGame(state = initState, action) {
               console.log("Fetch User State:", state);
               // return {...state, games: state.games.concat(action.game) };
               return { ...state, users: state.users.concat(action.users)};
-  
+
+          case 'FIND_USER':
+                console.log("Finding UserState in Reducer: ", state);
+                console.log("Finding UserAction in Reducer: ", action);
+
+                return { ...state, user: action.newUser};
+
 
 
     default:
