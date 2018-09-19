@@ -50,7 +50,7 @@ class App extends Component {
             <Route exact path="/" render={About} />
             <Route exact path="/new" component={GameContainer} />
             <Route exact path="/stats" component={GameStats} />
-            <Route exact path="/login" component={NewUser} />
+            <Route exact path="/signup" component={NewUser} />
         </React.Fragment>
       </Router>
     );

@@ -27,7 +27,7 @@ import { NavLink } from 'react-router-dom';
       }}
       >Stats</NavLink>
       <NavLink
-        to="/login"
+        to="/signup"
         exact
         activeStyle={{
           background: 'yellow'
