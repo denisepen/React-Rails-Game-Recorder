@@ -17,6 +17,7 @@ gem 'puma', '~> 3.11'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'foreman', '~> 0.82.0'
+gem 'jwt'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'active_model_serializers'
