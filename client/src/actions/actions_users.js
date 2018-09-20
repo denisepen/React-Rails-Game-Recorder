@@ -21,7 +21,7 @@ export function fetchUsers() {
         };
 
         return (dispatch) => {
-          console.log(" User Login", user);
+          console.log(" User", user);
           return fetch('/login', request )
                    .then(response => response.json())
                    // .then(response => console.log("api response",response))

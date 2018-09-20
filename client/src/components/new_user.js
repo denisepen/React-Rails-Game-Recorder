@@ -69,7 +69,7 @@ class NewUser extends React.Component {
 
       Gamer Tag: <input type="text" value={this.state.gamer_tag} onChange={(e) => this.handleTagChange(e)}/>{this.state.gamer_tag}<br/>
 
-      Email:<input value={this.state.email} type="text" onChange={(e) => this.handleEmailChange(e)}/>{this.state.email}<br/>
+      Email:<input value={this.state.email} type="email" onChange={(e) => this.handleEmailChange(e)}/>{this.state.email}<br/>
 
       Password: <input value={this.state.password} type="password" onChange={(e) => this.handlePasswordChange(e)}/>{this.state.password}<br/>
 

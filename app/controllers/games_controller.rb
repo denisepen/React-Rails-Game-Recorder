@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  # before_action :makesureloggedin except index and show
+  # before_action :makesureloggedin except index and show - maybe show?
 
   def index
     @games = Game.all
