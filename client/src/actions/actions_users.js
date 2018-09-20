@@ -10,6 +10,26 @@ export function fetchUsers() {
     }
   }
 
+  export function userLogin(user) {
+
+        const request = {
+          method: 'GET',
+          body: JSON.stringify(user),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        };
+
+        return (dispatch) => {
+          console.log(" User Login", user);
+          return fetch('/login', request )
+                   .then(response => response.json())
+                   // .then(response => console.log("api response",response))
+                   //  .then(res => console.log("Game just added to db:", res))
+                   .then(newUser => dispatch({ type: 'FIND_USER', newUser}))
+        }
+      }
+
 export function addUser(user) {
   // console.log("Adding this user: ", user);
       const request = {
@@ -26,7 +46,7 @@ export function addUser(user) {
                  .then(response => response.json())
                  // .then(response => console.log("api response",response.json()))
                  //  .then(res => console.log("User just added to db:", res))
-                  .catch(error => console.error('Error:', error))
-                 // .then(newUser => dispatch({ type: 'ADD_USER', newUser}))
+                  // .catch(error => console.error('Error:', error))
+                 .then(newUser => dispatch({ type: 'ADD_USER', newUser}))
       }
     }

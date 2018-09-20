@@ -9,6 +9,7 @@ import Navbar from './components/navbar'
 import { connect } from 'react-redux';
 import {  fetchGames } from './actions/index';
 import NewUser from './components/new_user';
+import SignIn from './components/signin';
 import Auth from './modules/Auth';
 // import GameInput from './components/game_input'
 
@@ -53,6 +54,7 @@ class App extends Component {
             <Route exact path="/new" component={GameContainer} />
             <Route exact path="/stats" component={GameStats} />
             <Route exact path="/signup" component={NewUser} />
+            <Route exact path='/signin' component={SignIn} />
         </React.Fragment>
       </Router>
     );

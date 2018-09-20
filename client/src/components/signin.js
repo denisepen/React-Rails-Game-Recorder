@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {  addUser } from '../actions/actions_users'
+import { userLogin } from '../actions/actions_users'
 
 class SignIn extends React.Component {
   constructor (props) {
@@ -18,7 +19,7 @@ class SignIn extends React.Component {
   handleUserSignin = event => {
   event.preventDefault();
   const user = this.state
-  this.props.findUser(user)
+  this.props.userLogin(user)
   console.log("onsubmit user signin state:", this.state);
 
   this.setState({
@@ -67,8 +68,8 @@ class SignIn extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    findUser: (user) => {
-      dispatch(fetchUser(user))
+    userLogin: (user) => {
+      dispatch(userLogin(user))
     }
   }
 }
