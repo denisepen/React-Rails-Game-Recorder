@@ -47,6 +47,7 @@ export function addUser(user) {
                    .then(response => response.json())
                    // .then(response => console.log("api response",response))
                    //  .then(res => console.log("Game just added to db:", res))
+                   .then(user => {localStorage.setItem("jwtToken", user.jwt)})
                    .then(newUser => dispatch({ type: 'FIND_USER', newUser}))
         }
       }

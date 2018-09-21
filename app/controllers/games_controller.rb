@@ -2,6 +2,7 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+    # @games = current_user.games
     render json: @games
   end
 

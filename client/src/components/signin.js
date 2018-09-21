@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {  addUser } from '../actions/actions_users'
 import { userLogin } from '../actions/actions_users'
+import { Redirect } from 'react-router-dom'
 
 class SignIn extends React.Component {
   constructor (props) {
@@ -46,23 +47,28 @@ class SignIn extends React.Component {
   }
 
   render () {
-    return (
-      <div>
+    if (localStorage.getItem('jwtToken')) {
+      return <Redirect to='/' />
+    } else {
+      return (
+        <div>
 
-    <form onSubmit={(event) => this.handleUserSignin(event)} className="input">
-      <h2> Please Sign In </h2>
-
-
-      Email:<input value={this.state.email} type="text" onChange={(e) => this.handleEmailChange(e)}/>{this.state.email}<br/>
-
-      Password: <input value={this.state.password} type="password" onChange={(e) => this.handlePasswordChange(e)}/>{this.state.password}<br/>
+      <form onSubmit={(event) => this.handleUserSignin(event)} className="input">
+        <h2> Please Sign In </h2>
 
 
-      <input type="submit" value="Sign In" />
-    </form><br/>
-    </div>
+        Email:<input value={this.state.email} type="text" onChange={(e) => this.handleEmailChange(e)}/>{this.state.email}<br/>
 
-    )
+        Password: <input value={this.state.password} type="password" onChange={(e) => this.handlePasswordChange(e)}/>{this.state.password}<br/>
+
+
+        <input type="submit" value="Sign In" />
+      </form><br/>
+      </div>
+
+      )
+    }
+
   }
 }
 

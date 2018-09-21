@@ -1,3 +1,5 @@
+require 'pry'
+
 class ApplicationController < ActionController::API
   before_action :authorized, except: [:welcome]
 
@@ -25,7 +27,9 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
+    binding.pry 
     if decoded_token
+
       if user_id = decoded_token[0]["user_id"]
         @user = User.find(user_id)
       else
@@ -37,6 +41,7 @@ class ApplicationController < ActionController::API
   end
 
   def logged_in?
+
     !!current_user
   end
 
