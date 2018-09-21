@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
     post '/login', to: 'auth#create'
     get '/me', to: 'users#me'
+    get '/welcome', to: 'application#welcome'
     # delete 'games/:id', to: 'games#destroy'
   # end
 end

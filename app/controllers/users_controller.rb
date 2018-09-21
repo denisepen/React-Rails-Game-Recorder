@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :current_user, only: [:me]
+  skip_before_action :authorized, only: [:create]
 
   def index
     @users = User.all
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
       if user.save
         payload = { user_id: user.id}
         # token = JWT.encode(payload, "flobble")
-        encode_token(payload)
+        token = encode_token(payload)
         render json: { user: user, jwt: token }
       else
         render json: {errors: {message: "This user failed to save"}}
@@ -18,13 +20,17 @@ class UsersController < ApplicationController
     end
 
     def me
-      authHeader = request.headers["Authorization"]
-      token = authHeader.split(" ")[1]
-      decoded_token = JWT.decode(token, "flobble", true, {algorithm: "HS256"})
-      user_id = decoded_token[0]["user_id"]
-      user = User.find(user_id)
+      # authHeader = request.headers["Authorization"]
+      # token = authHeader.split(" ")[1]
+      # decoded_token = JWT.decode(token, "flobble", true, {algorithm: "HS256"})
+      # user_id = decoded_token[0]["user_id"]
+      # user = User.find(user_id)
+      if @user
+        render json: { user: @user, games: @user.games}
+      else
+        render json: { message: "Error GIVE ME A JWT" }
+      end
 
-      render json: { user: user, games: user.games}
     end
 
     def show
