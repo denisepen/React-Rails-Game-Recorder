@@ -36,7 +36,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date).merge(user_id:2)
+      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date).merge(user_id:27)
    end
 
 end
