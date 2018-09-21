@@ -9,6 +9,7 @@ import Navbar from './components/navbar'
 import { connect } from 'react-redux';
 import {  fetchGames } from './actions/index'
 import NewUser from './components/new_user'
+import SignIn from './components/signin';
 // import GameInput from './components/game_input'
 
 import './App.css';
@@ -51,6 +52,8 @@ class App extends Component {
             <Route exact path="/new" component={GameContainer} />
             <Route exact path="/stats" component={GameStats} />
             <Route exact path="/login" component={NewUser} />
+            <Route exact path='/signin' component={SignIn} />
+
         </React.Fragment>
       </Router>
     );

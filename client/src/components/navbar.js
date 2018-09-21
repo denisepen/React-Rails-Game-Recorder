@@ -33,6 +33,13 @@ import { NavLink } from 'react-router-dom';
           background: 'yellow'
         }}
         >Sign Up</NavLink>
+        <NavLink
+            to="/signin"
+            exact
+            activeStyle={{
+              background: 'yellow'
+            }}
+            >Sign In</NavLink>  
   </div>;
 
   export default Navbar

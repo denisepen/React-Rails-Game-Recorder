@@ -30,3 +30,23 @@ export function addUser(user) {
                  // .then(newUser => dispatch({ type: 'ADD_USER', newUser}))
       }
     }
+
+    export function userLogin(user) {
+
+        const request = {
+          method: 'post',
+          body: JSON.stringify(user),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        };
+
+        return (dispatch) => {
+          console.log(" User", user);
+          return fetch('/login', request )
+                   .then(response => response.json())
+                   // .then(response => console.log("api response",response))
+                   //  .then(res => console.log("Game just added to db:", res))
+                   .then(newUser => dispatch({ type: 'FIND_USER', newUser}))
+        }
+      }
