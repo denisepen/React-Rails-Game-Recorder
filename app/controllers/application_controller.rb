@@ -3,6 +3,8 @@
 
 class ApplicationController < ActionController::API
   # before_action :authorized, except: [:welcome]
+  # below from 2 hr jsilverstein video
+  # include ActionController::HttpAuthentication::Token::ControllerMethods
 
 
   def encode_token(payload)
