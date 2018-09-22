@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_021931) do
     t.string "name"
     t.string "gamer_tag"
     t.string "email"
+    t.string "auth_token"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

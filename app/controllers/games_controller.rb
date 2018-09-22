@@ -1,8 +1,9 @@
 class GamesController < ApplicationController
-
+require 'pry'
   def index
     @games = Game.all
-    # @games = current_user.games
+    # binding.pry
+    # @games = @user.games
     render json: @games
   end
 
@@ -37,7 +38,8 @@ class GamesController < ApplicationController
   private
 
   def game_params
-      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date).merge(user_id:27)
+    # binding.pry
+      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date).merge(user_id:1)
    end
 
 end

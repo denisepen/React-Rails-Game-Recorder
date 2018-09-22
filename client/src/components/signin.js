@@ -12,6 +12,7 @@ class SignIn extends React.Component {
 
       email: '',
       password: '',
+      // jwt: ''
     }
   }
 
@@ -20,12 +21,13 @@ class SignIn extends React.Component {
   handleUserSignin = event => {
   event.preventDefault();
   const user = this.state
+  // this.setState({jwt: user.jwt})
   this.props.userLogin(user)
   console.log("onsubmit user signin state:", this.state);
 
   this.setState({
     email: '',
-    password: '',
+    password: ''
   })
 
 
@@ -48,6 +50,7 @@ class SignIn extends React.Component {
 
   render () {
     if (localStorage.getItem('jwtToken')) {
+      // this.setState({jwt: localStorage.getItem('jwtToken')})
       return <Redirect to='/' />
     } else {
       return (

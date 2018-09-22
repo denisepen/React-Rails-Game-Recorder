@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :current_user, only: [:me]
-  skip_before_action :authorized, only: [:create]
+  # before_action :current_user, only: [:me]
+  # skip_before_action :authorized, only: [:create]
 
   def index
     @users = User.all
@@ -13,6 +13,7 @@ class UsersController < ApplicationController
         payload = { user_id: user.id}
         # token = JWT.encode(payload, "flobble")
         token = encode_token(payload)
+        # binding.pry
         render json: { user: user, jwt: token }
       else
         render json: {errors: {message: "This user failed to save"}}

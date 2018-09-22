@@ -1,6 +1,7 @@
 // import thunk from 'redux-thunk';
 
 export function fetchGames() {
+  console.log("headers", localStorage.jwtToken);
   return function (dispatch){
     // debugger;
      return fetch('/games')
@@ -19,7 +20,8 @@ export function addGame(game) {
         method: 'POST',
         body: JSON.stringify(game),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
         }
       };
 
@@ -41,7 +43,8 @@ export function addGame(game) {
             body: JSON.stringify(game),
             credentials: "same-origin",
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
             }
           };
           console.log(request);

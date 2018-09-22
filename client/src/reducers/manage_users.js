@@ -11,7 +11,7 @@ export default function manageUsers(state = initState, action) {
       console.log("User state:", state)
       console.log("Add User Action:", action);
 
-      return { ...state, users: state.users.concat(action.newUser)};
+      return { ...state, users: state.users.concat(action.user)};
 
       case 'FETCH_USERS':
           console.log("Fetch User State:", state);

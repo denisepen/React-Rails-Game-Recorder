@@ -16,7 +16,8 @@ export function addUser(user) {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          "Authorization": `Bearer ${localStorage.token}`
         }
       };
 // console.log("req body", request.body);
@@ -37,17 +38,20 @@ export function addUser(user) {
           method: 'post',
           body: JSON.stringify(user),
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
           }
         };
 
         return (dispatch) => {
-          console.log(" User", user);
+          console.log(" local storage", localStorage.jwt);
           return fetch('/login', request )
                    .then(response => response.json())
                    // .then(response => console.log("api response",response))
                    //  .then(res => console.log("Game just added to db:", res))
                    .then(user => {localStorage.setItem("jwtToken", user.jwt)})
+                   // .then(request => request.headers.concat("Authorization": "Bearer `${user.jwt}`"))
                    .then(newUser => dispatch({ type: 'FIND_USER', newUser}))
         }
       }

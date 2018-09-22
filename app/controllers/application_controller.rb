@@ -1,52 +1,50 @@
-require 'pry'
+# require 'pry'
+
 
 class ApplicationController < ActionController::API
-  before_action :authorized, except: [:welcome]
+  # before_action :authorized, except: [:welcome]
+
 
   def encode_token(payload)
-    token = JWT.encode(payload, "flobble")
+    @token = JWT.encode(payload, "flobble")
   end
 
-  def auth_header
-    header = request.headers["Authorization"]
-  end
+  # def auth_header
+  #   @token
+  #   # binding.pry
+  #   # header = request.headers["Authorization"]
+  # end
 
   def decoded_token
-    if auth_header
-      token = auth_header.split(" ")[1]
-      begin
-        JWT.decode(token, "flobble", true, { algorith: "HS256"})
-      rescue JWT::DecodeError
-        [{}]
+    # if auth_header
+    if @token
+      # token = auth_header.split(" ")[1]
+      # begin
+        JWT.decode(@token, "flobble", true, { algorith: "HS256"})
+      # rescue JWT::DecodeError
+        # [{}]
       end
       # decoded_token = JWT.decode(token, "flobble", true, {algorithm: "HS256"})
-    else
     end
 
 
-  end
 
+  # binding.pry
   def current_user
-    binding.pry 
     if decoded_token
-
-      if user_id = decoded_token[0]["user_id"]
+       user_id = decoded_token[0]["user_id"]
         @user = User.find(user_id)
-      else
-      end
-
-    else
+      # binding.pry
     end
-
   end
 
   def logged_in?
-
     !!current_user
   end
 
   def authorized
-    redirect_to '/welcome' unless logged_in?
+    # redirect_to '/welcome' unless logged_in?
+    redirect_to '/welcome' unless current_user
   end
 
   def welcome
