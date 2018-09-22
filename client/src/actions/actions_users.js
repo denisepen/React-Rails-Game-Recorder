@@ -1,7 +1,14 @@
 export function fetchUsers() {
   return function (dispatch){
+    const request = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        "Authorization": `Bearer ${localStorage.token}`
+      }
+    };
     // debugger;
-     return fetch('/users')
+     return fetch('/users', request)
            .then(response => response.json())
            // .then(res => console.log("Game just fetched:", res))
             .then(users => {

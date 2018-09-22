@@ -161,7 +161,7 @@ console.log("PG Kills", playgroundKills);
    if (this.props.games === []){
      return <div>Loading </div>
    } else {
-     console.log("This.props:", this.props.games);
+     console.log("This.props.games:", this.props.games);
 
   const overallKills = [];
    const OverallKills = this.props.games.map(game => {

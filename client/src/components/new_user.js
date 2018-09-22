@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {  addUser } from '../actions/actions_users'
 
-class NewUser extends React.Component {
+class NewUser extends Component {
   constructor (props) {
     super (props)
 
@@ -11,6 +11,7 @@ class NewUser extends React.Component {
       gamer_tag: '',
       email: '',
       password: '',
+      games: []
     }
   }
 

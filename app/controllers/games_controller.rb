@@ -39,7 +39,8 @@ require 'pry'
 
   def game_params
     # binding.pry
-      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date).merge(user_id:1)
+      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date, :user_id)
+      # .merge(user_id:1)
    end
 
 end

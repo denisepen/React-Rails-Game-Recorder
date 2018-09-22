@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {  addUser } from '../actions/actions_users'
+// import {  addUser } from '../actions/actions_users'
 import { userLogin } from '../actions/actions_users'
 import { Redirect } from 'react-router-dom'
 
-class SignIn extends React.Component {
+class SignIn extends Component {
   constructor (props) {
     super (props)
 
