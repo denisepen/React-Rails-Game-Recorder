@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   before_action :current_user
 require 'pry'
   def index
-  
+  # @games = current_user.games
     @games = Game.all
     # binding.pry
     # @games = @user.games
@@ -42,7 +42,8 @@ require 'pry'
 
   def game_params
     # binding.pry
-      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date).merge(user_id:4)
+      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date, :user_id)
+      # .merge(user_id:4)
    end
 
 end

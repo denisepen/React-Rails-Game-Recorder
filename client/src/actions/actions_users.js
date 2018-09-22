@@ -49,7 +49,7 @@ export function addUser(user) {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
+            // 'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
           }
         };
 
@@ -58,9 +58,13 @@ export function addUser(user) {
           return fetch('/login', request )
                    .then(response => response.json())
                    // .then(response => console.log("api response",response))
-                   //  .then(res => console.log("Game just added to db:", res))
-                   .then(user => {localStorage.setItem("jwtToken", user.jwt)})
+                    // .then(res => console.log("Game just added to db:", res))
+                   .then(newUser => {
+                     localStorage.setItem("jwtToken", newUser.jwt)
+                    dispatch({ type: 'FIND_USER', newUser})
+                  })
                    // .then(request => request.headers.concat("Authorization": "Bearer `${user.jwt}`"))
-                   .then(newUser => dispatch({ type: 'FIND_USER', newUser}))
+                   // .then(newUser => dispatch({ type: 'FIND_USER', newUser}))
+                   // .then(user => console.log(user))
         }
       }

@@ -1,7 +1,7 @@
 
 // const initState = {games: []};
 
-const initState = {games: [], users:[]};
+const initState = {games: [], users:[], user: {}};
 export default function manageGame(state = initState, action) {
   console.log("Games Action:", action)
   console.log("Games State:", state)
@@ -32,6 +32,13 @@ export default function manageGame(state = initState, action) {
           console.log("Add User Action:", action);
 
           return { ...state, users: state.users.concat(action.newUser)};
+
+          case 'FIND_USER':
+            console.log("Found User state:", state)
+            console.log("Found User Action:", action);
+
+
+            return { ...state, user:  action.newUser.user };
 
           case 'FETCH_USERS':
               console.log("Fetch User State:", state);

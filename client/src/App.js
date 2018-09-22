@@ -27,8 +27,12 @@ class App extends Component {
   //   GameService.fetchGames().then(games => this.setState({ games }) )
   // }
 
-  componentWillMount () {
-     this.props.fetchGames();
+  componentDidMount () {
+    fetch('/welcome')
+    .then(res => res.json())
+    .then(json => console.log(json))
+     // this.props.fetchGames();
+
   }
 
   // addGame= (game) => {

@@ -12,7 +12,7 @@ class SignIn extends Component {
 
       email: '',
       password: '',
-      // jwt: ''
+      jwt: ''
     }
   }
 
@@ -29,8 +29,6 @@ class SignIn extends Component {
     email: '',
     password: ''
   })
-
-
   // console.log("state:", this.state)
 
 }
