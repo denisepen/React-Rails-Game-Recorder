@@ -2,7 +2,7 @@
 
 
 class ApplicationController < ActionController::API
-  before_action :authorized, except: [:welcome]
+  # before_action :authorized, except: [:welcome]
   # below from 2 hr jsilverstein video
   # include ActionController::HttpAuthentication::Token::ControllerMethods
 
@@ -11,12 +11,12 @@ class ApplicationController < ActionController::API
     token = JWT.encode(payload, "flobble")
   end
 
-  def auth_header
+  def auth_Header
     header = request.headers["Authorization"]
   end
 
   def decoded_token
-    if auth_header
+    if auth_Header
       token = auth_Header.split(" ")[1]
       begin
         decoded_token = JWT.decode(token, "flobble", true, {algorithm: "HS256"})
@@ -26,11 +26,13 @@ class ApplicationController < ActionController::API
     end
   end
 
+
   def current_user
     if decoded_token
        if user_id = decoded_token[0]["user_id"]
        @user = User.find(user_id)
-      # binding.pry
+       # binding.pry
+     end
     end
   end
 

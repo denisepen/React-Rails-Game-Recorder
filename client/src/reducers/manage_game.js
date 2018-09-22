@@ -37,7 +37,7 @@ export default function manageGame(state = initState, action) {
               console.log("Fetch User State:", state);
               // return {...state, games: state.games.concat(action.game) };
               return { ...state, users: state.users.concat(action.users)};
-  
+
 
 
     default:

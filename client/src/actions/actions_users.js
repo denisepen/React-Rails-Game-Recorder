@@ -4,10 +4,11 @@ export function fetchUsers() {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        "Authorization": `Bearer ${localStorage.token}`
+        'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
       }
     };
     // debugger;
+    console.log(request);
      return fetch('/users', request)
            .then(response => response.json())
            // .then(res => console.log("Game just fetched:", res))
@@ -24,7 +25,7 @@ export function addUser(user) {
         body: JSON.stringify(user),
         headers: {
           'Content-Type': 'application/json',
-          "Authorization": `Bearer ${localStorage.token}`
+          'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
         }
       };
 // console.log("req body", request.body);
@@ -35,8 +36,8 @@ export function addUser(user) {
                  // .then(response => console.log("api response",response.json()))
                  //  .then(res => console.log("User just added to db:", res))
                  .then(user => {localStorage.setItem("jwtToken", user.jwt)})
-                  .catch(error => console.error('Error:', error))
-                 // .then(newUser => dispatch({ type: 'ADD_USER', newUser}))
+                  // .catch(error => console.error('Error:', error))
+                 .then(newUser => dispatch({ type: 'ADD_USER', newUser}))
       }
     }
 

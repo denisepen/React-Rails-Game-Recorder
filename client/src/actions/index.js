@@ -24,9 +24,9 @@ export function addGame(game) {
           'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
         }
       };
-
+      console.log("Headers: ", request.headers);
       return (dispatch) => {
-        console.log("Dispatched game", game);
+        console.log("Dispatched request", request);
         return fetch('/games', request )
                  .then(response => response.json())
                  // .then(response => console.log("api response",response))

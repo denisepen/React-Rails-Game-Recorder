@@ -1,6 +1,8 @@
 class GamesController < ApplicationController
+  before_action :current_user
 require 'pry'
   def index
+  
     @games = Game.all
     # binding.pry
     # @games = @user.games
@@ -9,6 +11,7 @@ require 'pry'
 
   def create
     @game = Game.new(game_params)
+    # @game.user_id = current_user.id
     if @game.save
       render json: @game
     else
@@ -39,8 +42,7 @@ require 'pry'
 
   def game_params
     # binding.pry
-      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date, :user_id)
-      # .merge(user_id:1)
+      params.require(:game).permit(:mode, :max_kills, :final_place, :comments, :date).merge(user_id:4)
    end
 
 end
