@@ -22,7 +22,11 @@ class AuthController < ApplicationController
     # decoded_token = JWT.decode(token, "flobble", true, { algorithm: 'HS256'})
     # user_id = decoded_token[0]['user_id']
     # user = User.find(user_id)
-    render json: { user: user, games: user.games }
+    if @user
+      render json: { user: @user, games: @user.games }
+      else
+        render json: {message: "Need Correct JWT"}
+    end
   end
 
 
