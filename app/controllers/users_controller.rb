@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
+
       user = User.new(user_params)
       if user.save
         payload = { user_id: user.id}
@@ -16,11 +16,7 @@ class UsersController < ApplicationController
         token = encode_token(payload)
         # binding.pry
         render json: { user: user, jwt: token }
-=======
-      @user = User.create!(user_params)
-      if @user.save
-        render json: @user
->>>>>>> 62b7b289dbcaeae088f1d37a0099738b55ef7016
+
       else
         render json: {errors: {message: "This user failed to save"}}
       end

@@ -2,11 +2,8 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :games
-<<<<<<< HEAD
 
-=======
-  has_secure_password
->>>>>>> 62b7b289dbcaeae088f1d37a0099738b55ef7016
+
 
   # validates :name, :email, :password, presence: true
   # # validates_uniqueness_of :email
