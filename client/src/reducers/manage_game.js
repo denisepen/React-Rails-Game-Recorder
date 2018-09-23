@@ -10,8 +10,12 @@ export default function manageGame(state = initState, action) {
     case 'ADD_GAME':
 
       console.log("Add Action:", action);
+      // debugger
+      //   const game = action.newGame
+      //   game.user_id = state.user.id
 
       return { ...state, games: state.games.concat(action.newGame)};
+      // return { ...state, games: state.games.concat(game)};
 
 
 

@@ -2,15 +2,18 @@ class GamesController < ApplicationController
   before_action :current_user
 require 'pry'
   def index
-  # @games = current_user.games
-    @games = Game.all
+  games = @user.games
+    # @games = Game.all
     # binding.pry
     # @games = @user.games
-    render json: @games
+    render json: games
   end
 
   def create
+
     @game = Game.new(game_params)
+    @game.user_id = @user.id
+    # binding.pry
     # @game.user_id = current_user.id
     if @game.save
       render json: @game

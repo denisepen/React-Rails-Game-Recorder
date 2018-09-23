@@ -49,7 +49,7 @@ export function addUser(user) {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            // 'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
+            'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
           }
         };
 

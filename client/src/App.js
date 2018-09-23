@@ -28,10 +28,10 @@ class App extends Component {
   // }
 
   componentDidMount () {
-    fetch('/welcome')
-    .then(res => res.json())
-    .then(json => console.log(json))
-     // this.props.fetchGames();
+    // fetch('/welcome')
+    // .then(res => res.json())
+    // .then(json => console.log(json))
+     this.props.fetchGames();
 
   }
 

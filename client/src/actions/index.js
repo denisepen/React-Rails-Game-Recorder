@@ -1,10 +1,19 @@
 // import thunk from 'redux-thunk';
 
 export function fetchGames() {
-  console.log("headers", localStorage.jwtToken);
+  // console.log("headers", localStorage.jwtToken);
+  const request = {
+    method: 'GET',
+    // mode: 'no-cors',
+    credentials: "same-origin",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
+    }
+  };
   return function (dispatch){
     // debugger;
-     return fetch('/games')
+     return fetch('/games', request)
            .then(response => response.json())
            // .then(res => console.log("Game just fetched:", res))
             .then(games => {
