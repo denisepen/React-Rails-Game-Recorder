@@ -120,10 +120,7 @@ console.log("PG Kills", playgroundKills);
      return (game.final_place)
      });
 
-     // <SparkChart soloData={soloKills}  duoData={duoKills} squadData={squadKills} fiftyData={fiftyvKills} playgroundData={playgroundKills} />
-
-    // Below is the data fot eh chartjs stacked chart
-     // <Chart  soloData={soloKills}  duoData={duoKills} squadData={squadKills} fiftyData={fiftyvKills} playgroundData={playgroundKills}/>
+    
  return (
 
    <div>
@@ -203,13 +200,3 @@ export default connect (mapStateToProps, mapDispatchToProps)(GameStats);
 // } else {
 //   <h1> Welcome </h1>
 // }
-
-// <div>
-//   <table>
-//     <thead>
-//       <th> Game Kills Over Time</th>
-//       <th> Final Place Over Time </th>
-//     </thead>
-//       {this.renderCharts()}
-//     </table>
-//   </div>
