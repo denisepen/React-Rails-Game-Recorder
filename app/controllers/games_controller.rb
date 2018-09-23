@@ -2,10 +2,11 @@ class GamesController < ApplicationController
   before_action :current_user
 require 'pry'
   def index
-  games = @user.games
-    # @games = Game.all
-    # binding.pry
-    # @games = @user.games
+    if @user
+      games = @user.games
+    else
+     @games = Game.all
+  end
     render json: games
   end
 
@@ -13,8 +14,7 @@ require 'pry'
 
     @game = Game.new(game_params)
     @game.user_id = @user.id
-    # binding.pry
-    # @game.user_id = current_user.id
+
     if @game.save
       render json: @game
     else
@@ -24,22 +24,15 @@ require 'pry'
 
   def show
     @game = Game.find_by(id: params[:id])
-    # respond_to do |format|
-    #   format.html { render :show }
+
       render json: @game
-    # end
+
   end
 
   def destroy
     Game.find(params[:id]).destroy
   end
 
-    # @game = Game.find(params[:id])
-    # # if !is_admin? && current_user == @review.user
-    # # if @game
-    #     @game.destroy
-      # end
-  # end
 
   private
 
