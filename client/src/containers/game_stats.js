@@ -53,6 +53,7 @@ createPieChart () {
 
 
 createModeCharts () {
+  const gameIds = this.props.games.map(game => game.id)
   const soloGames = this.props.games.filter(game =>
     { return (game.mode === 'Solo') })
 
@@ -93,8 +94,8 @@ createModeCharts () {
     { return (game.mode === 'Duos') })
 
     const duoKills = duoGames.map(game => {
-      return (game.max_kills)
-      // return [game.max_kills, game.date]
+      // return (game.max_kills)
+      return [game.max_kills, game.date]
       // return {game.date: game.max_kills}
      }
    );
@@ -124,10 +125,10 @@ console.log("PG Kills", playgroundKills);
  return (
 
    <div>
-    <Chart  soloData={soloKills}  duoData={duoKills} squadData={squadKills} fiftyData={fiftyvKills} playgroundData={playgroundKills}/>
+    <Chart  chartTitle={"Total Kills"} gameIds={gameIds} soloData={soloKills}  duoData={duoKills} squadData={squadKills} fiftyData={fiftyvKills} playgroundData={playgroundKills} />
 
 
-   <Chart  soloData={soloFinalPlace}  duoData={duoFinalPlace} squadData={squadFinalPlace} fiftyData={fiftyvFinalPlace} playgroundData={pgFinalPlace}/>
+   <Chart  chartTitle={"Final Position"} soloData={soloFinalPlace}  duoData={duoFinalPlace} squadData={squadFinalPlace} fiftyData={fiftyvFinalPlace} playgroundData={pgFinalPlace}/>
   </div>
     // <div>
     //

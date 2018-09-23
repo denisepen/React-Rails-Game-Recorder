@@ -4,15 +4,13 @@ import { Line, Scatter, Bar } from 'react-chartjs-2';
 
 const Chart = (props) => {
   // console.log("chart data props: ", props.data);
-  const labels = [];
+  // const labels = [];
 
 
     const chartData = {
-      // labels:  [],
+      labels: props.soloData.map(game => "Game Total"),
       datasets: [
         {
-        labels: props.soloData.map(game => "Game: " + game),
-
       label: 'Solo Kills',
       fill: false,
       lineTension: 0.5,
@@ -59,7 +57,7 @@ const Chart = (props) => {
 
     ]
   }
-console.log("Labels", labels)
+
   return(
 
     <div className="chart">
@@ -72,7 +70,7 @@ console.log("Labels", labels)
           // maintainAspectRatio: false,
             title: {
               display: true,
-              text: 'Total Game Kills',
+              text: props.chartTitle,
               fontSize: 15
               },
             legend: {
@@ -116,7 +114,7 @@ console.log("Labels", labels)
                   beginAtZero: true,
                   max: 100
                 },
-                labelString: "Total Kills",
+                labelString: props.chartTitle,
                 fontSize: 10
               }
             }]
