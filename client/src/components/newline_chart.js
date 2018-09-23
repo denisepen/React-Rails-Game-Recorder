@@ -8,10 +8,13 @@ const Chart = (props) => {
 
 
     const chartData = {
-      labels: props.soloData.map(game => "Game Total"),
+      labels: props.gameIds.map(game => "Game"),
+      // labels: props.duoData.map(data => data[1]),
       datasets: [
         {
       label: 'Solo Kills',
+      pointHoverBackgroundColor: 'gray',
+      pointHoverRadius: 5,
       fill: false,
       lineTension: 0.5,
       backgroundColor: 'red',
@@ -21,6 +24,8 @@ const Chart = (props) => {
         },
         {
         label: 'Squad Kills',
+        pointHoverBackgroundColor: 'gray',
+        pointHoverRadius: 5,
         fill: false,
         lineTension: 0.5,
         backgroundColor: 'orange',
@@ -29,6 +34,8 @@ const Chart = (props) => {
       },
       {
       label: '50v50 Kills',
+      pointHoverBackgroundColor: 'gray',
+      pointHoverRadius: 5,
       fill: false,
       lineTension: 0.5,
       backgroundColor: 'green',
@@ -37,16 +44,19 @@ const Chart = (props) => {
       },
       {
       label: 'Duo Kills',
-      // labels: props.duoData.map(data => data[1]),
+      pointHoverBackgroundColor: 'gray',
+      pointHoverRadius: 5,
       fill: false,
       lineTension: 0.5,
       backgroundColor: 'purple',
       borderColor: 'purple',
-      data: props.duoData
-      // data: props.duoData.map(data => data[0]),
+      // data: props.duoData
+      data: props.duoData.map(data => data[0]),
       },
       {
       label: 'Playground Kills',
+      pointHoverBackgroundColor: 'gray',
+      pointHoverRadius: 5,
       fill: false,
       lineTension: 0.5,
       backgroundColor: 'blue',

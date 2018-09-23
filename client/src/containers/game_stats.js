@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Chart from '../components/newline_chart'
 import { fetchGames } from '../actions/index'
 import PieChart from '../components/pie_chart'
-import SparkChart from '../components/sparklines_chart';
+
 
 class GameStats extends Component {
   constructor (props) {
@@ -54,6 +54,8 @@ createPieChart () {
 
 createModeCharts () {
   const gameIds = this.props.games.map(game => game.id)
+  console.log("game ids", gameIds);
+
   const soloGames = this.props.games.filter(game =>
     { return (game.mode === 'Solo') })
 
@@ -94,8 +96,8 @@ createModeCharts () {
     { return (game.mode === 'Duos') })
 
     const duoKills = duoGames.map(game => {
-      // return (game.max_kills)
-      return [game.max_kills, game.date]
+      return (game.max_kills)
+      // return [game.max_kills, new Date(game.date).toLocaleDateString()]
       // return {game.date: game.max_kills}
      }
    );
@@ -128,102 +130,12 @@ console.log("PG Kills", playgroundKills);
     <Chart  chartTitle={"Total Kills"} gameIds={gameIds} soloData={soloKills}  duoData={duoKills} squadData={squadKills} fiftyData={fiftyvKills} playgroundData={playgroundKills} />
 
 
-   <Chart  chartTitle={"Final Position"} soloData={soloFinalPlace}  duoData={duoFinalPlace} squadData={squadFinalPlace} fiftyData={fiftyvFinalPlace} playgroundData={pgFinalPlace}/>
+   <Chart  chartTitle={"Final Position"} gameIds={gameIds} soloData={soloFinalPlace}  duoData={duoFinalPlace} squadData={squadFinalPlace} fiftyData={fiftyvFinalPlace} playgroundData={pgFinalPlace}/>
   </div>
-    // <div>
-    //
-    //
-    //    <tbody>
-    //        <tr>
-    //        <td> Total Kills </td>
-    //          <td>
-    //
-    //            <Chart  data={soloKills} color="red" mode={'Solo'} y={'Total Kills'} label={'Total Kills'}/>
-    //
-    //          </td>
-    //          <td>
-    //            <Chart  data={duoKills} color="purple" mode={'Duos'} y={'Total Kills'} label={'Total Kills'}/>
-    //          </td>
-    //          <td>
-    //            <Chart  data={squadKills} color="orange"  mode={'Squads'} y={'Total Kills'} label={'Total Kills'}/>
-    //          </td>
-    //          <td>
-    //            <Chart  data={fiftyvKills} color="green"  mode={'50v50'} y={'Total Kills'} label={'Total Kills'}/>
-    //          </td>
-    //          <td>
-    //            <Chart  data={playgroundKills} color="blue" mode={'Playground'}  y={'Total Kills'} label={'Total Kills'}/>
-    //          </td>
-    //        </tr>
-    //        <tr>
-    //        <td> Final Position </td>
-    //          <td>
-    //            <Chart  data={soloFinalPlace} color="red" mode={'Solo'} y={'Final Position'} label={'Final Position'}/>
-    //          </td>
-    //          <td>
-    //            <Chart  data={duoFinalPlace} color="purple" mode={'Duos'} y={'Final Position'} label={'Final Position'}/>
-    //          </td>
-    //          <td>
-    //            <Chart  data={squadFinalPlace} color="orange" mode={'Squads'} y={'Final Position'} label={'Final Position'}/>
-    //          </td>
-    //          <td>
-    //            <Chart  data={fiftyvFinalPlace} color="green" mode={'50v50'} y={'Final Position'} label={'Final Position'}/>
-    //          </td>
-    //          <td>
-    //            <Chart  data={pgFinalPlace} color="blue" mode={'Playground'} y={'Final Position'} label={'Final Position'}/>
-    //          </td>
-    //        </tr>
-    //     </tbody>
-    // </div>
  )
-
 }
 
- renderCharts(){
-   // debugger;
-   if (this.props.games === []){
-     return <div>Loading </div>
-   } else {
-     console.log("This.props.games:", this.props.games);
 
-  const overallKills = [];
-   const OverallKills = this.props.games.map(game => {
-     return overallKills.push(game.max_kills)
-    }
-  );
-
-  const overallFinalPlace = [];
-
-    const OverallFinalPlace = this.props.games.map(game => {
-      return overallFinalPlace.push(game.final_place)
-      });
-
-    const finalPosition = this.props.games.map(game =>
-     game.final_place);
-
-   return (
-     <tbody>
-         <tr>
-           <td>
-             <Chart  data={overallKills} color="green" mode={'All Games'} />
-           </td>
-
-           <td>
-             <Chart  data={overallFinalPlace} color="blue" mode={'All Games'} />
-           </td>
-         </tr>
-      </tbody>
-   )
- }
-}
-
-// render () {
-//   return (
-//     <div>
-//       {this.createModeCharts()}
-//     </div>
-//   )
-//
-// }
 
   render () {
     // debugger
