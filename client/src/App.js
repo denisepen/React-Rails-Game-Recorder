@@ -23,27 +23,11 @@ class App extends Component {
     }
   }
 
-  // componentWillMount () {
-  //   GameService.fetchGames().then(games => this.setState({ games }) )
-  // }
 
   componentDidMount () {
-    // fetch('/welcome')
-    // .then(res => res.json())
-    // .then(json => console.log(json))
      this.props.fetchGames();
-
   }
 
-  // addGame= (game) => {
-  //    // debugger;
-  //   GameService.addGame(game).then(game =>
-  //      // console.log("Created Game: ", game)
-  //      this.setState({
-  //      games: this.state.games.concat(game)})
-  //     // [...this.state.games, game]
-  //   )
-  // }
 
   render() {
     // console.log("Games:", this.state.games);

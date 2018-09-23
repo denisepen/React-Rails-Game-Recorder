@@ -5,21 +5,21 @@ import { fetchGames } from '../actions/index'
 import PieChart from '../components/pie_chart'
 
 class GameStats extends Component {
-  // constructor (props) {
-  //   super(props)
+  constructor (props) {
+    super(props)
   //
   //   // this.state = props
   //   // this.props.fetchGames();
-  // }
+  }
 
 // componentWillMount() {
-//   // this.props.fetchGames();
+//   this.props.fetchGames();
 //   this.renderCharts()
 // }
 
-componentWillUnmount () {
-  this.props = {games: []}
-}
+// componentWillUnmount () {
+//   this.props = {games: []}
+// }
 
 // const total = this.props.games.length
 // console.log(this.props.games.length);
@@ -204,8 +204,14 @@ console.log("PG Kills", playgroundKills);
 // }
 
   render () {
+    // debugger
+
+    console.log("Game Charts User props ", this.props);
     return (
+
+
       <div>
+      <h1> Welcome {this.props.games[0].user.name}</h1>
         <div>
           {this.createPieChart()}
         </div>

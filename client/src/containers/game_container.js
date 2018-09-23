@@ -20,7 +20,6 @@ class GameContainer extends Component {
      console.log("GameProps",this.props)
     return(
       <div>
-
       <div className="input">
         <GameInput
           addGame={this.props.addGame}
@@ -41,7 +40,7 @@ class GameContainer extends Component {
 
 const mapStateToProps = (state) => {
   console.log("propsstate:", state)
-  return {games: state.games};
+  return {games: state.games, user: state.user};
 }
 
 const mapDispatchToProps = dispatch => {

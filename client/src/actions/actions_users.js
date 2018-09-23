@@ -54,7 +54,7 @@ export function addUser(user) {
         };
 
         return (dispatch) => {
-          console.log(" local storage", localStorage.jwt);
+          // console.log(" local storage", localStorage.jwt);
           return fetch('/login', request )
                    .then(response => response.json())
                    // .then(response => console.log("api response",response))
