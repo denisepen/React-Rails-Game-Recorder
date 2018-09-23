@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -16,23 +16,23 @@ p.gameMode {
   padding-bottom: 0;
   text-align: center;
   font-weight: bold;
-}
+} */
 
-table {
+/* table {
   margin-left:auto; margin-right:auto;
 }
 
 td, th {
   vertical-align: middle;
   text-align: center;
-}
+} */
 
 td {
   /* margin-right: 20px; */
   /* padding-right: 20px; */
 }
 
-tr {
+/* tr {
   margin-bottom: 50px;
   padding-bottom: 50px;
 }
@@ -69,4 +69,4 @@ height: 50vh;
   float: right;
   width: 45vw;
   height: 90vh;
-}
+} */

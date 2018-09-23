@@ -29,11 +29,11 @@ export default function manageGame(state = initState, action) {
         console.log("Fetch Action:", action);
         // return {...state, games: state.games.concat(action.game) };
         return { ...state, games: state.games.concat(action.games)};
-        
+
 
         case 'ADD_USER':
-          console.log("User state:", state)
-          console.log("Add User Action:", action);
+          // console.log("User state:", state)
+          console.log(" User Action Signing up:", action);
 
           return { ...state, users: state.users.concat(action.newUser), user: action.newUser };
 

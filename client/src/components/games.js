@@ -18,7 +18,7 @@ const Games = props => {
   // const onHandleDelete = (game) => props.deleteGame(game)
    games = props.games.map((game, index) => {
      // console.log("inside games - propobj", props);
-    return (<Game  id={game.id} key={index} date={game.date} mode={game.mode} max_kills={game.max_kills} final_place={game.final_place}  comments={game.comments} game={game} deleteGame={props.deleteGame}/>)
+    return (<Game  id={game.id} key={index} date={new Date(game.date).toLocaleDateString()} mode={game.mode} max_kills={game.max_kills} final_place={game.final_place}  comments={game.comments} game={game} deleteGame={props.deleteGame}/>)
   }
 
 //

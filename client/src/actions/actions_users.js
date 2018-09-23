@@ -63,8 +63,6 @@ export function addUser(user) {
                      localStorage.setItem("jwtToken", newUser.jwt)
                     dispatch({ type: 'FIND_USER', newUser})
                   })
-                   // .then(request => request.headers.concat("Authorization": "Bearer `${user.jwt}`"))
-                   // .then(newUser => dispatch({ type: 'FIND_USER', newUser}))
-                   // .then(user => console.log(user))
+                   
         }
       }

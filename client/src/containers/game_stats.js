@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Chart from '../components/chart'
+import Chart from '../components/newline_chart'
 import { fetchGames } from '../actions/index'
 import PieChart from '../components/pie_chart'
+import SparkChart from '../components/sparklines_chart';
 
 class GameStats extends Component {
   constructor (props) {
@@ -23,6 +24,15 @@ class GameStats extends Component {
 
 // const total = this.props.games.length
 // console.log(this.props.games.length);
+
+createTotalGames(){
+  const total = this.props.games.length;
+  return (
+    <div>
+      <h2>Total Games Played: {total} </h2>
+    </div>
+  )
+}
 
 createPieChart () {
   const total = this.props.games.length;
@@ -84,9 +94,11 @@ createModeCharts () {
 
     const duoKills = duoGames.map(game => {
       return (game.max_kills)
+      // return [game.max_kills, game.date]
+      // return {game.date: game.max_kills}
      }
    );
-
+console.log("Duo Kills: ", duoKills, );
 // calc final place over time while playing duos
    const duoFinalPlace = duoGames.map(game => {
        return (game.final_place)
@@ -105,53 +117,62 @@ console.log("PG Kills", playgroundKills);
      return (game.final_place)
      });
 
-    // const  pieData = [soloGames.length, squadGames.length, fiftyvGames.length, duoGames.length, playgroundGames.length]
+     // <SparkChart soloData={soloKills}  duoData={duoKills} squadData={squadKills} fiftyData={fiftyvKills} playgroundData={playgroundKills} />
 
+    // Below is the data fot eh chartjs stacked chart
+     // <Chart  soloData={soloKills}  duoData={duoKills} squadData={squadKills} fiftyData={fiftyvKills} playgroundData={playgroundKills}/>
  return (
-    <div>
+
+   <div>
+    <Chart  soloData={soloKills}  duoData={duoKills} squadData={squadKills} fiftyData={fiftyvKills} playgroundData={playgroundKills}/>
 
 
-       <tbody>
-           <tr>
-           <td> Total Kills </td>
-             <td>
-
-               <Chart  data={soloKills} color="red" mode={'Solo'} y={'Total Kills'} label={'Total Kills'}/>
-
-             </td>
-             <td>
-               <Chart  data={duoKills} color="purple" mode={'Duos'} y={'Total Kills'} label={'Total Kills'}/>
-             </td>
-             <td>
-               <Chart  data={squadKills} color="orange"  mode={'Squads'} y={'Total Kills'} label={'Total Kills'}/>
-             </td>
-             <td>
-               <Chart  data={fiftyvKills} color="green"  mode={'50v50'} y={'Total Kills'} label={'Total Kills'}/>
-             </td>
-             <td>
-               <Chart  data={playgroundKills} color="blue" mode={'Playground'}  y={'Total Kills'} label={'Total Kills'}/>
-             </td>
-           </tr>
-           <tr>
-           <td> Final Position </td>
-             <td>
-               <Chart  data={soloFinalPlace} color="red" mode={'Solo'} y={'Final Position'} label={'Final Position'}/>
-             </td>
-             <td>
-               <Chart  data={duoFinalPlace} color="purple" mode={'Duos'} y={'Final Position'} label={'Final Position'}/>
-             </td>
-             <td>
-               <Chart  data={squadFinalPlace} color="orange" mode={'Squads'} y={'Final Position'} label={'Final Position'}/>
-             </td>
-             <td>
-               <Chart  data={fiftyvFinalPlace} color="green" mode={'50v50'} y={'Final Position'} label={'Final Position'}/>
-             </td>
-             <td>
-               <Chart  data={pgFinalPlace} color="blue" mode={'Playground'} y={'Final Position'} label={'Final Position'}/>
-             </td>
-           </tr>
-        </tbody>
-    </div>
+   <Chart  soloData={soloFinalPlace}  duoData={duoFinalPlace} squadData={squadFinalPlace} fiftyData={fiftyvFinalPlace} playgroundData={pgFinalPlace}/>
+  </div>
+    // <div>
+    //
+    //
+    //    <tbody>
+    //        <tr>
+    //        <td> Total Kills </td>
+    //          <td>
+    //
+    //            <Chart  data={soloKills} color="red" mode={'Solo'} y={'Total Kills'} label={'Total Kills'}/>
+    //
+    //          </td>
+    //          <td>
+    //            <Chart  data={duoKills} color="purple" mode={'Duos'} y={'Total Kills'} label={'Total Kills'}/>
+    //          </td>
+    //          <td>
+    //            <Chart  data={squadKills} color="orange"  mode={'Squads'} y={'Total Kills'} label={'Total Kills'}/>
+    //          </td>
+    //          <td>
+    //            <Chart  data={fiftyvKills} color="green"  mode={'50v50'} y={'Total Kills'} label={'Total Kills'}/>
+    //          </td>
+    //          <td>
+    //            <Chart  data={playgroundKills} color="blue" mode={'Playground'}  y={'Total Kills'} label={'Total Kills'}/>
+    //          </td>
+    //        </tr>
+    //        <tr>
+    //        <td> Final Position </td>
+    //          <td>
+    //            <Chart  data={soloFinalPlace} color="red" mode={'Solo'} y={'Final Position'} label={'Final Position'}/>
+    //          </td>
+    //          <td>
+    //            <Chart  data={duoFinalPlace} color="purple" mode={'Duos'} y={'Final Position'} label={'Final Position'}/>
+    //          </td>
+    //          <td>
+    //            <Chart  data={squadFinalPlace} color="orange" mode={'Squads'} y={'Final Position'} label={'Final Position'}/>
+    //          </td>
+    //          <td>
+    //            <Chart  data={fiftyvFinalPlace} color="green" mode={'50v50'} y={'Final Position'} label={'Final Position'}/>
+    //          </td>
+    //          <td>
+    //            <Chart  data={pgFinalPlace} color="blue" mode={'Playground'} y={'Final Position'} label={'Final Position'}/>
+    //          </td>
+    //        </tr>
+    //     </tbody>
+    // </div>
  )
 
 }
@@ -209,30 +230,40 @@ console.log("PG Kills", playgroundKills);
     console.log("Game Charts User props ", this.props);
     return (
 
-
       <div>
-      <h1> Welcome {this.props.games[0].user.name}</h1>
-        <div>
-          {this.createPieChart()}
-        </div>
-          <br/>
-
-       <table className="table table-hover">
-         <thead>
-           <tr>
-            <th>  </th>
-             <th> </th>
-             <th>  </th>
-             <th> </th>
-             <th>  </th>
-                <th>  </th>
-           </tr>
-         </thead>
-
-         {this.createModeCharts()}
-
-       </table>
+      {this.createTotalGames()}
+        <br/>
+        {this.createPieChart()}
+        <br/>
+        {this.createModeCharts()}
       </div>
+
+
+      // <div>
+      //
+      //
+      //
+      //   <div>
+      //     {this.createPieChart()}
+      //   </div>
+      //     <br/>
+      //
+      //  <table className="table table-hover">
+      //    <thead>
+      //      <tr>
+      //       <th>  </th>
+      //        <th> </th>
+      //        <th>  </th>
+      //        <th> </th>
+      //        <th>  </th>
+      //           <th>  </th>
+      //      </tr>
+      //    </thead>
+      //
+      //    {this.createModeCharts()}
+      //
+      //  </table>
+      // </div>
     );
   }
 
@@ -250,9 +281,15 @@ const mapDispatchToProps = dispatch => {
 
 function mapStateToProps(state){
   // debugger;
-  return {games: state.games}
+  return {games: state.games, user: state.user}
 }
 export default connect (mapStateToProps, mapDispatchToProps)(GameStats);
+
+// if ( {this.props.user !== {}} ){
+//   <h1> Welcome {this.props.games[0].user.name}</h1>
+// } else {
+//   <h1> Welcome </h1>
+// }
 
 // <div>
 //   <table>
