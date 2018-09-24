@@ -12,7 +12,7 @@ const Chart = (props) => {
       // labels: props.duoData.map(data => data[1]),
       datasets: [
         {
-      label: 'Solo Kills',
+      label: 'Solo',
       pointHoverBackgroundColor: 'gray',
       pointHoverRadius: 5,
       fill: false,
@@ -23,7 +23,7 @@ const Chart = (props) => {
       data: props.soloData
         },
         {
-        label: 'Squad Kills',
+        label: 'Squad',
         pointHoverBackgroundColor: 'gray',
         pointHoverRadius: 5,
         fill: false,
@@ -33,7 +33,7 @@ const Chart = (props) => {
         data: props.squadData
       },
       {
-      label: '50v50 Kills',
+      label: '50v50',
       pointHoverBackgroundColor: 'gray',
       pointHoverRadius: 5,
       fill: false,
@@ -43,7 +43,7 @@ const Chart = (props) => {
       data: props.fiftyData
       },
       {
-      label: 'Duo Kills',
+      label: 'Duo',
       pointHoverBackgroundColor: 'gray',
       pointHoverRadius: 5,
       fill: false,
@@ -54,7 +54,7 @@ const Chart = (props) => {
       // data: props.duoData.map(data => data[0]),
       },
       {
-      label: 'Playground Kills',
+      label: 'Playground',
       pointHoverBackgroundColor: 'gray',
       pointHoverRadius: 5,
       fill: false,
@@ -71,7 +71,7 @@ const Chart = (props) => {
   return(
 
     <div className="chart">
-      <Scatter
+      <Line
       width={150} height={50}
         data={chartData}
 
