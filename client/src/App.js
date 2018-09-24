@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import {  fetchGames } from './actions/index'
 import NewUser from './components/new_user'
 import SignIn from './components/signin';
+import Logout from './components/logout'
 // import GameInput from './components/game_input'
 
 import './App.css';
@@ -28,7 +29,7 @@ class App extends Component {
      this.props.fetchGames();
   }
 
-  logout = () => {localStorage.removeItem("jwtToken")}
+
 
   render() {
     // console.log("Games:", this.state.games);
@@ -42,7 +43,8 @@ class App extends Component {
             <Route exact path="/stats" component={GameStats} />
             <Route exact path="/signup" component={NewUser} />
             <Route exact path='/signin' component={SignIn} />
-            <Route exact path='/logout' onClick={this.logout()} />
+            <Route exact path='/logout' component={Logout} />
+
 
         </React.Fragment>
       </Router>
@@ -59,3 +61,5 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect (null, mapDispatchToProps)(App);
+
+// <Route exact path='/logout' render={this.logout()} />
