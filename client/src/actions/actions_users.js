@@ -35,9 +35,12 @@ export function addUser(user) {
                  .then(response => response.json())
                  // .then(response => console.log("api response",response.json()))
                  //  .then(res => console.log("User just added to db:", res))
-                 .then(user => {localStorage.setItem("jwtToken", user.jwt)})
+                 .then(newUser => {
+                   localStorage.setItem("jwtToken", newUser.jwt)
+                   dispatch({ type: 'ADD_USER', newUser} )
+                 })
                   // .catch(error => console.error('Error:', error))
-                 .then(newUser => dispatch({ type: 'ADD_USER', newUser}))
+                 // .then(newUser => dispatch({ type: 'ADD_USER', newUser} )
       }
     }
 
@@ -63,6 +66,6 @@ export function addUser(user) {
                      localStorage.setItem("jwtToken", newUser.jwt)
                     dispatch({ type: 'FIND_USER', newUser})
                   })
-                   
+
         }
       }

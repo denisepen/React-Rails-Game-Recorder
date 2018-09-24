@@ -4,12 +4,6 @@ import { connect } from 'react-redux';
 
 
  class AllGames extends Component {
-   // constructor(){
-   //   super()
-   // }
-
-
-
 
   render () {
     return(

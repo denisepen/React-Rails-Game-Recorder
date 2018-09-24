@@ -26,18 +26,20 @@ export default function manageGame(state = initState, action) {
         return { ...state, games: state.games.concat(action.games)};
 
 
-        case 'ADD_USER':
+        case 'ADD_USER' :
           // console.log("User state:", state)
           console.log(" User Action Signing up:", action);
 
-          return { ...state, users: state.users.concat(action.newUser), user: action.newUser };
+          return console.log( "Adding user to users and user",{ ...state, users: state.users.concat(action.newUser), user: action.newUser.user });
+
+          
 
           case 'FIND_USER':
             console.log("Found User state:", state)
             console.log("Found User Action:", action);
 
-
             return { ...state, user: action.newUser.user };
+
 
           case 'FETCH_USERS':
               console.log("Fetch User State:", state);
@@ -45,7 +47,7 @@ export default function manageGame(state = initState, action) {
               return { ...state, users: state.users.concat(action.users)};
 
 
-
+              console.log("Added to user: ", state.user);
     default:
       return state;
   }

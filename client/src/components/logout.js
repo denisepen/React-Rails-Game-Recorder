@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 
 export default  () => {
 
+  
   const logout = () => {localStorage.removeItem("jwtToken")}
 
 
