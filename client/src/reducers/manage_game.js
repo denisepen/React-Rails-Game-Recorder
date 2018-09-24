@@ -10,9 +10,6 @@ export default function manageGame(state = initState, action) {
     case 'ADD_GAME':
       console.log("Add Action:", action);
       return { ...state, games: state.games.concat(action.newGame)};
-    
-
-
 
     case 'DELETE_GAME':
        // debugger;

@@ -2,23 +2,25 @@ class GamesController < ApplicationController
   before_action :current_user
 require 'pry'
 
-def create
-  @game = Game.new(game_params)
-  @game.user_id = @user.id
-  if @game.save
-    render json: @game
-  else
-    render json: {errors: {message: "This game failed to save"}}
-  end
-end
+
 
   def index
     if @user
       games = @user.games
     else
-     @games = Game.all
+     games = Game.all
   end
     render json: games
+  end
+
+  def create
+    @game = Game.new(game_params)
+    @game.user_id = @user.id
+    if @game.save
+      render json: @game
+    else
+      render json: {errors: {message: "This game failed to save"}}
+    end
   end
 
   def show

@@ -13,18 +13,21 @@ class GameContainer extends Component {
   // }
   //
   // componentDidUpdate(){
-  //   // this.props.fetchGames();
+  //   this.props.fetchGames();
   // }
 
   render (){
      console.log("GameProps",this.props)
     return(
       <div>
-      <div className="input">
-        <GameInput
-          addGame={this.props.addGame}
-          />
-      </div>
+      {(localStorage.getItem('jwtToken')) ?
+        <div className="input">
+          <GameInput
+            addGame={this.props.addGame}
+            />
+        </div>
+       : <h3 className="input"> Please Sign In to Add Create Your Account </h3> }
+
       <div className="sideBar">
         <Games games={this.props.games}
         deleteGame={this.props.deleteGame}

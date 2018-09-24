@@ -16,6 +16,7 @@ const Games = props => {
   } else {
   // debugger;
   // const onHandleDelete = (game) => props.deleteGame(game)
+  // debugger;
    games = props.games.map((game, index) => {
      // console.log("inside games - propobj", props);
     return (<Game  id={game.id} key={index} date={new Date(game.date).toLocaleDateString()} mode={game.mode} max_kills={game.max_kills} final_place={game.final_place}  comments={game.comments} game={game} deleteGame={props.deleteGame}/>)
@@ -44,7 +45,9 @@ const Games = props => {
             <th>Total Kills</th>
             <th>Place</th>
             <th>Comments</th>
-            <th>Delete</th>
+
+            {(localStorage.getItem('jwtToken')) ?   <th>Delete</th> : "" }
+
           </tr>
         </thead>
         <tbody>

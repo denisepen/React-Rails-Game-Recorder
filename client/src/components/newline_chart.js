@@ -8,7 +8,7 @@ const Chart = (props) => {
 
 
     const chartData = {
-      labels: props.gameIds.map(game => "Game"),
+      labels: props.gameIds.map(game => ""),
       // labels: props.duoData.map(data => data[1]),
       datasets: [
         {
@@ -50,8 +50,8 @@ const Chart = (props) => {
       lineTension: 0.5,
       backgroundColor: 'purple',
       borderColor: 'purple',
-      // data: props.duoData
-      data: props.duoData.map(data => data[0]),
+      data: props.duoData
+      // data: props.duoData.map(data => data[0]),
       },
       {
       label: 'Playground Kills',
@@ -71,7 +71,7 @@ const Chart = (props) => {
   return(
 
     <div className="chart">
-      <Line
+      <Scatter
       width={150} height={50}
         data={chartData}
 
@@ -108,8 +108,8 @@ const Chart = (props) => {
               ticks: {
                 // autoSkip: false,
 
-                min: 0,
-                max: 10,
+                // min: 0,
+                // max: 10,
                 // stepSize: 1
               },
             }],

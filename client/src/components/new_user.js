@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {  addUser } from '../actions/actions_users'
+import { Redirect } from 'react-router-dom'
 
 class NewUser extends Component {
   constructor (props) {
@@ -60,6 +61,10 @@ class NewUser extends Component {
   }
 
   render () {
+    if (localStorage.getItem('jwtToken')) {
+      // this.setState({jwt: localStorage.getItem('jwtToken')})
+      return <Redirect to='/' />
+    } else {
     return (
       <div>
 
@@ -80,6 +85,7 @@ class NewUser extends Component {
     </div>
 
     )
+  }
   }
 }
 

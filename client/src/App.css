@@ -1,8 +1,21 @@
-/* .App {
-  text-align: center;
+ .App {
+  /* text-align: center; */
+  margin-left:auto;
+  margin-right:auto;
 }
 
-ul.form li {
+body {
+  /* background-image: url(https://i0.wp.com/wallpapersfortech.com/wp-content/uploads/2018/01/2844B874-67B0-4E1D-969D-C614C125259C.jpeg?ssl=1);
+  background-repeat: no-repeat;
+  background-position: center; */
+  /* opacity: 0.5; */
+}
+
+div {
+  opacity: 1.0;
+}
+
+ ul.form li {
   display: inline-block;
   font-size: 12px;
   margin-left: 0;
@@ -11,28 +24,29 @@ ul.form li {
   padding-left: 0
 }
 
+
 p.gameMode {
   margin-bottom: 0;
   padding-bottom: 0;
   text-align: center;
   font-weight: bold;
-} */
+}
 
-/* table {
+ table {
   margin-left:auto; margin-right:auto;
 }
 
 td, th {
   vertical-align: middle;
   text-align: center;
-} */
+}
 
 td {
   /* margin-right: 20px; */
   /* padding-right: 20px; */
 }
 
-/* tr {
+ tr {
   margin-bottom: 50px;
   padding-bottom: 50px;
 }
@@ -46,7 +60,8 @@ svg {
 }
 
 .sideBar {
-  background-color: yellow;
+  /* background-color: yellow; */
+  padding-top: 20px;
   font-size: 10px;
   float: left;
   width: 45vw;
@@ -61,12 +76,14 @@ height: 50vh;
 }
 
 .about{
-  background-color: slategrey;
+  background-color: lightgrey;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .input {
-  background-color: mediumpurple;
+  /* background-color: mediumpurple; */
   float: right;
   width: 45vw;
   height: 90vh;
-} */
+}

@@ -17,7 +17,11 @@ const  Game = (props) => {
     <td> {props.max_kills} </td>
     <td> {props.final_place} </td>
     <td> {props.comments}</td>
-    <td><button onClick={ (e) => onClickHandler(e) }>Delete</button></td>
+
+    {(localStorage.getItem('jwtToken')) ?
+      // this.setState({jwt: localStorage.getItem('jwtToken')})
+      <td><button onClick={ (e) => onClickHandler(e) }>Delete</button></td> : ""
+     }
   </tr>)
 }
 

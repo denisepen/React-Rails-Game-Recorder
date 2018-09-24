@@ -28,6 +28,7 @@ class App extends Component {
      this.props.fetchGames();
   }
 
+  logout = () => {localStorage.removeItem("jwtToken")}
 
   render() {
     // console.log("Games:", this.state.games);
@@ -41,6 +42,7 @@ class App extends Component {
             <Route exact path="/stats" component={GameStats} />
             <Route exact path="/signup" component={NewUser} />
             <Route exact path='/signin' component={SignIn} />
+            <Route exact path='/logout' onClick={this.logout()} />
 
         </React.Fragment>
       </Router>
