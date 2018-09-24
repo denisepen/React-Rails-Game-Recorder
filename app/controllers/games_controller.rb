@@ -13,6 +13,11 @@ require 'pry'
     render json: games
   end
 
+  def all_games
+    games = Game.all
+    render json: games
+  end
+
   def create
     @game = Game.new(game_params)
     @game.user_id = @user.id
