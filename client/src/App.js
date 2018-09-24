@@ -7,10 +7,11 @@ import GameStats from './containers/game_stats'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Navbar from './components/navbar'
 import { connect } from 'react-redux';
-import {  fetchGames } from './actions/index'
+import {  fetchGames, getAllGames } from './actions/index'
 import NewUser from './components/new_user'
 import SignIn from './components/signin';
 import Logout from './components/logout'
+
 // import GameInput from './components/game_input'
 
 import './App.css';
@@ -20,13 +21,15 @@ class App extends Component {
     super(props);
 
     this.state = {
-      games: []
+      games: [],
+      allUserGames: []
     }
   }
 
 
   componentDidMount () {
      this.props.fetchGames();
+     this.props.getAllGames()
   }
 
 
@@ -56,6 +59,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchGames: () => {
       dispatch(fetchGames())
+    },
+    getAllGames: () => {
+      dispatch(getAllGames())
     },
   }
 }

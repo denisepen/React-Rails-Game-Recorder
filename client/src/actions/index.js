@@ -22,6 +22,28 @@ export function fetchGames() {
     }
   }
 
+  export function getAllGames() {
+    // console.log("headers", localStorage.jwtToken);
+    const request = {
+      method: 'GET',
+      // mode: 'no-cors',
+      credentials: "same-origin",
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
+      }
+    };
+    return function (dispatch){
+      // debugger;
+       return fetch('/all_games', request)
+             .then(response => response.json())
+             // .then(res => console.log("Game just fetched:", res))
+              .then(games => {
+                dispatch({ type: 'GET_ALL_USER_GAMES', games})
+            })
+      }
+    }
+
 
 export function addGame(game) {
 

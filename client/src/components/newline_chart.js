@@ -13,8 +13,8 @@ const Chart = (props) => {
       datasets: [
         {
       label: 'Solo',
-      pointHoverBackgroundColor: 'gray',
-      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'red',
+      pointHoverRadius: 6,
       fill: false,
       lineTension: 0.5,
       backgroundColor: 'red',
@@ -24,7 +24,7 @@ const Chart = (props) => {
         },
         {
         label: 'Squad',
-        pointHoverBackgroundColor: 'gray',
+        pointHoverBackgroundColor: 'orange',
         pointHoverRadius: 5,
         fill: false,
         lineTension: 0.5,
@@ -34,8 +34,8 @@ const Chart = (props) => {
       },
       {
       label: '50v50',
-      pointHoverBackgroundColor: 'gray',
-      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'green',
+      pointHoverRadius: 4,
       fill: false,
       lineTension: 0.5,
       backgroundColor: 'green',
@@ -44,8 +44,8 @@ const Chart = (props) => {
       },
       {
       label: 'Duo',
-      pointHoverBackgroundColor: 'gray',
-      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'purple',
+      pointHoverRadius: 3,
       fill: false,
       lineTension: 0.5,
       backgroundColor: 'purple',
@@ -55,8 +55,8 @@ const Chart = (props) => {
       },
       {
       label: 'Playground',
-      pointHoverBackgroundColor: 'gray',
-      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'blue',
+      pointHoverRadius: 8,
       fill: false,
       lineTension: 0.5,
       backgroundColor: 'blue',

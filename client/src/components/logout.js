@@ -11,7 +11,7 @@ export default  () => {
     { (localStorage.getItem('jwtToken')) ?
         <div>
           <h1> Please Visit Again and Save More Games</h1>
-          <button onClick={logout()}>
+          <button onClick={logout}>
             Logout
           </button>
           </div>

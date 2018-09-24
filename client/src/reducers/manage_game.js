@@ -1,11 +1,14 @@
 
 // const initState = {games: []};
 
-const initState = {games: [], users:[], user: {}};
+const initState = {games: [], users:[], user: {}, allUserGames: []};
 export default function manageGame(state = initState, action) {
   console.log("Games Action:", action)
   console.log("Games State:", state)
   switch (action.type) {
+
+    case 'GET_ALL_USER_GAMES':
+      return {...state, allUserGames: state.allUserGames.concat(action.games)}
 
     case 'ADD_GAME':
       console.log("Add Action:", action);
