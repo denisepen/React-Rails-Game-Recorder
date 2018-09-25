@@ -4,6 +4,9 @@ const  Game = (props) => {
   // console.log('inside game', props);
   // const deleteGame = props.deleteGame;
 
+  // console.log("GameProps: ", props);
+  console.log("Inside Game: ", props);
+// debugger
   const onClickHandler = (e) => {
     e.preventDefault();
     // console.log(this);
@@ -11,14 +14,14 @@ const  Game = (props) => {
   }
   return (<tr >
 
-
     <td> {props.date} </td>
+    <td> {props.user.name} </td>
     <td> {props.mode} </td>
     <td> {props.max_kills} </td>
     <td> {props.final_place} </td>
     <td> {props.comments}</td>
 
-    {(localStorage.getItem('jwtToken')) ?
+    {(localStorage.getItem('jwtToken') && (props.user.id === props.user.id)) ?
       // this.setState({jwt: localStorage.getItem('jwtToken')})
       <td><button onClick={ (e) => onClickHandler(e) }>Delete</button></td> : ""
      }

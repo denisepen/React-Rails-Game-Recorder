@@ -16,8 +16,11 @@ class GameContainer extends Component {
   //   this.props.fetchGames();
   // }
 
+
+
   render (){
-     console.log("GameProps",this.props)
+     // console.log("GameProps",this.props)
+     console.log("Game Container Props: ", this.props);
     return(
       <div>
       {(localStorage.getItem('jwtToken')) ?
@@ -31,6 +34,7 @@ class GameContainer extends Component {
       <div className="sideBar">
         <Games games={this.props.games}
         deleteGame={this.props.deleteGame}
+        current_user={this.props.current_user}
         />
       </div>
 
@@ -43,8 +47,9 @@ class GameContainer extends Component {
 
 const mapStateToProps = (state) => {
   console.log("propsstate:", state)
-  return {games: state.games, user: state.user};
+  return {games: state.games, current_user: state.user};
 }
+
 
 const mapDispatchToProps = dispatch => {
   return {

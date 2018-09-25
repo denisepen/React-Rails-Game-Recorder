@@ -4,12 +4,7 @@ import Game from './game'
 let games;
 const Games = props => {
 
-  // const shouldComponentUpdate = (props) => {
-  //   return (props.games.filter(game => {
-  //     return game.id === (undefined || null)
-  //   })
-  //   )
-  // }
+console.log("inside games - propobj", props);
 
   if (!props.games){
     return  games = (<p>Please Add a game</p>)
@@ -18,8 +13,10 @@ const Games = props => {
   // const onHandleDelete = (game) => props.deleteGame(game)
   // debugger;
    games = props.games.map((game, index) => {
-     // console.log("inside games - propobj", props);
-    return (<Game  id={game.id} key={index} date={new Date(game.date).toLocaleDateString()} mode={game.mode} max_kills={game.max_kills} final_place={game.final_place}  comments={game.comments} game={game} deleteGame={props.deleteGame}/>)
+
+    return (<Game  current_user={props.current_user}
+              user={game.user}
+      id={game.id} key={index} date={new Date(game.date).toLocaleDateString()} mode={game.mode} max_kills={game.max_kills} final_place={game.final_place}  comments={game.comments} game={game} deleteGame={props.deleteGame}/>)
   }
 
 //
@@ -41,6 +38,7 @@ const Games = props => {
       <thead>
           <tr>
             <th>Date</th>
+            <th>Player</th>
             <th>Game Mode</th>
             <th>Total Kills</th>
             <th>Place</th>

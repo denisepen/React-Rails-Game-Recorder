@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
   render () {
     return(
       <div className="sideBar">
-        <Games games={this.props.games}
+        <Games games={this.props.games} current_user={this.props.current_user}
         />
       </div>
     )
@@ -18,7 +18,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   console.log("ALLUSERGAMESstate:", state)
-  return {games: state.allUserGames};
+  return {games: state.allUserGames, current_user: state.user};
 }
 
 // const mapStateToProps = dispatch => {

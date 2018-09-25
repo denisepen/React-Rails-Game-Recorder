@@ -20,10 +20,10 @@ class App extends Component {
   constructor (props) {
     super(props);
 
-    this.state = {
-      games: [],
-      allUserGames: []
-    }
+    // this.state = {
+    //   games: [],
+    //   allUserGames: []
+    // }
   }
 
 
