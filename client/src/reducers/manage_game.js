@@ -18,7 +18,7 @@ export default function manageGame(state = initState, action) {
        // debugger;
         console.log("DeletedGames:", action);
         // return {...state, games: state.games.concat(action.game) };
-        return {games: state.games.filter(game => game.id !== action.game.id) }
+        return {...state, games: state.games.filter(game => game.id !== action.game.id) }
 
     case 'FETCH_GAMES':
         console.log("Fetch Action:", action);
@@ -31,11 +31,9 @@ export default function manageGame(state = initState, action) {
           // console.log("User state:", state)
           // console.log(" User Action Signing up:", action);
 
+          return { ...state, users: state.users.concat(action.newUser), user: Object.assign({}, state.user, action.newUser.user) };
           // return { ...state, users: state.users.concat(action.newUser), user: action.newUser.user };
-          return { ...state, users: state.users.concat(action.newUser), user: action.newUser.user };
           // console.log("Just added user: ", state);
-
-
 
           case 'FIND_USER':
             console.log("Found User state:", state)

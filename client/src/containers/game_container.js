@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import GameInput from '../components/game_input'
 import Games from '../components/games'
 import {  addGame, fetchGames, deleteGame} from '../actions/index'
+import { authenticate } from '../actions/actions_users'
 
 
 class GameContainer extends Component {
@@ -11,6 +12,7 @@ class GameContainer extends Component {
   //
   componentDidMount(){
     localStorage.getItem('jwtToken') ? this.props.fetchGames() : <h2> XXXXXXXX </h2>
+    this.props.authenticate()
 
        // this.props.fetchGames()
 
@@ -73,9 +75,12 @@ const mapDispatchToProps = dispatch => {
       dispatch(fetchGames())
     },
     // delete: (game) => dispatch({type: 'DELETE_GAME', payload: game })
-      deleteGame: (game) => {
-        dispatch(deleteGame(game))
-      }
+    deleteGame: (game) => {
+      dispatch(deleteGame(game))
+    },
+    authenticate: () => {
+      dispatch(authenticate())
+      },
   }
 }
 // ({

@@ -30,10 +30,7 @@ class App extends Component {
 
   componentDidMount () {
      this.props.getAllGames();
-     this.props.authenticate()
-     // if(localStorage.getItem('jwtToken')){
-       // this.props.fetchGames()
-     // }
+     this.props.authenticate();
   }
 
 
