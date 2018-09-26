@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {  addUser } from '../actions/actions_users'
+import {  addUser, authenticate } from '../actions/actions_users'
 import { Redirect } from 'react-router-dom'
 
 class NewUser extends Component {
@@ -22,17 +22,20 @@ class NewUser extends Component {
   event.preventDefault();
   const user = this.state
   this.props.addUser(user)
-  console.log("onsubmit user state:", this.state);
+  if (this.props.authenticate()){
 
-  this.setState({
-    name: '',
-    gamer_tag: '',
-    email: '',
-    password: '',
-  })
+    <Redirect to='/' />
+    this.setState({
+      name: '',
+      gamer_tag: '',
+      email: '',
+      password: '',
+    })
+    console.log("onsubmit user state:", this.state);
+  } else {
+    alert("Please Sign In")
+  }
 
-
-  // console.log("state:", this.state)
 
 }
 
@@ -93,7 +96,10 @@ const mapDispatchToProps = dispatch => {
   return {
     addUser: (user) => {
       dispatch(addUser(user))
-    }
+    },
+    authenticate: () => {
+      dispatch(authenticate())
+    },
   }
 }
 

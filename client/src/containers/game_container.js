@@ -24,7 +24,7 @@ class GameContainer extends Component {
 
   render (){
     console.log("Container Props: ", this.props);
-    if (this.props){
+    if (this.props.current_user.id){
       return(
         <div>
           <div className="input">
@@ -48,9 +48,7 @@ class GameContainer extends Component {
       else {
         return (
           <div className="input">
-          <GameInput
-            addGame={this.props.addGame}
-            />
+          <h1>Please Login To Begin Saving Your Games </h1>
         </div>
       )
       }

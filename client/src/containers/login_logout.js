@@ -10,13 +10,11 @@ class LoginLogout extends Component{
 
   render(){
     if (localStorage.getItem('jwtToken')){
-      this.props.authenticate()
+      // this.props.authenticate()
       return (<div><Logout /></div>)
     } else {
       return (<div><NewUser /> <SignIn /></div>)
     }
-      // localStorage.getItem('jwtToken') ? return (<div><Logout /></div>) : return (<div><NewUser /> <SignIn /></div>)
-
   }
 }
 

@@ -8,10 +8,10 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Navbar from './components/navbar'
 import { connect } from 'react-redux';
 import {  fetchGames, getAllGames } from './actions/index'
-import NewUser from './components/new_user'
+// import NewUser from './components/new_user'
 import AllGames from './components/allgames'
-import SignIn from './components/signin';
-import Logout from './components/logout'
+// import SignIn from './components/signin';
+// import Logout from './components/logout'
 import { authenticate } from './actions/actions_users';
 import LoginLogout from './containers/login_logout';
 

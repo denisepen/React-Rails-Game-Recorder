@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
       else
         render json: {errors: {message: "This user failed to save"}}
+      #   render json: {errors: {message: "This user failed to save"}}
       end
     end
 

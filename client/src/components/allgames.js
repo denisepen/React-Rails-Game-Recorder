@@ -1,4 +1,4 @@
-import React, { Component } from 'react';import {  addGame, fetchGames, deleteGame} from '../actions/index'
+import React, { Component } from 'react';import { deleteGame} from '../actions/index'
 import Games from './games'
 import { connect } from 'react-redux';
 

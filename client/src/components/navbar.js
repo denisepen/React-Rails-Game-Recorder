@@ -40,8 +40,8 @@ import { NavLink } from 'react-router-dom';
         activeStyle={{
           background: 'yellow'
         }}
-        >  Sign In  </NavLink>
-        
+        >  Login  </NavLink>
+
   </div>;
 
   export default Navbar
