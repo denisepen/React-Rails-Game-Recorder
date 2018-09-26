@@ -61,9 +61,9 @@ svg {
 
 .sideBar {
   /* background-color: yellow; */
-  padding-top: 20px;
+  padding-top: 10px;
   font-size: 10px;
-  float: left;
+  float: right;
   width: 45vw;
   height: 90vh;
 }
@@ -83,7 +83,7 @@ height: 50vh;
 
 .input {
   /* background-color: mediumpurple; */
-  float: right;
-  width: 45vw;
-  height: 90vh;
+  /* float: right; */
+  width: 55vw;
+  height: 30vh;
 }

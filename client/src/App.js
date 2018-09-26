@@ -12,7 +12,8 @@ import NewUser from './components/new_user'
 import AllGames from './components/allgames'
 import SignIn from './components/signin';
 import Logout from './components/logout'
-import { authenticate } from './actions/actions_users'
+import { authenticate } from './actions/actions_users';
+import LoginLogout from './containers/login_logout';
 
 // import GameInput from './components/game_input'
 
@@ -39,13 +40,13 @@ class App extends Component {
       <Router>
         <React.Fragment>
             <Navbar />
+              <h1>Welcome </h1>
             <Route exact path="/" component={About} />
             <Route exact path="/new" component={GameContainer} />
             <Route exact path="/stats" component={GameStats} />
-            <Route exact path="/signup" component={NewUser} />
-            <Route exact path='/signin' component={SignIn} />
-            <Route exact path='/logout' component={Logout} />
+            <Route exact path="/signin" component={LoginLogout} />
             <Route exact path='/allgames' component={AllGames} />
+
         </React.Fragment>
       </Router>
     );

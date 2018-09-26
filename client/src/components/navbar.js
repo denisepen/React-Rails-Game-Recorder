@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
       activeStyle={{
         background: 'yellow'
       }}
-    >Home</NavLink>
+    >  Home  </NavLink>
 
     <NavLink
       to="/allgames"
@@ -17,7 +17,7 @@ import { NavLink } from 'react-router-dom';
       activeStyle={{
         background: 'yellow'
       }}
-    > All Games </NavLink>
+    >  All Games  </NavLink>
 
     <NavLink
       to="/new"
@@ -25,7 +25,7 @@ import { NavLink } from 'react-router-dom';
       activeStyle={{
         background: 'yellow'
       }}
-    >New</NavLink>
+    >  New  </NavLink>
 
     <NavLink
       to="/stats"
@@ -35,26 +35,13 @@ import { NavLink } from 'react-router-dom';
       }}
       >Stats</NavLink>
       <NavLink
-        to="/signup"
+        to="/signin"
         exact
         activeStyle={{
           background: 'yellow'
         }}
-        >Sign Up</NavLink>
-        <NavLink
-            to="/signin"
-            exact
-            activeStyle={{
-              background: 'yellow'
-            }}
-            >Sign In</NavLink>
-            <NavLink
-                to="/logout"
-                exact
-                activeStyle={{
-                  background: 'yellow'
-                }}
-                >Logout</NavLink>
+        >  Sign In  </NavLink>
+        
   </div>;
 
   export default Navbar

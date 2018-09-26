@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
+import { authenticate } from '../actions/actions_users'
+import { connect } from 'react-redux';
 
-export default  () => {
-
-  
-  const logout = () => {localStorage.removeItem("jwtToken")}
+class Logout extends Component {
 
 
+  log = () => {localStorage.removeItem("jwtToken")
+                this.props.authenticate();
+                <Redirect to="/"/>}
+
+render () {
   return (
-<div className="logout">
-    { (localStorage.getItem('jwtToken')) ?
-        <div>
-          <h1> Please Visit Again and Save More Games</h1>
-          <button onClick={logout}>
-            Logout
-          </button>
-          </div>
-     : <Redirect to='/' /> }
+    <div className="logout">
+      <button onClick={this.log}>
+        Logout
+      </button>
     </div>
    )
+ }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    authenticate: () => {
+      dispatch(authenticate())
+    },
+  }
+}
+
+
+export default connect(null, mapDispatchToProps)(Logout)
