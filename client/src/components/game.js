@@ -5,13 +5,14 @@ const  Game = (props) => {
   // const deleteGame = props.deleteGame;
 
   // console.log("GameProps: ", props);
-  console.log("Inside Game: ", props);
+  console.log("Inside Game: ", (props.current_user.id === props.game.user.id));
 // debugger
   const onClickHandler = (e) => {
     e.preventDefault();
     // console.log(this);
      props.deleteGame(props.game)
   }
+
   return (<tr >
 
     <td> {props.date} </td>
@@ -21,7 +22,7 @@ const  Game = (props) => {
     <td> {props.final_place} </td>
     <td> {props.comments}</td>
 
-    {(localStorage.getItem('jwtToken') && (props.user.id === props.user.id)) ?
+    {(localStorage.getItem('jwtToken') && (props.current_user.id === props.game.user.id)) ?
       // this.setState({jwt: localStorage.getItem('jwtToken')})
       <td><button onClick={ (e) => onClickHandler(e) }>Delete</button></td> : ""
      }

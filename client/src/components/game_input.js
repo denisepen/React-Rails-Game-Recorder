@@ -4,8 +4,6 @@ export default class GameInput extends Component {
   constructor(props){
     super(props);
 
-
-
     this.state={
       date: '',
       mode: '',
@@ -149,24 +147,3 @@ handleCommentsChange = (e) => {
     )
   }
 }
-
-// Mode: <input type="text" onChange={(e) => this.handleModeChange(e)} value={this.state.mode}/> {this.state.mode}<br/>
-  // value={this.state.mode}
-
-  // checked={this.state.winner === "Winner"}
-
-  // <label>
-  // 1st Place?
-  //   <input type="checkbox"
-  //   onChange={(e) => this.handleWinnerChange(e)}
-  //   value={ "Winner"}
-  //   checked={this.state.victory === "Winner" }
-  //
-  //
-  //   /> <br/>
-  // </label>
-  // handleWinnerChange = (e) => {
-  //   this.setState(
-  //        {victory: e.target.value}
-  //   )
-  // }

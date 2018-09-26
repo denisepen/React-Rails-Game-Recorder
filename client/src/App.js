@@ -11,6 +11,7 @@ import {  fetchGames, getAllGames } from './actions/index'
 import NewUser from './components/new_user'
 import SignIn from './components/signin';
 import Logout from './components/logout'
+import { authenticate } from './actions/actions_users'
 
 // import GameInput from './components/game_input'
 
@@ -28,8 +29,11 @@ class App extends Component {
 
 
   componentDidMount () {
-     this.props.fetchGames();
-     this.props.getAllGames()
+     this.props.getAllGames();
+     this.props.authenticate()
+     // if(localStorage.getItem('jwtToken')){
+       // this.props.fetchGames()
+     // }
   }
 
 
@@ -62,6 +66,9 @@ const mapDispatchToProps = dispatch => {
     },
     getAllGames: () => {
       dispatch(getAllGames())
+    },
+    authenticate: () => {
+      dispatch(authenticate())
     },
   }
 }

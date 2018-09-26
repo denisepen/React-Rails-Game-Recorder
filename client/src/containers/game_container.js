@@ -7,39 +7,52 @@ import {  addGame, fetchGames, deleteGame} from '../actions/index'
 
 class GameContainer extends Component {
 
-  // componentWillMount () {
-  //   // GameService.fetchGames().then(games => this.setState({ games }) )
-  //   this.props.fetchGames();
-  // }
-  //
-  // componentDidUpdate(){
-  //   this.props.fetchGames();
-  // }
 
+  //
+  componentDidMount(){
+    localStorage.getItem('jwtToken') ? this.props.fetchGames() : <h2> XXXXXXXX </h2>
+
+       // this.props.fetchGames()
+
+  }
+  //
+  // componentWillUnmount(){
+  //   this.props.games = []
+  // }
 
 
   render (){
-     // console.log("GameProps",this.props)
-     console.log("Game Container Props: ", this.props);
-    return(
-      <div>
-      {(localStorage.getItem('jwtToken')) ?
-        <div className="input">
+    console.log("Container Props: ", this.props);
+    if (this.props){
+      return(
+        <div>
+          <div className="input">
+            <GameInput
+              addGame={this.props.addGame}
+              />
+          </div>
+
+
+        <div className="sideBar">
+          <Games games={this.props.games}
+          deleteGame={this.props.deleteGame}
+          current_user={this.props.current_user}
+          />
+        </div>
+
+        </div>
+      )
+    }
+
+      else {
+        return (
+          <div className="input">
           <GameInput
             addGame={this.props.addGame}
             />
         </div>
-       : <h3 className="input"> Please Sign In to Add Create Your Account </h3> }
-
-      <div className="sideBar">
-        <Games games={this.props.games}
-        deleteGame={this.props.deleteGame}
-        current_user={this.props.current_user}
-        />
-      </div>
-
-      </div>
-    )
+      )
+      }
   }
 }
 

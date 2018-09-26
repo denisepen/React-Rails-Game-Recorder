@@ -1,3 +1,25 @@
+export function authenticate() {
+  return function (dispatch){
+    const request = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
+      }
+    };
+    // debugger;
+    console.log("Authenticate: ", request);
+     return fetch('/authenticate', request)
+           .then(response => response.json())
+           // .then(res => console.log("Game just fetched:", res))
+            .then(user => {
+              dispatch({ type: 'AUTH_USER', user})
+          })
+    }
+  }
+
+
+
 export function fetchUsers() {
   return function (dispatch){
     const request = {

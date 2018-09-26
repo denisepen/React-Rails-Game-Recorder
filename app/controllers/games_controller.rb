@@ -5,11 +5,11 @@ require 'pry'
 
 
   def index
-    if @user
+    # if @user
       games = @user.games
-    else
-     games = Game.all
-  end
+  #   else
+  #    games = Game.all
+  # end
     render json: games
   end
 
