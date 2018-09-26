@@ -12,6 +12,14 @@ import { NavLink } from 'react-router-dom';
     >Home</NavLink>
 
     <NavLink
+      to="/allgames"
+      /* add prop for activeStyle */
+      activeStyle={{
+        background: 'yellow'
+      }}
+    > All Games </NavLink>
+
+    <NavLink
       to="/new"
       exact
       activeStyle={{

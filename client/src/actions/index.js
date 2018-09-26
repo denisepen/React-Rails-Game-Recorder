@@ -80,11 +80,11 @@ export function addGame(game) {
           };
           console.log(request);
           return (dispatch) => {
-            // console.log("inside delete actions", game);
+            console.log("inside delete actions", game);
             return  fetch(`games/${game.id}`, {method: 'DELETE'} )
                     // .then(response => console.log(response.json()))
-                     // .then(data => console.log("Inside Actions:", data))
-                     .then(newGame => dispatch({ type: 'DELETE_GAME', game})
-                   )
+                     // .then(data => console.log("Inside Delete Actions:", data))
+                     .then(newGame => dispatch({ type: 'DELETE_GAME', game}))
+
           }
         }

@@ -2,9 +2,7 @@ import React from 'react';
 
 const  Game = (props) => {
   // console.log('inside game', props);
-  // const deleteGame = props.deleteGame;
 
-  // console.log("GameProps: ", props);
   console.log("Inside Game: ", (props.current_user.id === props.game.user.id));
 // debugger
   const onClickHandler = (e) => {

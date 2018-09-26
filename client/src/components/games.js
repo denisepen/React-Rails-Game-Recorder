@@ -7,9 +7,9 @@ import Game from './game';
 // console.log("inside games - propobj", props);
 
 class Games extends Component {
-  constructor(props){
-    super(props);
-  }
+  // constructor(props){
+  //   super(props);
+  // }
 
 
 // let games;

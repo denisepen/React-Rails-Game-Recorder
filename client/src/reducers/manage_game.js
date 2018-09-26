@@ -12,13 +12,13 @@ export default function manageGame(state = initState, action) {
 
     case 'ADD_GAME':
       console.log("Add Action:", action);
-      return { ...state, games: state.games.concat(action.newGame)};
+      return { ...state, games: state.games.concat(action.newGame), allUserGames: state.allUserGames.concat(action.newGame) };
 
     case 'DELETE_GAME':
        // debugger;
         console.log("DeletedGames:", action);
         // return {...state, games: state.games.concat(action.game) };
-        return {...state, games: state.games.filter(game => game.id !== action.game.id) }
+        return {...state, games: state.games.filter(game => game.id !== action.game.id), allUserGames: state.allUserGames.filter(game => game.id !== action.game.id) }
 
     case 'FETCH_GAMES':
         console.log("Fetch Action:", action);
@@ -54,7 +54,7 @@ export default function manageGame(state = initState, action) {
               return { ...state, users: state.users.concat(action.users)};
 
 
-              console.log("Added to user: ", state.user);
+              // console.log("Added to user: ", state.user);
     default:
       return state;
   }

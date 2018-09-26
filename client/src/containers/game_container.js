@@ -12,9 +12,8 @@ class GameContainer extends Component {
   //
   componentDidMount(){
     localStorage.getItem('jwtToken') ? this.props.fetchGames() : <h2> XXXXXXXX </h2>
+    // this.props.authenticate() ? this.props.fetchGames() : <h2> XXXXXXXX </h2>
     this.props.authenticate()
-
-       // this.props.fetchGames()
 
   }
   //
