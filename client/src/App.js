@@ -13,6 +13,7 @@ import AllGames from './components/allgames'
 // import Logout from './components/logout'
 import { authenticate } from './actions/actions_users';
 import LoginLogout from './containers/login_logout';
+import Welcome from './components/welcome'
 
 // import GameInput from './components/game_input'
 
@@ -39,7 +40,7 @@ class App extends Component {
       <Router>
         <React.Fragment>
             <Navbar authenticate={this.props.authenticate}/>
-              <h1>Welcome {this.props.authenticate ?  this.props.current_user.name : ""} </h1>
+            <Welcome user={this.props.current_user} />
             <Route exact path="/" component={About} />
             <Route exact path="/new" component={GameContainer} />
             <Route exact path="/stats" component={GameStats} />

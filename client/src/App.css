@@ -4,6 +4,24 @@
   margin-right:auto;
 }
 
+/* nav {
+  padding-bottom: 30px;
+  text-align: center;
+  /* position: fixed; */
+/* }  */
+
+ul {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+li {
+  margin: 0 8px;
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+}
+
 body {
   /* background-image: url(https://i0.wp.com/wallpapersfortech.com/wp-content/uploads/2018/01/2844B874-67B0-4E1D-969D-C614C125259C.jpeg?ssl=1);
   background-repeat: no-repeat;

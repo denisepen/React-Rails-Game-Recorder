@@ -11,11 +11,9 @@ class GameStats extends Component {
     super(props)
   }
 
-// componentWillMount() {
-//   if(this.props.authenticate) {
-//     this.props.fetchGames()
-//   }
-// }
+componentWillMount() {
+  this.props.authenticate
+}
 
 createTotalGames(){
   const total = this.props.games.length;
@@ -128,9 +126,9 @@ console.log("PG Kills", playgroundKills);
 
   render () {
     // debugger
-    // if(!this.props.games) {
-    //   this.props.fetchGames();
-    // }
+    if(this.props.user.name) {
+      this.props.fetchGames();
+    }
     console.log("Game Charts User props ", this.props);
     return (
 
