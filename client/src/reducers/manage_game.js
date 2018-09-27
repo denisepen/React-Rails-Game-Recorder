@@ -47,6 +47,11 @@ export default function manageGame(state = initState, action) {
 
               return { ...state, user: Object.assign({}, state.user, action.user) };
 
+              case 'Logout_USER':
+                console.log("Auth User state:", state)
+                console.log("Auth User Action:", action);
+
+                return { ...state, user: Object.assign({}, state.user, action.user) };
 
           case 'FETCH_USERS':
               console.log("Fetch User State:", state);

@@ -15,7 +15,12 @@ export function authenticate() {
             .then(user => {
               dispatch({ type: 'AUTH_USER', user})
           })
+          .catch(err => alert("Enjoy Your Day!"))
         }
+      }
+
+  export function logout() {
+    return ({ type: 'LOGOUT_USER', user: {}})
   }
 
 

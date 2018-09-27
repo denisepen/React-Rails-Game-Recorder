@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Navbar from './components/navbar'
 import { connect } from 'react-redux';
 import {  fetchGames, getAllGames } from './actions/index'
-// import NewUser from './components/new_user'
 import AllGames from './components/allgames'
 // import SignIn from './components/signin';
 // import Logout from './components/logout'
@@ -39,8 +38,8 @@ class App extends Component {
 
       <Router>
         <React.Fragment>
-            <Navbar />
-              <h1>Welcome </h1>
+            <Navbar authenticate={this.props.authenticate}/>
+              <h1>Welcome {this.props.authenticate ?  this.props.current_user.name : ""} </h1>
             <Route exact path="/" component={About} />
             <Route exact path="/new" component={GameContainer} />
             <Route exact path="/stats" component={GameStats} />
@@ -67,6 +66,11 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect (null, mapDispatchToProps)(App);
+const mapStateToProps = (state) => {
+  return { current_user: state.user};
+}
 
+export default connect (mapStateToProps, mapDispatchToProps)(App);
+
+// render={()=> localStorage.getItem("jwtToken") ? <GameContainer /> : <About />}
 // <Route exact path='/logout' render={this.logout()} />

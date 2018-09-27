@@ -3,27 +3,19 @@ import { connect } from 'react-redux';
 import Chart from '../components/newline_chart'
 import { fetchGames } from '../actions/index'
 import PieChart from '../components/pie_chart'
+import { authenticate } from '../actions/actions_users'
 
 
 class GameStats extends Component {
   constructor (props) {
     super(props)
-  //
-  //   // this.state = props
-  //   // this.props.fetchGames();
   }
 
 // componentWillMount() {
-//   this.props.fetchGames();
-//   this.renderCharts()
+//   if(this.props.authenticate) {
+//     this.props.fetchGames()
+//   }
 // }
-
-// componentWillUnmount () {
-//   this.props = {games: []}
-// }
-
-// const total = this.props.games.length
-// console.log(this.props.games.length);
 
 createTotalGames(){
   const total = this.props.games.length;
@@ -120,7 +112,7 @@ console.log("PG Kills", playgroundKills);
      return (game.final_place)
      });
 
-    
+
  return (
 
    <div>
@@ -136,7 +128,9 @@ console.log("PG Kills", playgroundKills);
 
   render () {
     // debugger
-
+    // if(!this.props.games) {
+    //   this.props.fetchGames();
+    // }
     console.log("Game Charts User props ", this.props);
     return (
 
@@ -147,37 +141,8 @@ console.log("PG Kills", playgroundKills);
         <br/>
         {this.createModeCharts()}
       </div>
-
-
-      // <div>
-      //
-      //
-      //
-      //   <div>
-      //     {this.createPieChart()}
-      //   </div>
-      //     <br/>
-      //
-      //  <table className="table table-hover">
-      //    <thead>
-      //      <tr>
-      //       <th>  </th>
-      //        <th> </th>
-      //        <th>  </th>
-      //        <th> </th>
-      //        <th>  </th>
-      //           <th>  </th>
-      //      </tr>
-      //    </thead>
-      //
-      //    {this.createModeCharts()}
-      //
-      //  </table>
-      // </div>
     );
   }
-
-
 }
 
 const mapDispatchToProps = dispatch => {
@@ -185,7 +150,10 @@ const mapDispatchToProps = dispatch => {
 
     fetchGames: () => {
       dispatch(fetchGames())
-    }
+    },
+    authenticate: () => {
+      dispatch(authenticate())
+    },
   }
 }
 

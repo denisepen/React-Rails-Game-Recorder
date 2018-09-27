@@ -5,10 +5,14 @@ import { connect } from 'react-redux';
 
 class Logout extends Component {
 
+  componentDidMount(){
+    this.props.authenticate()
+  }
+
 
   log = () => {localStorage.removeItem("jwtToken")
                 this.props.authenticate();
-                <Redirect to="/"/>}
+              return  <Redirect to="/"/>}
 
 render () {
   return (

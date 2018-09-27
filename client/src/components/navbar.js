@@ -1,21 +1,28 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
- const Navbar = () =>
+ const Navbar = (props) => {
+
+ const componentDidMount = (props) => {
+   props.authenticate()
+ }
+ return(
   <div>
     <NavLink
       to="/"
       /* add prop for activeStyle */
       activeStyle={{
-        background: 'yellow'
-      }}
+        fontWeight: 'bold',
+        color: 'red'
+      }} exact
     >  Home  </NavLink>
 
     <NavLink
       to="/allgames"
       /* add prop for activeStyle */
       activeStyle={{
-        background: 'yellow'
+        fontWeight: 'bold',
+        color: 'red'
       }}
     >  All Games  </NavLink>
 
@@ -23,7 +30,8 @@ import { NavLink } from 'react-router-dom';
       to="/new"
       exact
       activeStyle={{
-        background: 'yellow'
+        fontWeight: 'bold',
+        color: 'red'
       }}
     >  New  </NavLink>
 
@@ -31,17 +39,19 @@ import { NavLink } from 'react-router-dom';
       to="/stats"
       exact
       activeStyle={{
-        background: 'yellow'
+        fontWeight: 'bold',
+        color: 'red'
       }}
       >Stats</NavLink>
       <NavLink
         to="/signin"
         exact
         activeStyle={{
-          background: 'yellow'
+          fontWeight: 'bold',
+          color: 'red'
         }}
-        >  Login  </NavLink>
+        >{localStorage.getItem("jwtToken") ? "Logout" : "Login"}</NavLink>
 
-  </div>;
+  </div>)}
 
   export default Navbar

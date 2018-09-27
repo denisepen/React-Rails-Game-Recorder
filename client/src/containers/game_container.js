@@ -16,10 +16,6 @@ class GameContainer extends Component {
     this.props.authenticate()
 
   }
-  //
-  // componentWillUnmount(){
-  //   this.props.games = []
-  // }
 
 
   render (){
