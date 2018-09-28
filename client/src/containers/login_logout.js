@@ -4,6 +4,9 @@ import  NewUser  from '../components/new_user';
 import  Logout  from '../components/logout';
 import { authenticate, logout } from '../actions/actions_users'
 import { connect } from 'react-redux';
+import Player from '../components/player'
+import { deleteGame } from '../actions/index';
+import Games from '../components/games'
 
 // import { Redirect } from 'react-router'
 
@@ -15,6 +18,7 @@ class LoginLogout extends Component{
       return (
         <div>{this.props.authenticate}
           <Logout logout={this.props.logout} />
+          <Player user={this.props.user}/>
 
         </div>)
     } else {
@@ -30,8 +34,21 @@ const mapDispatchToProps = dispatch => {
     },
     logout: () => {
       dispatch(logout())
-    }
-  }
+    },
+    deleteGame: (game) => {
+      dispatch(deleteGame(game))
+    }}
+
 }
 
-export default connect(null, mapDispatchToProps)(LoginLogout)
+function mapStateToProps(state){
+  // debugger;
+  return {games: state.games, user: state.user}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginLogout)
+
+// <Games games={this.props.games}
+// deleteGame={this.props.deleteGame}
+// current_user={this.props.current_user}
+// />

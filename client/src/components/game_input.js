@@ -16,17 +16,22 @@ export default class GameInput extends Component {
   handleSubmit = event => {
   event.preventDefault();
   const game = this.state
-  this.props.addGame(game)
-  console.log("onsubmit state:", this.state);
 
-  this.setState({
-    gameId: '',
-    // date: '',
-    mode: '',
-    max_kills: '',
-    final_place: '',
-    comments: ''
-  })
+  if((this.state.date === "") || (!this.state.mode)){
+    alert("Game Date and Game Mode are required!")
+  } else {
+    this.props.addGame(game)
+    console.log("onsubmit state:", this.state);
+
+    this.setState({
+      gameId: '',
+      // date: '',
+      mode: '',
+      max_kills: '',
+      final_place: '',
+      comments: ''
+    }) }
+
 
   // below was created before ading api
   // this.props.addGame(this.state)

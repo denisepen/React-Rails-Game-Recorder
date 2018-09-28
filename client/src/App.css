@@ -11,10 +11,23 @@
     left: 50%;
 } */
 
+ div.player{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+button {
+  border-radius: 6px;
+  font-size: 75%;
+  background-color: #5491f2
+}
+
 button.logout {
-  position:absolute;
+    position:absolute;
+    margin-top: 10px;
     transition: .5s ease;
     right: 50%;
+    padding: 10px 30px;
     left: 50%;
 }
 
@@ -27,7 +40,6 @@ button.logout {
 .nav {
   width: inherit;
   text-align: center;
-
 }
 
 li {
@@ -117,11 +129,12 @@ p.gameMode {
 }
 
  table {
-  /* margin-left:auto; margin-right:auto; */
+   margin-left: auto;
+     margin-right: auto;
 }
 
 th {
-  padding-right: 5px;
+  padding: 0px 5px;
   text-align: center;
   justify-content: left;
 }
@@ -129,8 +142,7 @@ th {
 th, tr {
   text-align: center;
   padding-bottom: 12px;
-  margin-right: 5px;
-  /* padding-right: 5px; */
+  margin-right: 10px;
   padding-left: 1px;
 }
 
