@@ -7,16 +7,10 @@ import { authenticate } from '../actions/actions_users'
 
 
 class GameStats extends Component {
-  // constructor (props) {
-  //   super(props)
-  // }
-
-// componentWillMount() {
-//   this.props.authenticate
-// }
 
 componentDidMount(){
  this.props.fetchGames()
+ this.props.authenticate()
  }
 
 createTotalGames(){
@@ -42,12 +36,12 @@ createPieChart () {
   return (
     <PieChart  data={pieData} total={total}/>
   )
-}
-
+ }
 }
 
 
 createModeCharts () {
+  if (this.props.games.length > 0){
   const gameIds = this.props.games.map(game => game.id)
   console.log("game ids", gameIds);
 
@@ -125,7 +119,7 @@ console.log("PG Kills", playgroundKills);
    <Chart  chartTitle={"Final Position"} gameIds={gameIds} soloData={soloFinalPlace}  duoData={duoFinalPlace} squadData={squadFinalPlace} fiftyData={fiftyvFinalPlace} playgroundData={pgFinalPlace}/>
   </div>
  )
-}
+}}
 
 
 
@@ -146,7 +140,8 @@ console.log("PG Kills", playgroundKills);
       </div>
     );
   }
-}
+  }
+
 
 const mapDispatchToProps = dispatch => {
   return {

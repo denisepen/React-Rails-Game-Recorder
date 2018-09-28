@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Welcome = (props) => {
-  return(
-    <div>
-    <h2>Welcome {props.user.name ? props.user.name : ""} </h2>
-    </div>
-  )
+class Welcome extends React.Component {
+
+  render (props){
+    this.props.authenticate
+    return(
+      <div>
+      <h2>Welcome {this.props.user.name ? this.props.user.name : ""} </h2>
+      </div>
+    )
+  }
 }
 
 

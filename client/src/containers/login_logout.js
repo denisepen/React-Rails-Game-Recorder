@@ -13,9 +13,9 @@ class LoginLogout extends Component{
     // this.props.authenticate
     if (localStorage.getItem('jwtToken')){
       return (
-        <div>
+        <div>{this.props.authenticate}
           <Logout logout={this.props.logout} />
-          {this.props.authenticate}
+
         </div>)
     } else {
       return (<div><NewUser /> <SignIn /></div>)

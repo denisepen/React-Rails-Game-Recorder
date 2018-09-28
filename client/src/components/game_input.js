@@ -21,7 +21,7 @@ export default class GameInput extends Component {
 
   this.setState({
     gameId: '',
-    date: '',
+    // date: '',
     mode: '',
     max_kills: '',
     final_place: '',

@@ -4,8 +4,10 @@ import { NavLink } from 'react-router-dom';
  const Navbar = (props) => {
 
  const componentDidMount = (props) => {
-   props.authenticate()
+   // props.authenticate()
  }
+
+  props.authenticate
  return(
   <div>
   <ul className="nav">
@@ -13,6 +15,7 @@ import { NavLink } from 'react-router-dom';
         <NavLink
           to="/"
           /* add prop for activeStyle */
+
           activeStyle={{
             fontWeight: 'bold',
             color: 'red'
@@ -57,7 +60,7 @@ import { NavLink } from 'react-router-dom';
               fontWeight: 'bold',
               color: 'red'
             }}
-            >{localStorage.getItem("jwtToken") ? "Logout" : "Login"}</NavLink>
+            >{localStorage.getItem("jwtToken") ? props.authenticate && props.user.name : "Login"}</NavLink>
           </li>
         </ul>
   </div>)}

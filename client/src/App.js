@@ -39,8 +39,8 @@ class App extends Component {
 
       <Router>
         <React.Fragment>
-            <Navbar authenticate={this.props.authenticate} className="nav"/>
-            <Welcome user={this.props.current_user} className="center"/>
+            <Navbar authenticate={this.props.authenticate} user={this.props.current_user} className="nav"/>
+
             <Route exact path="/" component={About} />
             <Route exact path="/new" component={GameContainer} />
             <Route exact path="/stats" component={GameStats} />
@@ -72,6 +72,8 @@ const mapStateToProps = (state) => {
 }
 
 export default connect (mapStateToProps, mapDispatchToProps)(App);
+
+  // <Welcome user={this.props.current_user} className="center"/>
 
 // render={()=> localStorage.getItem("jwtToken") ? <GameContainer /> : <About />}
 // <Route exact path='/logout' render={this.logout()} />

@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 
 class Logout extends Component {
 
-  // componentDidMount(){
-  //   this.props.authenticate()
-  // }
+  componentDidMount(){
+    this.props.authenticate()
+  }
 
 
   log = () => {localStorage.removeItem("jwtToken")
