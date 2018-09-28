@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Game from './game';
+// import { authenticate } from '../actions/users'
 
 
 // const Games = props => {
@@ -7,12 +8,12 @@ import Game from './game';
 // console.log("inside games - propobj", props);
 
 class Games extends Component {
-  // constructor(props){
-  //   super(props);
-  // }
 
-
-// let games;
+  componentDidMount(){
+    if(this.props.fetchGames){
+      this.props.fetchGames();
+    }
+  }
 
 
 
