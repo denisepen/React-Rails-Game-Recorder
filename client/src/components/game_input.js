@@ -73,7 +73,7 @@ handleCommentsChange = (e) => {
       <div >
 
         <form onSubmit={(event) => this.handleSubmit(event)} className="input">
-          <h2> Please add your game </h2>
+          <h2> Please Add Your Game </h2>
           Date: <input type="date" onChange={(e) => this.handleDateChange(e)}/>{this.state.date}<br/>
 
 

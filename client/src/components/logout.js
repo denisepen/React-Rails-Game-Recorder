@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
-import { authenticate } from '../actions/actions_users'
+import { authenticate, logout } from '../actions/actions_users'
 import { connect } from 'react-redux';
 
 class Logout extends Component {
 
-  componentDidMount(){
-    this.props.authenticate()
-  }
+  // componentDidMount(){
+  //   this.props.authenticate()
+  // }
 
 
   log = () => {localStorage.removeItem("jwtToken")
-                this.props.authenticate();
-              return  <Redirect to="/"/>}
+                this.props.logout();
+              }
 
 render () {
   return (
@@ -29,6 +29,9 @@ const mapDispatchToProps = dispatch => {
   return {
     authenticate: () => {
       dispatch(authenticate())
+    },
+    logout: () => {
+      dispatch(logout())
     },
   }
 }

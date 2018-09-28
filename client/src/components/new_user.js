@@ -21,19 +21,21 @@ class NewUser extends Component {
   handleUserSubmit = event => {
   event.preventDefault();
   const user = this.state
-  this.props.addUser(user)
-  if (this.props.authenticate()){
 
-    <Redirect to='/' />
+  if ((this.state.name === "") || (this.state.email === "") || (!this.state.email.includes("@")) || (this.state.password === "") || (this.state.password.length < 6)){
+
+    // <Redirect to='/' />
+    alert("Please Sign In. Password Name, Email, & Password Required. Password Must be at least 6 characters.")
+    console.log("onsubmit user state:", this.state);
+  } else {
+
+    this.props.addUser(user)
     this.setState({
       name: '',
       gamer_tag: '',
       email: '',
       password: '',
     })
-    console.log("onsubmit user state:", this.state);
-  } else {
-    alert("Please Sign In")
   }
 
 
@@ -71,7 +73,7 @@ class NewUser extends Component {
     return (
       <div>
 
-    <form onSubmit={(event) => this.handleUserSubmit(event)} className="input">
+    <form onSubmit={(event) => this.handleUserSubmit(event)} className="input right" >
       <h2> Please Sign Up </h2>
       Name: <input type="text" value={this.state.name} onChange={(e) => this.handleNameChange(e)}/>{this.state.name}<br/>
 

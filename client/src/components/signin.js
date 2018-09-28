@@ -53,7 +53,7 @@ class SignIn extends Component {
       return (
         <div>
 
-      <form onSubmit={(event) => this.handleUserSignin(event)} className="input">
+      <form onSubmit={(event) => this.handleUserSignin(event)} className="input left">
         <h2> Please Sign In </h2>
 
 

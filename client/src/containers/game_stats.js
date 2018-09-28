@@ -7,13 +7,17 @@ import { authenticate } from '../actions/actions_users'
 
 
 class GameStats extends Component {
-  constructor (props) {
-    super(props)
-  }
+  // constructor (props) {
+  //   super(props)
+  // }
 
-componentWillMount() {
-  this.props.authenticate
-}
+// componentWillMount() {
+//   this.props.authenticate
+// }
+
+componentDidMount(){
+ this.props.fetchGames()
+ }
 
 createTotalGames(){
   const total = this.props.games.length;
@@ -25,6 +29,7 @@ createTotalGames(){
 }
 
 createPieChart () {
+  if (this.props.games.length > 0){
   const total = this.props.games.length;
   const soloGames =this.props.games.filter(game => (game.mode === 'Solo'))
   const squadGames = this.props.games.filter(game => (game.mode === 'Squads'))
@@ -37,7 +42,7 @@ createPieChart () {
   return (
     <PieChart  data={pieData} total={total}/>
   )
-
+}
 
 }
 
@@ -127,7 +132,7 @@ console.log("PG Kills", playgroundKills);
   render () {
     // debugger
     if(this.props.user.name) {
-      this.props.fetchGames();
+      this.props.fetchGames;
     }
     console.log("Game Charts User props ", this.props);
     return (

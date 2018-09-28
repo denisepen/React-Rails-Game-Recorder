@@ -17,6 +17,7 @@ class AuthController < ApplicationController
   end
 
   def authenticate
+    # binding.pry
     authHeader = request.headers["Authorization"]
     token = authHeader.split(" ")[1]
     decoded_token = JWT.decode(token, "flobble", true, { algorithm: 'HS256'})

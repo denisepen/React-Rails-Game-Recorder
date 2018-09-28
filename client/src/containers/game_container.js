@@ -30,7 +30,7 @@ class GameContainer extends Component {
           </div>
 
 
-        <div className="sideBar">
+        <div >
           <Games games={this.props.games}
           deleteGame={this.props.deleteGame}
           current_user={this.props.current_user}

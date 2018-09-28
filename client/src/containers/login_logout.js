@@ -10,10 +10,13 @@ import { connect } from 'react-redux';
 class LoginLogout extends Component{
 
   render(){
-    this.props.authenticate
+    // this.props.authenticate
     if (localStorage.getItem('jwtToken')){
-      // this.props.authenticate()
-      return (<div><Logout logout={this.props.logout} /></div>)
+      return (
+        <div>
+          <Logout logout={this.props.logout} />
+          {this.props.authenticate}
+        </div>)
     } else {
       return (<div><NewUser /> <SignIn /></div>)
     }

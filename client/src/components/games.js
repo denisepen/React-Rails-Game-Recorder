@@ -32,7 +32,7 @@ render (props) {
   }
   return (
     <div>
-      <table>
+      <table >
       <thead>
           <tr>
             <th>Date</th>

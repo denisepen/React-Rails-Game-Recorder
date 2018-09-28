@@ -39,8 +39,8 @@ class App extends Component {
 
       <Router>
         <React.Fragment>
-            <Navbar authenticate={this.props.authenticate}/>
-            <Welcome user={this.props.current_user} />
+            <Navbar authenticate={this.props.authenticate} className="nav"/>
+            <Welcome user={this.props.current_user} className="center"/>
             <Route exact path="/" component={About} />
             <Route exact path="/new" component={GameContainer} />
             <Route exact path="/stats" component={GameStats} />
