@@ -30,12 +30,6 @@ class GameContainer extends Component {
           </div>
 
 
-        <div >
-          <Games games={this.props.games}
-          deleteGame={this.props.deleteGame}
-          current_user={this.props.current_user}
-          />
-        </div>
 
         </div>
       )
@@ -84,6 +78,9 @@ const mapDispatchToProps = dispatch => {
 //  })
 
 export default connect (mapStateToProps, mapDispatchToProps)(GameContainer)
+
+
+
 
 // function mapDispatchToProps(dispatch) {
 //   return {
