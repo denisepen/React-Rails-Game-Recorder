@@ -132,7 +132,9 @@ console.log("PG Kills", playgroundKills);
     return (
 
       <div>
-      {this.createTotalGames()}
+        <div className="totalGames">
+        {this.createTotalGames()}
+        </div>
         <br/>
         {this.createPieChart()}
         <br/>

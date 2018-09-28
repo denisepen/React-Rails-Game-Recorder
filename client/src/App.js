@@ -40,7 +40,7 @@ class App extends Component {
       <Router>
         <React.Fragment>
             <Navbar authenticate={this.props.authenticate} user={this.props.current_user} className="nav"/>
-
+            <hr/>
             <Route exact path="/" component={About} />
             <Route exact path="/new" component={GameContainer} />
             <Route exact path="/stats" component={GameStats} />

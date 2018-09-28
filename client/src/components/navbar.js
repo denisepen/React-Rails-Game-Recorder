@@ -3,9 +3,7 @@ import { NavLink } from 'react-router-dom';
 
  const Navbar = (props) => {
 
- const componentDidMount = (props) => {
-   // props.authenticate()
- }
+ 
 
   props.authenticate
  return(
