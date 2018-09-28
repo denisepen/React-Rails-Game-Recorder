@@ -11,16 +11,18 @@ class GameContainer extends Component {
 
   //
   componentDidMount(){
-    localStorage.getItem('jwtToken') ? this.props.fetchGames() : <h2> XXXXXXXX </h2>
-    // this.props.authenticate() ? this.props.fetchGames() : <h2> XXXXXXXX </h2>
-    this.props.authenticate()
+    if(localStorage.getItem('jwtToken')){
+      this.props.fetchGames()
+    }
 
+    this.props.authenticate()
   }
 
 
   render (){
     console.log("Container Props: ", this.props);
-    if (this.props.current_user.id){
+
+    if (localStorage.getItem('jwtToken')){
       return(
         <div>
           <div className="input">
@@ -28,9 +30,6 @@ class GameContainer extends Component {
               addGame={this.props.addGame}
               />
           </div>
-
-
-
         </div>
       )
     }

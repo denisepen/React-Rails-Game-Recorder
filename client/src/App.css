@@ -20,7 +20,8 @@
 button {
   border-radius: 6px;
   font-size: 75%;
-  background-color: #5491f2
+  background-color: red;
+  color: white;
 }
 
 button.logout {
@@ -29,6 +30,7 @@ button.logout {
     transition: .5s ease;
     right: 8%;
     padding: 10px 30px;
+    background-color: #5491f2;
     /* left: 50%; */
     /* display: block; */
 }
