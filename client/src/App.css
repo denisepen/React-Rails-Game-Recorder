@@ -106,14 +106,23 @@ form input {
   border: none;
 }
 
-form.right{
-  float: right;
-  width: 45%;
-}
-
 form.left{
   float: left;
-  width: 45%;
+  width: 40%;
+  margin-top: 6%;
+  margin-bottom: auto;
+  margin-left: 5%;
+  margin-right: 5%
+}
+
+form.right{
+  float: left;
+  width: 40%;
+  margin-top:auto;
+  margin-bottom:auto;
+  margin-left: 5%;
+  margin-right: 5%
+
 }
 
 
@@ -122,9 +131,9 @@ tr:hover {background-color: #f5f5f5;}
 
 
 body {
-    /* background-image: url(https://d1lss44hh2trtw.cloudfront.net/assets/article/2018/07/03/is-fortnite-crack-in-sky-growing-proof_1200x500.jpg); */
-  /* background-repeat: no-repeat;
-   background-position: center;*/
+    /* background-image: url(https://www.imore.com/sites/imore.com/files/styles/xlarge/public/field/image/2018/03/fornite-br-hero.jpg?itok=5QOksJXV);
+  background-repeat: no-repeat;
+   background-position: center; */
     background-color: #205dbf;
   /* opacity: 0.5; */
 }

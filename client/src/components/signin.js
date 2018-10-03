@@ -57,9 +57,9 @@ class SignIn extends Component {
         <h2> Please Sign In </h2>
 
 
-        Email:<input value={this.state.email} type="text" onChange={(e) => this.handleEmailChange(e)}/>{this.state.email}<br/>
+        Email:<input value={this.state.email} type="text" onChange={(e) => this.handleEmailChange(e)}/>{/*this.state.email*/}<br/>
 
-        Password: <input value={this.state.password} type="password" onChange={(e) => this.handlePasswordChange(e)}/>{this.state.password}<br/>
+        Password: <input value={this.state.password} type="password" onChange={(e) => this.handlePasswordChange(e)}/>{/*this.state.password*/}<br/>
 
 
         <input type="submit" value="Sign In" />

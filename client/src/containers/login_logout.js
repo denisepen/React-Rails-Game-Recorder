@@ -28,7 +28,7 @@ class LoginLogout extends Component{
 
         </div>)
     } else {
-      return (<div><NewUser /> <SignIn /></div>)
+      return (<div> <SignIn /> <NewUser /> </div>)
     }
   }
 }

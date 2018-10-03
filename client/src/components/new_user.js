@@ -24,7 +24,6 @@ class NewUser extends Component {
 
   if ((this.state.name === "") || (this.state.email === "") || (!this.state.email.includes("@")) || (this.state.password === "") || (this.state.password.length < 6)){
 
-    // <Redirect to='/' />
     alert("Please Sign In. Password Name, Email, & Password Required. Password Must be at least 6 characters.")
     console.log("onsubmit user state:", this.state);
   } else {
@@ -60,7 +59,7 @@ class NewUser extends Component {
   }
 
   handlePasswordChange = (e) => {
-    this.setState({
+    this.setState({ 
       password: e.target.value
     })
   }
@@ -75,14 +74,14 @@ class NewUser extends Component {
 
     <form onSubmit={(event) => this.handleUserSubmit(event)} className="input right" >
       <h2> Please Sign Up </h2>
-      Name: <input type="text" value={this.state.name} onChange={(e) => this.handleNameChange(e)}/>{this.state.name}<br/>
+      Name: <input type="text" value={this.state.name} onChange={(e) => this.handleNameChange(e)}/>{/*this.state.name*/}<br/>
 
 
-      Gamer Tag: <input type="text" value={this.state.gamer_tag} onChange={(e) => this.handleTagChange(e)}/>{this.state.gamer_tag}<br/>
+      Gamer Tag: <input type="text" value={this.state.gamer_tag} onChange={(e) => this.handleTagChange(e)}/>{/*this.state.gamer_tag*/}<br/>
 
-      Email:<input value={this.state.email} type="text" onChange={(e) => this.handleEmailChange(e)}/>{this.state.email}<br/>
+      Email:<input value={this.state.email} type="text" onChange={(e) => this.handleEmailChange(e)}/>{/*this.state.email*/}<br/>
 
-      Password: <input value={this.state.password} type="password" onChange={(e) => this.handlePasswordChange(e)}/>{this.state.password}<br/>
+      Password: <input value={this.state.password} type="password" onChange={(e) => this.handlePasswordChange(e)}/>{/*this.state.password*/}<br/>
 
 
       <input type="submit" value="Create Account" />

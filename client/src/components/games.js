@@ -18,12 +18,15 @@ class Games extends Component {
 
 
 
-render (props) {
+render () {
   let games;
   if (!this.props){
     return  games = (<p>Please Add a game</p>)
   } else {
+
+    // const gameList=this.props.games.sort(function(a, b){return a.date - b.date})
    games = this.props.games.map((game, index) => {
+   // games = gameList.map((game, index) => {
 
     return (<Game  current_user={this.props.current_user}
               user={game.user}

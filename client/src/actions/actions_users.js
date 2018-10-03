@@ -66,10 +66,7 @@ export function addUser(user) {
                    localStorage.setItem("jwtToken", newUser.jwt)
                    dispatch({ type: 'ADD_USER', newUser} )
                  })
-                 .catch(err => alert("Please  Try Again "))
-
-                  // .catch(error => console.error('Error:', error))
-                 // .then(newUser => dispatch({ type: 'ADD_USER', newUser} )
+                 .catch(err => alert("Please  Try Again ", err))
       }
     }
 
@@ -96,6 +93,5 @@ export function addUser(user) {
                     dispatch({ type: 'FIND_USER', newUser})
                   })
                   .catch(err => alert("Incorrect User Name or Password "))
-
         }
       }

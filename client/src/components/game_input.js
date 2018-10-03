@@ -79,7 +79,7 @@ handleCommentsChange = (e) => {
 
         <form onSubmit={(event) => this.handleSubmit(event)} className="input">
           <h2> Please Add Your Game </h2>
-          Date: <input type="date" onChange={(e) => this.handleDateChange(e)}/>{this.state.date}<br/>
+          Date: <input type="date" onChange={(e) => this.handleDateChange(e)}/><br/>
 
 
           <div>
@@ -139,11 +139,11 @@ handleCommentsChange = (e) => {
                   </li>
                 </ul>
 
-          Max Kills: <input type="number" value={this.state.max_kills} onChange={(e) => this.handleKillsChange(e)}/>{this.state.max_kills}<br/>
+          Max Kills: <input type="number" value={this.state.max_kills} onChange={(e) => this.handleKillsChange(e)}/><br/>
 
-          Final Place:<input value={this.state.final_place} type="number" onChange={(e) => this.handlePlaceChange(e)}/>{this.state.final_place}<br/>
+          Final Place:<input value={this.state.final_place} type="number" onChange={(e) => this.handlePlaceChange(e)}/><br/>
 
-          Comments: <input value={this.state.comments} type="text" onChange={(e) => this.handleCommentsChange(e)}/>{this.state.comments}<br/>
+          Comments: <input value={this.state.comments} type="text" onChange={(e) => this.handleCommentsChange(e)}/><br/>
           </div>
 
           <input type="submit" value="Add Game" />

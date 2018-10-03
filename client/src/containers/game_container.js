@@ -69,12 +69,6 @@ const mapDispatchToProps = dispatch => {
       },
   }
 }
-// ({
-//   addGame: game => {
-//      debugger;
-//   dispatch({ type: "ADD_GAME", game })
-// }
-//  })
 
 export default connect (mapStateToProps, mapDispatchToProps)(GameContainer)
 

@@ -11,7 +11,7 @@ import {  fetchGames, getAllGames } from './actions/index'
 import AllGames from './components/allgames'
 import { authenticate } from './actions/actions_users';
 import LoginLogout from './containers/login_logout';
-import Welcome from './components/welcome'
+
 
 import './App.css';
 
