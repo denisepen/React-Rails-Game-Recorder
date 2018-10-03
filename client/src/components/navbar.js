@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 
  const Navbar = (props) => {
 
- 
+
 
   props.authenticate
  return(
-  <div>
+  <div className="navbar">
   <ul className="nav">
     <li>
         <NavLink
@@ -20,16 +20,7 @@ import { NavLink } from 'react-router-dom';
           }} exact
         >  Home  </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/allgames"
-          /* add prop for activeStyle */
-          activeStyle={{
-            fontWeight: 'bold',
-            color: 'red'
-          }}
-        >  All Games  </NavLink>
-        </li>
+
         <li>
         <NavLink
           to="/new"
@@ -38,7 +29,7 @@ import { NavLink } from 'react-router-dom';
             fontWeight: 'bold',
             color: 'red'
           }}
-        >  New  </NavLink>
+        >  Add A Game  </NavLink>
         </li>
         <li>
         <NavLink
@@ -48,8 +39,18 @@ import { NavLink } from 'react-router-dom';
             fontWeight: 'bold',
             color: 'red'
           }}
-          >Stats</NavLink>
+          > Your Stats </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/allgames"
+            /* add prop for activeStyle */
+            activeStyle={{
+              fontWeight: 'bold',
+              color: 'red'
+            }}
+          >  All Players  </NavLink>
+          </li>
         <li>
           <NavLink
             to="/signin"

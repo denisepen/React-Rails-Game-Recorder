@@ -77,15 +77,20 @@ const Chart = (props) => {
 
         options={{
           responsive: true,
+
           // maintainAspectRatio: false,
             title: {
               display: true,
               text: props.chartTitle,
+              fontColor: 'black',
               fontSize: 15
               },
             legend: {
               display: true,
               position: 'bottom',
+              labels:{
+                fontColor: 'black'
+              }
               // labelString: 'Final Position'
               },
           scales: {
@@ -93,12 +98,14 @@ const Chart = (props) => {
               type: 'category',
               offset: false,
               stepSize: 1,
+              fontColor: 'black',
               scaleLabel: {
                 // type: 'linear',
 
                 display: false,
                 labelString: 'Date',
                 fontSize: 10,
+                fontColor: 'black',
                 },
             // type: 'linear',
               position: 'bottom',
@@ -106,6 +113,7 @@ const Chart = (props) => {
                 display: false
               },
               ticks: {
+                fontColor: 'black',
                 // autoSkip: false,
 
                 // min: 0,
@@ -116,6 +124,7 @@ const Chart = (props) => {
             yAxes: [{
               ticks: {
                 beginAtZero: true,
+                fontColor: 'black',
                 // max: 30
               },
               scaleLabel: {
@@ -125,7 +134,8 @@ const Chart = (props) => {
                   max: 100
                 },
                 labelString: props.chartTitle,
-                fontSize: 10
+                fontSize: 10,
+                fontColor: 'black',
               }
             }]
           }

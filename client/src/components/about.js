@@ -18,11 +18,12 @@ import { connect } from 'react-redux';
   render (){
     return (
       <div className="about">
-        <h1> Welcome</h1>
-          <p>
-          This application allows you to record the data for each of your Fortnite games.  This data will then be collected so you can track your progress. After adding your games, please check out the stats tab to see your progress over time.
-          </p>
-          {<AllGames deleteGame={this.props.deleteGame} games={this.props.games}/>}
+        <h1> Welcome Fortnite Lovers!</h1>
+          <h3>
+          Record Games, Review Your Stats and Compare Your Progess To Others
+          </h3>
+          {/*<AllGames deleteGame={this.props.deleteGame} games={this.props.games}/>*/}
+          <img src="https://i0.wp.com/wallpapersfortech.com/wp-content/uploads/2018/01/2844B874-67B0-4E1D-969D-C614C125259C.jpeg?ssl=1" class="w3-round" alt="Fortnite" />
       </div>
     )
   }

@@ -27,33 +27,33 @@ export default function manageGame(state = initState, action) {
         return {...state,  games: action.games};
 
 
-        case 'ADD_USER':
-          // console.log("User state:", state)
-          // console.log(" User Action Signing up:", action);
+    case 'ADD_USER':
+    // console.log("User state:", state)
+    // console.log(" User Action Signing up:", action);
 
-          return { ...state, users: state.users.concat(action.newUser), user: Object.assign({}, state.user, action.newUser.user) };
-          // return { ...state, users: state.users.concat(action.newUser), user: action.newUser.user };
-          // console.log("Just added user: ", state);
+      return { ...state, users: state.users.concat(action.newUser), user: Object.assign({}, state.user, action.newUser.user) };
+    // return { ...state, users: state.users.concat(action.newUser), user: action.newUser.user };
+    // console.log("Just added user: ", state);
 
-          case 'FIND_USER':
-            console.log("Found User state:", state)
-            console.log("Found User Action:", action);
+    case 'FIND_USER':
+        console.log("Found User state:", state)
+        console.log("Found User Action:", action);
 
-            return { ...state, user: Object.assign({}, state.user, action.newUser) };
+        return { ...state, user: Object.assign({}, state.user, action.newUser) };
 
-            case 'AUTH_USER':
-              console.log("Auth User state:", state)
-              console.log("Auth User Action:", action);
+      case 'AUTH_USER':
+        console.log("Auth User state:", state)
+        console.log("Auth User Action:", action);
 
-              return { ...state, user: Object.assign({}, state.user, action.user) };
+        return { ...state, user: Object.assign({}, state.user, action.user) };
 
-              case 'LOGOUT_USER':
-                console.log("LOGOUT state:", state)
-                console.log("LOGOUT Action:", action);
+      case 'LOGOUT_USER':
+        console.log("LOGOUT state:", state)
+        console.log("LOGOUT Action:", action);
 
-                return { ...state, user: Object.assign({}, state.user, action.user) };
+          return { ...state, user: Object.assign({}, state.user, action.user) };
 
-          case 'FETCH_USERS':
+        case 'FETCH_USERS':
               console.log("Fetch User State:", state);
               // return {...state, games: state.games.concat(action.game) };
               return { ...state, users: state.users.concat(action.users)};

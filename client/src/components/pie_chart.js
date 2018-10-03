@@ -24,6 +24,12 @@ export default (props) => {
         data={chartData}
         width={450}  height={350}
         options={{
+          // title: {
+          //   display: true,
+          //   // text: props.chartTitle,
+          //   fontColor: 'black',
+          //   fontSize: 15
+          //   },
           layout:{
             padding:{
               left: 50,
@@ -38,7 +44,8 @@ export default (props) => {
             title: {
               display: true,
               text: 'Total Games Played by Game Mode',
-              fontSize: 20
+              fontSize: 20,
+              fontColor: 'black',
               },
             legend: {
               display: true,

@@ -11,6 +11,12 @@
     left: 50%;
 } */
 
+div.about {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+
  div.player{
   margin-left:70px;
   margin-right:auto;
@@ -30,7 +36,7 @@ button.logout {
     transition: .5s ease;
     right: 8%;
     padding: 10px 30px;
-    background-color: #5491f2;
+    background-color: black;
     /* left: 50%; */
     /* display: block; */
 }
@@ -44,6 +50,14 @@ button.logout {
 .nav {
   width: inherit;
   text-align: center;
+  padding-top: 15px;
+  height: 2.5em;
+}
+
+div.navbar {
+   /* background-image: url(https://d1lss44hh2trtw.cloudfront.net/assets/article/2018/07/03/is-fortnite-crack-in-sky-growing-proof_1200x500.jpg); */
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 li {
@@ -108,9 +122,10 @@ tr:hover {background-color: #f5f5f5;}
 
 
 body {
-  /* background-image: url(https://i0.wp.com/wallpapersfortech.com/wp-content/uploads/2018/01/2844B874-67B0-4E1D-969D-C614C125259C.jpeg?ssl=1);
-  background-repeat: no-repeat;
-  background-position: center; */
+    /* background-image: url(https://d1lss44hh2trtw.cloudfront.net/assets/article/2018/07/03/is-fortnite-crack-in-sky-growing-proof_1200x500.jpg); */
+  /* background-repeat: no-repeat;
+   background-position: center;*/
+    background-color: #205dbf;
   /* opacity: 0.5; */
 }
 
@@ -154,11 +169,3 @@ th, tr {
 /* svg {
   height: 100px;
 } */
-
-
-
-.about{
-  background-color: lightgrey;
-  margin-left:auto;
-  margin-right:auto;
-}

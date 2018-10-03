@@ -9,13 +9,9 @@ import Navbar from './components/navbar'
 import { connect } from 'react-redux';
 import {  fetchGames, getAllGames } from './actions/index'
 import AllGames from './components/allgames'
-// import SignIn from './components/signin';
-// import Logout from './components/logout'
 import { authenticate } from './actions/actions_users';
 import LoginLogout from './containers/login_logout';
 import Welcome from './components/welcome'
-
-// import GameInput from './components/game_input'
 
 import './App.css';
 
