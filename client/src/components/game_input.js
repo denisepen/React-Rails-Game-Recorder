@@ -21,11 +21,11 @@ export default class GameInput extends Component {
     alert("Game Date and Game Mode are required!")
   } else {
     this.props.addGame(game)
-    console.log("onsubmit state:", this.state);
+    // console.log("onsubmit state:", this.state);
 
     this.setState({
       gameId: '',
-      // date: '',
+      date: '',
       mode: '',
       max_kills: '',
       final_place: '',
@@ -35,13 +35,14 @@ export default class GameInput extends Component {
 
   // below was created before ading api
   // this.props.addGame(this.state)
-  console.log("state:", this.state)
+  // console.log("state:", this.state)
 
 }
 
 handleDateChange = (e) => {
   this.setState({
-    date: e.target.value.toLocaleString('en-US')
+    date: e.target.value
+    // .toLocaleString('en-US')
   })
 }
 

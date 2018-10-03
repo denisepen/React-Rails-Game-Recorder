@@ -12,7 +12,6 @@ const  Game = (props) => {
   }
 
   return (<tr >
-
     <td> {props.date} </td>
     <td> {props.user.name} </td>
     <td> {props.mode} </td>

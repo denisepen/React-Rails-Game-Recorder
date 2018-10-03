@@ -25,7 +25,7 @@ class NewUser extends Component {
   if ((this.state.name === "") || (this.state.email === "") || (!this.state.email.includes("@")) || (this.state.password === "") || (this.state.password.length < 6)){
 
     alert("Please Sign In. Password Name, Email, & Password Required. Password Must be at least 6 characters.")
-    console.log("onsubmit user state:", this.state);
+    // console.log("onsubmit user state:", this.state);
   } else {
 
     this.props.addUser(user)
@@ -59,7 +59,7 @@ class NewUser extends Component {
   }
 
   handlePasswordChange = (e) => {
-    this.setState({ 
+    this.setState({
       password: e.target.value
     })
   }

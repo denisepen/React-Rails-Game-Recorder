@@ -8,13 +8,14 @@ export function authenticate() {
       }
     };
     // debugger;
-    console.log("Authenticate: ", request);
+    // console.log("Authenticate: ", request);
      return fetch('/authenticate', request)
            .then(response => response.json())
            // .then(res => console.log("Game just fetched:", res))
             .then(user => {
               dispatch({ type: 'AUTH_USER', user})
-          })
+
+          }).catch(err => alert("User Not found"))
 
         }
       }
@@ -35,7 +36,7 @@ export function fetchUsers() {
       }
     };
     // debugger;
-    console.log(request);
+    // console.log(request);
      return fetch('/users', request)
            .then(response => response.json())
            // .then(res => console.log("Game just fetched:", res))
@@ -57,7 +58,7 @@ export function addUser(user) {
       };
 // console.log("req body", request.body);
       return (dispatch) => {
-        console.log("Dispatched user", user);
+        // console.log("Dispatched user", user);
         return fetch('/users', request )
                  .then(response => response.json())
                  // .then(response => console.log("api response",response.json()))

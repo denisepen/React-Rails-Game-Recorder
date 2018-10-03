@@ -22,7 +22,7 @@ class SignIn extends Component {
   const user = this.state
   // this.setState({jwt: user.jwt})
   this.props.userLogin(user)
-  console.log("onsubmit user signin state:", this.state);
+  // console.log("onsubmit user signin state:", this.state);
   // this.setState({jwt: localStorage.getItem('jwtToken')})
   this.setState({
     email: '',

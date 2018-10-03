@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import GameInput from '../components/game_input'
-import Games from '../components/games'
+// import Games from '../components/games'
 import {  addGame, fetchGames, deleteGame} from '../actions/index'
 import { authenticate } from '../actions/actions_users'
 
@@ -20,7 +20,7 @@ class GameContainer extends Component {
 
 
   render (){
-    console.log("Container Props: ", this.props);
+    // console.log("Container Props: ", this.props);
 
     if (localStorage.getItem('jwtToken')){
       return(
@@ -47,7 +47,7 @@ class GameContainer extends Component {
 // const mapStateToProps = ({ games }) => ({ games })
 
 const mapStateToProps = (state) => {
-  console.log("propsstate:", state)
+  // console.log("propsstate:", state)
   return {games: state.games, current_user: state.user};
 }
 

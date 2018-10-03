@@ -13,17 +13,18 @@ import { fetchGames, deleteGame} from '../actions/index'
 class LoginLogout extends Component{
 
   render(){
-    this.props.authenticate
+    // this.props.authenticate
     if (localStorage.getItem('jwtToken') ){
       return (
-        <div>{this.props.authenticate}
-              {this.props.fetchGames}
+        <div>{/*this.props.authenticate*/}
+              {/*this.props.fetchGames*/}
           <Logout logout={this.props.logout} />
-          <Player user={this.props.user}/>
+          <Player user={this.props.user} games={this.props.games}/>
           <Games games={this.props.games}
           deleteGame={this.props.deleteGame}
           current_user={this.props.user}
           fetchGames={this.props.fetchGames}
+
           />
 
         </div>)

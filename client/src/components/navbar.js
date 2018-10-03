@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 
 
-  props.authenticate
+  // props.authenticate
  return(
   <div className="navbar">
   <ul className="nav">
@@ -16,7 +16,8 @@ import { NavLink } from 'react-router-dom';
 
           activeStyle={{
             fontWeight: 'bold',
-            color: 'red'
+            textDecoration: 'underline'
+            // color: 'red'
           }} exact
         >  Home  </NavLink>
       </li>
@@ -27,7 +28,8 @@ import { NavLink } from 'react-router-dom';
           exact
           activeStyle={{
             fontWeight: 'bold',
-            color: 'red'
+            textDecoration: 'underline'
+            // color: 'red'
           }}
         >  Add A Game  </NavLink>
         </li>
@@ -37,7 +39,8 @@ import { NavLink } from 'react-router-dom';
           exact
           activeStyle={{
             fontWeight: 'bold',
-            color: 'red'
+            // color: 'red'
+            textDecoration: 'underline'
           }}
           > Your Stats </NavLink>
         </li>
@@ -47,7 +50,8 @@ import { NavLink } from 'react-router-dom';
             /* add prop for activeStyle */
             activeStyle={{
               fontWeight: 'bold',
-              color: 'red'
+              textDecoration: 'underline'
+              // color: 'red'
             }}
           >  All Players  </NavLink>
           </li>
@@ -57,7 +61,8 @@ import { NavLink } from 'react-router-dom';
             exact
             activeStyle={{
               fontWeight: 'bold',
-              color: 'red'
+              textDecoration: 'underline'
+              // color: 'red'
             }}
             >{localStorage.getItem("jwtToken") ? props.authenticate && props.user.name : "Login"}</NavLink>
           </li>

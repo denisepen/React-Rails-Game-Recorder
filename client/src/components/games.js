@@ -11,6 +11,7 @@ class Games extends Component {
 
   componentDidMount(){
     if(this.props.fetchGames){
+      // this.props.authenticate()
       this.props.fetchGames();
     }
   }
@@ -20,13 +21,12 @@ class Games extends Component {
 
 render () {
   let games;
-  if (!this.props){
+  if (!this.props && this.props.games.length > 0){
     return  games = (<p>Please Add a game</p>)
   } else {
-
-    // const gameList=this.props.games.sort(function(a, b){return a.date - b.date})
+    // this.props.authenticate
    games = this.props.games.map((game, index) => {
-   // games = gameList.map((game, index) => {
+
 
     return (<Game  current_user={this.props.current_user}
               user={game.user}

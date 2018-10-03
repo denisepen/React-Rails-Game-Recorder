@@ -16,10 +16,10 @@ import LoginLogout from './containers/login_logout';
 import './App.css';
 
 class App extends Component {
-  constructor (props) {
-    super(props);
-
-  }
+  // constructor (props) {
+  //   super(props);
+  //
+  // }
 
 
   componentDidMount () {

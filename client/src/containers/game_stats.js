@@ -9,8 +9,11 @@ import { authenticate } from '../actions/actions_users'
 class GameStats extends Component {
 
 componentDidMount(){
- this.props.fetchGames()
- this.props.authenticate()
+  if (localStorage.getItem('jwtToken') !== ("" || "undefined")){
+    this.props.fetchGames()
+    this.props.authenticate()
+  }
+
  }
 
 createTotalGames(){
@@ -43,7 +46,7 @@ createPieChart () {
 createModeCharts () {
   if (this.props.games.length > 0){
   const gameIds = this.props.games.map(game => game.id)
-  console.log("game ids", gameIds);
+  // console.log("game ids", gameIds);
 
   const soloGames = this.props.games.filter(game =>
     { return (game.mode === 'Solo') })
@@ -90,7 +93,7 @@ createModeCharts () {
       // return {game.date: game.max_kills}
      }
    );
-console.log("Duo Kills: ", duoKills, );
+// console.log("Duo Kills: ", duoKills, );
 // calc final place over time while playing duos
    const duoFinalPlace = duoGames.map(game => {
        return (game.final_place)
@@ -102,8 +105,8 @@ console.log("Duo Kills: ", duoKills, );
   const playgroundKills = playgroundGames.map(game => game.max_kills)
 
 
-console.log("PG Games", playgroundGames);
-console.log("PG Kills", playgroundKills);
+// console.log("PG Games", playgroundGames);
+// console.log("PG Kills", playgroundKills);
 //  to calc data for final position playing playground mode
  const pgFinalPlace = playgroundGames.map(game => {
      return (game.final_place)
@@ -126,9 +129,9 @@ console.log("PG Kills", playgroundKills);
   render () {
     // debugger
     if(this.props.user.name) {
-      this.props.fetchGames;
+      this.props.fetchGames();
     }
-    console.log("Game Charts User props ", this.props);
+    // console.log("Game Charts User props ", this.props);
     return (
 
       <div>
