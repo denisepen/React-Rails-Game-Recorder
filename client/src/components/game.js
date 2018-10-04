@@ -1,29 +1,47 @@
 import React from 'react';
 
-const  Game = (props) => {
-  // console.log('inside game', props);
+class Game extends React.Component {
+  constructor (props) {
+    super(props)
 
-  // console.log("Inside Game: ", (props.current_user.id === props.game.user.id));
-// debugger
-  const onClickHandler = (e) => {
-    e.preventDefault();
-    // console.log(this);
-     props.deleteGame(props.game)
+    this.state = {
+      likes: 0
+    }
   }
 
-  return (<tr >
-    <td> {props.date} </td>
-    <td> {props.user.name} </td>
-    <td> {props.mode} </td>
-    <td> {props.max_kills} </td>
-    <td style = {props.final_place == 1 ? {fontWeight: 'bold', color: 'orange', border: '2px solid red'} : {color: 'black'}}> {props.final_place} </td>
-    <td> {props.comments}</td>
 
-    {(localStorage.getItem('jwtToken') && (props.current_user.id === props.game.user.id)) ?
+// debugger
+   onClickHandler = (e) => {
+    e.preventDefault();
+    // console.log(this);
+     this.props.deleteGame(this.props.game)
+  }
+
+   onLike = (e) => {
+    e.preventDefault();
+    this.setState({
+      likes: this.state.likes +1
+    })
+  }
+
+render (){
+  return (<tr >
+    <td> {this.props.date} </td>
+    <td> {this.props.user.name} </td>
+    <td> {this.props.mode} </td>
+    <td> {this.props.max_kills} </td>
+    <td style = {this.props.final_place == 1 ? {fontWeight: 'bold', color: 'orange', border: '2px solid red'} : {color: 'black'}}> {this.props.final_place} </td>
+    <td> {this.props.comments}</td>
+    <td><button onClick={ (e) => this.onLike(e) }>{this.state.likes}</button></td>
+
+    {(localStorage.getItem('jwtToken') && (this.props.current_user.id === this.props.game.user.id)) ?
       // this.setState({jwt: localStorage.getItem('jwtToken')})
-      <td><button onClick={ (e) => onClickHandler(e) }>Delete</button></td> : ""
+      <td><button onClick={ (e) => this.onClickHandler(e) }>Delete</button></td> : ""
      }
   </tr>)
+}
+
+
 }
 
 export default Game;

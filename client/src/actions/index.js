@@ -62,8 +62,9 @@ export function addGame(game) {
                  .then(response => response.json())
                  // .then(response => console.log("api response",response))
                  //  .then(res => console.log("Game just added to db:", res))
-                 .then(newGame => dispatch({ type: 'ADD_GAME', newGame}))
-                 // .catch(err => alert("Incorrect Data. Please Try Again"))
+                 .then(newGame => {
+                   dispatch({ type: 'ADD_GAME', newGame})})
+                 .catch(err => alert("Incorrect Data. Please Try Again"))
       }
     }
 

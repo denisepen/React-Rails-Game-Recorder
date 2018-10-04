@@ -19,7 +19,7 @@ import { connect } from 'react-redux';
 
 
 const mapStateToProps = (state) => {
-  console.log("ALLUSERGAMESstate:", state)
+  // console.log("ALLUSERGAMESstate:", state)
   return {games: state.allUserGames, current_user: state.user};
 }
 
