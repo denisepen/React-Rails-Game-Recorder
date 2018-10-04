@@ -8,16 +8,19 @@ import { authenticate } from '../actions/actions_users'
 
 class GameStats extends Component {
 
-componentDidMount(){
-  if (localStorage.getItem('jwtToken') !== ("" || "undefined")){
-    this.props.fetchGames()
-    this.props.authenticate()
-  }
-
- }
+// componentDidMount(){
+//   if (localStorage.getItem('jwtToken') !== ("" || "undefined")){
+//     // !== ("" || "undefined")
+//     // && (localStorage.getItem('jwtToken') !== ("" || "undefined"))
+//     // this.props.fetchGames()
+//     this.props.authenticate()
+//     }
+//  }
 
 createTotalGames(){
-  const total = this.props.games.length;
+  if (localStorage.getItem('jwtToken') && this.props.games.length > 0){
+    var total = this.props.games.length;
+  } else { total = 0}
   return (
     <div>
       <h2>Total Games Played: {total} </h2>
@@ -26,7 +29,7 @@ createTotalGames(){
 }
 
 createPieChart () {
-  if (this.props.games.length > 0){
+  if (localStorage.getItem('jwtToken') && this.props.games.length > 0){
   const total = this.props.games.length;
   const soloGames =this.props.games.filter(game => (game.mode === 'Solo'))
   const squadGames = this.props.games.filter(game => (game.mode === 'Squads'))
@@ -44,7 +47,7 @@ createPieChart () {
 
 
 createModeCharts () {
-  if (this.props.games.length > 0){
+  if (localStorage.getItem('jwtToken') && this.props.games.length > 0){
   const gameIds = this.props.games.map(game => game.id)
   // console.log("game ids", gameIds);
 
@@ -128,9 +131,9 @@ createModeCharts () {
 
   render () {
     // debugger
-    if(this.props.user.name) {
-      this.props.fetchGames();
-    }
+    // if(this.props.user.name) {
+    //   this.props.fetchGames;
+    // }
     // console.log("Game Charts User props ", this.props);
     return (
 
