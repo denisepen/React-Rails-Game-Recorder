@@ -55,9 +55,9 @@ export function addGame(game) {
           'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
         }
       };
-      console.log("Headers: ", request.headers);
+      // console.log("Headers: ", request.headers);
       return (dispatch) => {
-        console.log("Dispatched request", request);
+        // console.log("Dispatched request", request);
         return fetch('/games', request )
                  .then(response => response.json())
                  // .then(response => console.log("api response",response))
@@ -79,9 +79,9 @@ export function addGame(game) {
               'Authorization': 'Bearer ' + localStorage.getItem("jwtToken")
             }
           };
-          console.log(request);
+          // console.log(request);
           return (dispatch) => {
-            console.log("inside delete actions", game);
+            // console.log("inside delete actions", game);
             return  fetch(`games/${game.id}`, {method: 'DELETE'} )
                     // .then(response => console.log(response.json()))
                      // .then(data => console.log("Inside Delete Actions:", data))

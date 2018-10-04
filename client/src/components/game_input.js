@@ -53,16 +53,29 @@ handleModeChange = (e) => {
 }
 
 handleKillsChange = (e) => {
+  if (e.target.value < 0 || e.target.value > 99) {
+    alert ("Please add a valid number")
+  } else {
   this.setState({
     max_kills: e.target.value
   })
+  }
 }
 
 
 handlePlaceChange = (e) => {
+  if (e.target.value < 0 || e.target.value > 99) {
+    alert ("Please add a valid number")
+  } else if (e.target.value == 1){
+    alert("GREAT JOB!")
   this.setState({
     final_place: e.target.value
   })
+} else {
+  this.setState({
+    final_place: e.target.value
+  })
+}
 }
 
 handleCommentsChange = (e) => {
