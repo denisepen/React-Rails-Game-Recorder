@@ -37,7 +37,7 @@ class GameContainer extends Component {
       else {
         return (
           <div className="input">
-          <h1>Please Login To Begin Saving Your Games </h1>
+          <h1 style={{textAlign: 'center'}}>Please Login To Begin Saving Your Games </h1>
         </div>
       )
       }
