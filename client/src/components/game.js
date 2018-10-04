@@ -16,7 +16,7 @@ const  Game = (props) => {
     <td> {props.user.name} </td>
     <td> {props.mode} </td>
     <td> {props.max_kills} </td>
-    <td> {props.final_place} </td>
+    <td style = {props.final_place == 1 ? {fontWeight: 'bold', color: 'orange', border: '2px solid red'} : {color: 'black'}}> {props.final_place} </td>
     <td> {props.comments}</td>
 
     {(localStorage.getItem('jwtToken') && (props.current_user.id === props.game.user.id)) ?

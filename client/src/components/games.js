@@ -25,8 +25,7 @@ render () {
     return  games = (<p>Please Add a game</p>)
   } else {
     // this.props.authenticate
-   games = this.props.games.map((game, index) => {
-
+   games = this.props.games.map((game, index) => { 
 
     return (<Game  current_user={this.props.current_user}
               user={game.user}
