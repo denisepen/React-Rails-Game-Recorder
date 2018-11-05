@@ -21,7 +21,7 @@ class Games extends Component {
 
 render () {
   let games;
-  if (!this.props && this.props.games.length > 0){
+  if (!this.props || (this.props.games.length === 0)){
     return  games = (<p>Please Add a game</p>)
   } else {
     // this.props.authenticate
@@ -44,7 +44,7 @@ render () {
             <th>Total Kills</th>
             <th>Place</th>
             <th>Comments</th>
-            <th>Likes</th>
+
 
 
             {(localStorage.getItem('jwtToken')) ?   <th>Delete</th> : "" }
