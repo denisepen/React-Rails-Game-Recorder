@@ -4,4 +4,4 @@ The purpose of this app is to record your Fortnite games. Upon logging in, you c
 You can also view all of the games saved by all users of this application.
 
 # Usage:
-To use this app fork a copy of this repository from https://github.com/denisepen/React-Rails-Game-Recorder. Clone a copy of the repository to your machine and cd into the directory. Run using 'rake start'. The React interface  will load on localhost:3000 and the Rails api will run on localhost: 3001. Login to begin saving your games.
+To use this app fork a copy of this repository from https://github.com/denisepen/React-Rails-Game-Recorder. Clone a copy of the repository to your machine and cd into the directory. Run 'rake db:migrate' followed by 'rake db:seed'. Start the application using 'rake start'. The React interface  will load on localhost:3000 and the Rails api will run on localhost: 3001. Login to begin saving your games.
