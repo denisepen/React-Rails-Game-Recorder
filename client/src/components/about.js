@@ -23,7 +23,7 @@ import React, { Component } from 'react';
           Record Games, Review Your Stats and Compare Your Progess To Others
           </h3>
           {/*<AllGames deleteGame={this.props.deleteGame} games={this.props.games}/>*/}
-          <img src="https://i0.wp.com/wallpapersfortech.com/wp-content/uploads/2018/01/2844B874-67B0-4E1D-969D-C614C125259C.jpeg?ssl=1" className="w3-round" alt="Fortnite" />
+          <img height="600" width="500" src="https://i0.wp.com/wallpapersfortech.com/wp-content/uploads/2018/01/2844B874-67B0-4E1D-969D-C614C125259C.jpeg?ssl=1" className="w3-round" alt="Fortnite" />
       </div>
     )
   }
